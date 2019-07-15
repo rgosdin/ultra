@@ -1,0 +1,10 @@
+{
+  "appName": {
+    "message": "Cut the Rope",
+    "description": "The title of the application, displayed in the web store."
+  },
+  "appDesc": {
+    "message": "Durchtrenne die Seile, um Om Nom in diesem Physikpuzzler zu füttern!",
+    "description":"The description of the application, displayed in the web store."
+  }
+}

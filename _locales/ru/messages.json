@@ -1,0 +1,10 @@
+{
+  "appName": {
+    "message": "Cut the Rope",
+    "description": "The title of the application, displayed in the web store."
+  },
+  "appDesc": {
+    "message": "Перерезайте веревки, чтобы накормить Ам Няма леденцами и открыть новые уровни!",
+    "description":"The description of the application, displayed in the web store."
+  }
+}

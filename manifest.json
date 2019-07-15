@@ -2,26 +2,19 @@
 "update_url": "https://clients2.google.com/service/update2/crx",
 
 	"manifest_version": 2,
-	"name": "Webcam Toy",
-	"description": "Take selfies with your camera using over 80 free fun effects. Save photos to your computer, or share online.",
-	"version": "1.6.2",
-	"icons": {
-		"16": "icon-16.png",
-		"48": "icon-48.png",
-		"128": "icon-128.png"
-	},
+	"name": "Audiotool",
+	"short_name": "Audiotool",
+	"version": "1.2",
+	"description": "Produce music online with builtin synthesizers, drum machines, effects and samples.",
 	"app": {
-		"urls": [
-			"https://webcamtoy.com/app/"
-		],
 		"launch": {
-			"web_url": "https://webcamtoy.com/app/",
-			"container": "tab"
+			"web_url" : "http://www.audiotool.com/app/chrome",
+			"width": 1280,
+			"height": 900
 		}
 	},
-	"requirements": {
-		"3D": {
-			"features": ["webgl"]
-		}
+	"icons": {
+		"16": "icon_16.png",
+		"128": "icon_128.png"
 	}
 }

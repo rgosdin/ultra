@@ -1,0 +1,10 @@
+{
+  "appName": {
+    "message": "Cut the Rope",
+    "description": "The title of the application, displayed in the web store."
+  },
+  "appDesc": {
+    "message": "Cut the Rope, catch a star, and feed Om Nom candy in this award-winning game!",
+    "description":"The description of the application, displayed in the web store."
+  }
+}
