@@ -1,0 +1,78 @@
+#dexControlsContainer {
+	z-index: 2147483640 !important;  /* max z-index is 2147483647 */
+	width: 0px;
+	height: 0px;
+	position: absolute;
+	top: -5000px;
+	left: -5000px;
+	background-color: rgba(255, 255, 255, 0);
+}
+
+#dexControlsContainer.dexFixed {
+	position: fixed;
+}
+
+#dexControlsContainerDragSurface {
+	display: none;
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	width: 100vw;
+	height: 100vh;
+	background-color: rgba(255, 255, 255, 0);
+	cursor: move !important;
+}
+
+#dexControlsContainerOverlay {
+	display: none;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	background-color: rgba(255, 255, 255, 0);
+	cursor: move !important;
+}
+
+#dexControlsContainer.dexPrepareDragging #dexControlsContainerDragSurface {
+	display: block;
+}
+#dexControlsContainer.dexDragging #dexControlsContainerDragSurface {
+	display: block;
+}
+#dexControlsContainer.dexDragging #dexControlsContainerOverlay {
+	display: block;
+}
+
+#dexControlsContainerBody {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 0px;
+	height: 0px;
+	background-color: rgba(255, 255, 255, 0);
+}
+
+#dexControlsContainer div.dexSeparator {
+	height: 2px;
+	width: 1px;
+	background-color: rgba(255, 255, 255, 0);
+	clear: both;
+	overflow: hidden;
+}
+
+#dexControlsContainerMeasurement {
+	display: block;
+	position: absolute;
+	left:-5000px; 
+	top: -5000px;
+}
+
+#dexControlsContainerMeasurementDiv {
+}
+
+#dexControlsContainerMeasurementDivCaret {
+	width: 0;
+	border-left: solid 1px red;
+	padding: 0px;
+	margin: 0px;
+	margin-left: -1px;
+}

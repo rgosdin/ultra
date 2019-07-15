@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Co:Writer UI Templates</title>
+</head>
+<body>
+
+<dji-dom-module id="dji-cwu-main-view">
+    <template>
+        <dji-cwu-main-view>
+            <dji-cwu-main-container>
+                <dji-cwu-tab-view>
+                    <dji-cwu-tab-view-pages>
+                        <dji-cwu-tab-view-page dji-cwu-role="type" dji-cwu-active>
+                            <dji-cwu-suggestions-pane dji-cwu-role="suggestions" dji-cwu-options="translations" dji-cwu-active>
+                                <dji-cwu-guesses-pane>
+                                    <dji-cwu-suggestion>Short</dji-cwu-suggestion>
+                                    <dji-cwu-suggestion>Very long suggestion</dji-cwu-suggestion>
+                                    <dji-cwu-suggestion>An extreme long suggestion</dji-cwu-suggestion>
+                                    <dji-cwu-suggestion>An extreme long suggestion that is really long</dji-cwu-suggestion>
+                                    <dji-cwu-suggestion>American Indian</dji-cwu-suggestion>
+                                    <dji-cwu-suggestion>opportunity to</dji-cwu-suggestion>
+                                    <dji-cwu-suggestion>unusual</dji-cwu-suggestion>
+                                </dji-cwu-guesses-pane>
+                                <dji-cwu-translations-pane>
+                                    <dji-cwu-icon-hr></dji-cwu-icon-hr>
+                                    <dji-cwu-suggestion>door</dji-cwu-suggestion>
+                                </dji-cwu-translations-pane>
+                            </dji-cwu-suggestions-pane>
+                            <dji-cwu-keyboard-pane dji-cwu-role="keyboard">
+                                <dji-cwu-keyboard-key dji-accessible dji-cwu-data="1">1</dji-cwu-keyboard-key>
+                                <dji-cwu-keyboard-key dji-accessible dji-cwu-data="2">2</dji-cwu-keyboard-key>
+                                <dji-cwu-keyboard-key dji-accessible dji-cwu-data="3">3</dji-cwu-keyboard-key>
+                                <dji-cwu-keyboard-key dji-accessible dji-cwu-data="4">4</dji-cwu-keyboard-key>
+                                <dji-cwu-keyboard-key dji-accessible dji-cwu-data="5">5</dji-cwu-keyboard-key>
+                                <dji-cwu-keyboard-key dji-accessible dji-cwu-data="6">6</dji-cwu-keyboard-key>
+                                <dji-cwu-keyboard-key dji-accessible dji-cwu-data="7">7</dji-cwu-keyboard-key>
+                                <dji-cwu-keyboard-key dji-accessible dji-cwu-data="8">8</dji-cwu-keyboard-key>
+                                <dji-cwu-keyboard-key dji-accessible dji-cwu-data="9">9</dji-cwu-keyboard-key>
+                                <dji-cwu-keyboard-key dji-accessible dji-cwu-data="0">0</dji-cwu-keyboard-key>
+                            </dji-cwu-keyboard-pane>
+                            <dji-cwu-toolbar>
+                                <dji-cwu-toolbar-button dji-accessible dji-cwu-link-to="suggestions" title="Show guesses" dji-cwu-active>abc</dji-cwu-toolbar-button>
+                                <dji-cwu-toolbar-button dji-accessible dji-cwu-link-to="keyboard" title="Show numeric keyboard">123</dji-cwu-toolbar-button>
+                            </dji-cwu-toolbar>
+                        </dji-cwu-tab-view-page>
+                        <dji-cwu-tab-view-page dji-cwu-role="topics">
+                            <dji-cwu-search-box>
+                                <dji-cwu-search-bar>
+                                    <dji-cwu-icon dji-cwu-src="search" dji-cwu-shape-round></dji-cwu-icon>
+                                    <dji-cwu-icon dji-accessible="5" dji-accessible-no-focus dji-cwu-src="arrow_back" dji-cwu-role="back" dji-cwu-shape-round></dji-cwu-icon>
+                                    <input type="text" dji-accessible="1" dji-accessible-no-focus placeholder="Search for topic" dji-cwu-no-prediction dji-non-draggable dji-dex-ignore-editor />
+                                    <dji-cwu-icon dji-accessible="2" dji-accessible-no-focus dji-cwu-src="mic" dji-cwu-role="start_speak" dji-cwu-shape-round></dji-cwu-icon>
+                                    <dji-cwu-icon dji-accessible="3" dji-accessible-no-focus dji-cwu-src="mic_off" dji-cwu-role="stop_speak" dji-cwu-shape-round></dji-cwu-icon>
+                                    <dji-cwu-icon dji-accessible="4" dji-accessible-no-focus dji-cwu-src="close" dji-cwu-role="clear" dji-cwu-shape-round></dji-cwu-icon>
+                                </dji-cwu-search-bar>
+                                <dji-cwu-search-results>
+                                    <dji-cwu-search-results-group dji-cwu-role="dji-cwu-local" dji-cwu-icon="bookmark">
+                                        <dji-cwu-topic>American's Cup</dji-cwu-topic>
+                                        <dji-cwu-topic>American Heart Association</dji-cwu-topic>
+                                        <dji-cwu-topic>American Library Association</dji-cwu-topic>
+                                        <dji-cwu-topic>America (United States)</dji-cwu-topic>
+                                        <dji-cwu-topic>Amblyseius</dji-cwu-topic>
+                                        <dji-cwu-topic>American's Cup</dji-cwu-topic>
+                                        <dji-cwu-topic>American Heart Association</dji-cwu-topic>
+                                        <dji-cwu-topic>American Library Association</dji-cwu-topic>
+                                        <dji-cwu-topic>America (United States)</dji-cwu-topic>
+                                        <dji-cwu-topic>Amblyseius</dji-cwu-topic>
+                                    </dji-cwu-search-results-group>
+                                    <dji-cwu-search-results-group dji-cwu-role="dji-cwu-web" dji-cwu-icon="language">
+                                        <dji-cwu-topic>American's Cup</dji-cwu-topic>
+                                        <dji-cwu-topic>American Heart Association</dji-cwu-topic>
+                                        <dji-cwu-topic>American Library Association</dji-cwu-topic>
+                                        <dji-cwu-topic>America (United States)</dji-cwu-topic>
+                                        <dji-cwu-topic>Amblyseius</dji-cwu-topic>
+                                        <dji-cwu-topic>American's Cup</dji-cwu-topic>
+                                        <dji-cwu-topic>American Heart Association</dji-cwu-topic>
+                                        <dji-cwu-topic>American Library Association</dji-cwu-topic>
+                                        <dji-cwu-topic>America (United States)</dji-cwu-topic>
+                                        <dji-cwu-topic>Amblyseius</dji-cwu-topic>
+                                    </dji-cwu-search-results-group>
+                                    <dji-cwu-info-pane dji-cwu-role="info-no-results">
+                                        <dji-cwu-div dji-cwu-role="message">No result found matching</dji-cwu-div>
+                                        <dji-cwu-div dji-cwu-role="name">[pattern]</dji-cwu-div>
+                                    </dji-cwu-info-pane>
+                                    <dji-cwu-info-pane dji-cwu-role="info-update-topics">
+                                        <dji-cwu-div dji-cwu-role="message-too-many-active">You may have at most 6 active topics!<br/>The new topic cannot be activated!</dji-cwu-div>
+                                        <dji-cwu-div dji-cwu-role="message-activate">Please wait while we<br/>activate the topic</dji-cwu-div>
+                                        <dji-cwu-div dji-cwu-role="message-update">Please wait while we<br/>update the topic</dji-cwu-div>
+                                        <dji-cwu-div dji-cwu-role="message-create">Please wait while we<br/>create the topic</dji-cwu-div>
+                                        <dji-cwu-div dji-cwu-role="name">[topic_name]</dji-cwu-div>
+                                        <dji-cwu-div dji-cwu-role="hint-update-too-many-active">You may have at most 6 active topics!<br/>The new topic will be updated but cannot be activated!</dji-cwu-div>
+                                        <dji-cwu-div dji-cwu-role="hint-create-too-many-active">You may have at most 6 active topics!<br/>The new topic will be created but cannot be activated!</dji-cwu-div>
+                                    </dji-cwu-info-pane>
+                                </dji-cwu-search-results>
+                            </dji-cwu-search-box>
+                            <dji-cwu-topics-pane>
+                                <dji-cwu-topic><dji-cwu-label>Albert Einstein</dji-cwu-label><dji-cwu-switch/></dji-cwu-topic>
+                                <dji-cwu-topic><dji-cwu-label>Global Warming</dji-cwu-label><dji-cwu-switch/></dji-cwu-topic>
+                                <dji-cwu-topic><dji-cwu-label>William Shakespeare</dji-cwu-label><dji-cwu-switch/></dji-cwu-topic>
+                                <dji-cwu-topic><dji-cwu-label>Aquarium Visit</dji-cwu-label><dji-cwu-switch/></dji-cwu-topic>
+                                <dji-cwu-topic><dji-cwu-label>Compare and Contrast</dji-cwu-label><dji-cwu-switch/></dji-cwu-topic>
+                                <dji-cwu-topic><dji-cwu-label>Tsunamis &amp; Tidal Waves</dji-cwu-label><dji-cwu-switch/></dji-cwu-topic>
+                            </dji-cwu-topics-pane>
+                        </dji-cwu-tab-view-page>
+                        <dji-cwu-tab-view-page dji-cwu-role="speech-recognition">
+                            <dji-cwu-speech-recognition-pane dji-cwu-options="multiple-languages">
+                                <dji-cwu-toolbar>
+                                    <dji-cwu-toolbar-button dji-accessible title="English" dji-cwu-active>EN</dji-cwu-toolbar-button>
+                                    <dji-cwu-toolbar-button dji-accessible title="Romanian">
+                                        <dji-cwu-span dji-cwu-role="source">RO</dji-cwu-span>
+                                        <dji-cwu-icon dji-cwu-src="chevron_right"></dji-cwu-icon>
+                                        <dji-cwu-span dji-cwu-role="target">EN</dji-cwu-span>
+                                    </dji-cwu-toolbar-button>
+                                </dji-cwu-toolbar>
+                                <dji-cwu-info>Click for speech to text</dji-cwu-info>
+                                <dji-cwu-icon dji-accessible dji-cwu-role="microphone" dji-cwu-state="idle">mic</dji-cwu-icon>
+                            </dji-cwu-speech-recognition-pane>
+                            <dji-cwu-error-pane>
+                                <dji-cwu-h2>No Connection</dji-cwu-h2>
+                                <dji-cwu-div>Speech recognition is not available offline.</dji-cwu-div>
+                            </dji-cwu-error-pane>
+                        </dji-cwu-tab-view-page>
+                    </dji-cwu-tab-view-pages>
+                    <dji-cwu-tab-view-toolbar>
+                        <dji-cwu-tab-view-toolbar-button dji-cwu-link-to="type" title="Type" dji-accessible dji-cwu-active>
+                            <dji-cwu-icon>create</dji-cwu-icon>
+                            <dji-cwu-label>Type</dji-cwu-label>
+                        </dji-cwu-tab-view-toolbar-button>
+                        <dji-cwu-tab-view-toolbar-button dji-cwu-link-to="topics" title="Manage topics" dji-accessible>
+                            <dji-cwu-icon>import_contacts</dji-cwu-icon>
+                            <dji-cwu-label>Topics</dji-cwu-label>
+                        </dji-cwu-tab-view-toolbar-button>
+                        <dji-cwu-tab-view-toolbar-button dji-cwu-link-to="speech-recognition" title="Speak to text" dji-accessible>
+                            <dji-cwu-icon>mic</dji-cwu-icon>
+                            <dji-cwu-label>Speak</dji-cwu-label>
+                        </dji-cwu-tab-view-toolbar-button>
+                    </dji-cwu-tab-view-toolbar>
+                </dji-cwu-tab-view>
+            </dji-cwu-main-container>
+        </dji-cwu-main-view>
+    </template>
+</dji-dom-module>
+
+<dji-dom-module id="dji-cwu-suggestion">
+    <template>
+        <dji-cwu-suggestion dji-accessible></dji-cwu-suggestion>
+    </template>
+</dji-dom-module>
+
+<dji-dom-module id="dji-cwu-suggestion-translation-placeholder">
+    <template>
+        <dji-cwu-suggestion dji-cwu-role="translation-placeholder">
+            <dji-cwu-span dji-cwu-role="source"></dji-cwu-span>
+            <dji-cwu-icon dji-cwu-src="chevron_right"></dji-cwu-icon>
+            <dji-cwu-span dji-cwu-role="target"></dji-cwu-span>
+        </dji-cwu-suggestion>
+    </template>
+</dji-dom-module>
+
+<dji-dom-module id="dji-cwu-topic">
+    <template>
+        <dji-cwu-topic dji-accessible><dji-cwu-label></dji-cwu-label><dji-cwu-switch/></dji-cwu-topic>
+    </template>
+</dji-dom-module>
+
+<dji-dom-module id="dji-cwu-topic-lookup">
+    <template>
+        <dji-cwu-topic dji-accessible dji-accessible-no-focus dji-accessible-scroll-into-view></dji-cwu-topic>
+    </template>
+</dji-dom-module>
+
+</body>
+</html>

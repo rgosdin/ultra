@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Popup</title>
+
+    <link rel="stylesheet" href="popup.css">
+    <link rel="stylesheet" href="../Options/dji-cwu-switch.css">
+
+    <script src="../ThirdParty/jquery/jquery-2.0.3.min.js"></script>
+    <script src="popup.js"></script>
+</head>
+<body>
+<div id="dji-cwu-overlay"></div>
+
+<div dji-cwu-login>
+    <div class="dji-cwu-menu-item dji-cwu-no-hover">
+        <div class="dji-cwu-menu-item-icon"><i class="dji-cwu-material-icons">power_settings_new</i></div>
+        <div class="dji-cwu-menu-item-text">Co:Writer</div>
+        <div class="dji-cwu-switch-menu-item">
+            <div id="dji-cwu-on" class="dji-cwu-switch-container">
+                <div class="dji-cwu-switch-track-bar"></div>
+                <div class="dji-cwu-switch-button"></div>
+            </div>
+        </div>
+    </div>
+    <div id="dji-cwu-topic-from-page" class="dji-cwu-menu-item">
+        <div class="dji-cwu-menu-item-icon"><i class="dji-cwu-material-icons">topic</i></div>
+        <div class="dji-cwu-menu-item-text">Create topic from this page</div>
+    </div>
+    <div id="dji-cwu-topic-from-selection" class="dji-cwu-menu-item">
+        <div class="dji-cwu-menu-item-icon"><i class="dji-cwu-material-icons">selected_text</i></div>
+        <div class="dji-cwu-menu-item-text">Create topic from selected text</div>
+    </div>
+    <div id="dji-cwu-options" class="dji-cwu-menu-item">
+        <div class="dji-cwu-menu-item-icon"><i class="dji-cwu-material-icons">settings</i></div>
+        <div class="dji-cwu-menu-item-text">Options</div>
+    </div>
+    <div id="dji-cwu-sign-out" class="dji-cwu-menu-item">
+        <div class="dji-cwu-menu-item-icon"><i class="dji-cwu-material-icons">sign_out</i></div>
+        <div class="dji-cwu-menu-item-text">Sign out</div>
+    </div>
+    <div class="dji-cwu-menu-item-separator"></div>
+    <a href="#" target="_blank" tabindex="-1" dji-cowriter-url>
+        <div id="dji-cwu-user-name" class="dji-cwu-menu-item">
+            <div class="dji-cwu-menu-item-icon"><i class="dji-cwu-material-icons">account_face</i></div>
+            <div class="dji-cwu-menu-item-text">[user_name]</div>
+        </div>
+    </a>
+</div>
+<div dji-cwu-no-login>
+    <div id="dji-cwu-sign-in" class="dji-cwu-menu-item">
+        <div class="dji-cwu-menu-item-icon"><i class="dji-cwu-material-icons">account_face</i></div>
+        <div class="dji-cwu-menu-item-text">Sign in</div>
+    </div>
+    <a href="#" target="_blank" tabindex="-1" dji-cowriter-url>
+        <div id="dji-cwu-create-account" class="dji-cwu-menu-item">
+            <div class="dji-cwu-menu-item-icon"><i class="dji-cwu-material-icons">person_add</i></div>
+            <div class="dji-cwu-menu-item-text">Create account</div>
+        </div>
+    </a>
+</div>
+</body>
+</html>

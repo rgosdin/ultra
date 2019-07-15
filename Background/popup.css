@@ -1,0 +1,161 @@
+:root {
+    --dji-cwu-overlay-background-color: rgba(0, 0, 0, 0.12);
+    --dji-cwu-menu-item-height: 56px;
+    --dji-cwu-menu-item-icon-size: 24px;
+    --dji-cwu-menu-item-icon-color: rgba(0, 0, 0, 0.56);
+    --dji-cwu-menu-item-text-size: 16px;
+    --dji-cwu-menu-item-text-color: rgba(0, 0, 0, 0.87);
+    --dji-cwu-menu-item-hover-background-color: rgba(0, 0, 0, 0.12);
+    --dji-cwu-menu-item-active-background-color: rgba(0, 0, 0, 0.24);
+    --dji-cwu-menu-item-icon-padding: 0 16px;
+}
+
+body {
+    margin: 8px 0;
+    padding: 0;
+    width: 305px;
+    min-width: 305px;
+    max-width: 305px;
+}
+
+@font-face {
+    font-family: "Material Icons";
+    font-style: normal;
+    font-weight: 400;
+    src: local("Material Icons"), local("MaterialIcons-Regular"), url(../Fonts/material-icons.woff2) format("woff2");
+}
+
+#dji-cwu-overlay {
+    z-index: 1000;
+    position: fixed;
+    display: none;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: var(--dji-cwu-overlay-background-color);
+    cursor: wait;
+}
+
+body.dji-cwu-busy #dji-cwu-overlay {
+    display: block;
+}
+
+.dji-cwu-material-icons {
+    font-family: "Material Icons";
+    font-weight: normal;
+    font-style: normal;
+    font-size: 24px;
+    display: inline-block;
+    line-height: 1;
+    text-transform: none;
+    letter-spacing: normal;
+    word-wrap: normal;
+    white-space: nowrap;
+    direction: ltr;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    -moz-osx-font-smoothing: grayscale;
+    font-feature-settings: "liga";
+}
+
+i.dji-cwu-material-icons {
+    user-select: none;
+}
+
+.dji-cwu-layout-horizontal {
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -ms-flex-direction: row;
+    -webkit-flex-direction: row;
+    flex-direction: row;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+}
+
+.dji-cwu-menu-item {
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -ms-flex-direction: row;
+    -webkit-flex-direction: row;
+    flex-direction: row;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+    height: var(--dji-cwu-menu-item-height);
+    min-height: var(--dji-cwu-menu-item-height);
+    max-height: var(--dji-cwu-menu-item-height);
+    cursor: default;
+}
+
+.dji-cwu-menu-item.dji-cwu-disabled {
+    cursor: default;
+    pointer-events: none;
+}
+
+.dji-cwu-menu-item:not(.dji-cwu-no-hover):not(.dji-cwu-disabled) {
+    cursor: pointer;
+}
+
+.dji-cwu-menu-item:not(.dji-cwu-no-hover):not(.dji-cwu-disabled):hover {
+    background-color: var(--dji-cwu-menu-item-hover-background-color);
+}
+
+.dji-cwu-menu-item:not(.dji-cwu-no-hover):not(.dji-cwu-disabled):active {
+    background-color: var(--dji-cwu-menu-item-active-background-color);
+}
+
+.dji-cwu-menu-item .dji-cwu-menu-item-icon {
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+    padding: var(--dji-cwu-menu-item-icon-padding);
+    width: var(--dji-cwu-menu-item-icon-size);
+    min-width: var(--dji-cwu-menu-item-icon-size);
+    max-width: var(--dji-cwu-menu-item-icon-size);
+    height: var(--dji-cwu-menu-item-icon-size);
+    min-height: var(--dji-cwu-menu-item-icon-size);
+    max-height: var(--dji-cwu-menu-item-icon-size);
+    color: var(--dji-cwu-menu-item-icon-color);
+}
+
+.dji-cwu-menu-item .dji-cwu-menu-item-text {
+    -webkit-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    font-size: var(--dji-cwu-menu-item-text-size);
+    padding: 0 0 0 16px;
+}
+
+.dji-cwu-menu-item-separator {
+    margin: 0;
+    height: 1px;
+    background-color: #B2B2B2;
+}
+
+.dji-cwu-switch-menu-item {
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+    margin-right: 10px;
+    width: 50px;
+}
+
+a {
+    outline: none;
+    text-decoration: none;
+    color: var(--dji-cwu-menu-item-text-color);
+}

@@ -1,0 +1,715 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Co:Writer Extension</title>
+
+    <link rel="stylesheet" href="options.css">
+    <link rel="stylesheet" href="dji-cwu-switch.css">
+    <link rel="stylesheet" href="dji-cwu-toast.css">
+
+    <link type="text/css" rel="stylesheet" href="/ContentScripts/ui/cweFonts.css" />
+    <link type="text/css" rel="stylesheet" href="/ContentScripts/ui/cweMainView.css" />
+
+    <script src="/Common/color.js"></script>
+    <script src="/Common/timer.js"></script>
+    <script src="/ContentScripts/ui/djiUiTemplatesRegistry.js"></script>
+    <script src="/ContentScripts/ui/cweDOMExtensions.js"></script>
+    <script src="/ContentScripts/ui/cweMainView.js"></script>
+
+    <script src="../ThirdParty/jquery/jquery-2.0.3.min.js"></script>
+</head>
+<body>
+<div class="dji-cwu-options-layout">
+    <div class="dji-cwu-options-view">
+        <div class="dji-cwu-2-columns-layout">
+            <div class="dji-cwu-column">
+                <div class="dji-cwu-main-logo"></div>
+            </div>
+            <div class="dji-cwu-column dji-cwu-align-top-right">
+                <div id="dji-cwu-user-name" class="dji-cwu-dropdown" dji-cwu-dropdown-id="dji-cwu-user-context-menu">
+                    <span></span>
+                    <div class="dji-cwu-option-dropdown-items"></div>
+                </div>
+            </div>
+        </div>
+        <div class="dji-cwu-2-columns-layout" dji-cwu-options>
+            <div class="dji-cwu-column dji-cwu-have-overlay">
+                <div class="dji-cwu-column-overlay"></div>
+                <div class="dji-cwu-options-group">
+                    <div class="dji-cwu-topics-view">
+                        <div dji-cwu-topics-title-bar>
+                            <div id="dji-cwu-search-container"
+                                 class="dji-cwu-search-container dji-cwu-layout-horizontal"
+                                 dji-cwu-view-mode="dji-cwu-default">
+                                <div class="dji-cwu-icon" dji-cwu-search-icon><i
+                                        class="dji-cwu-material-icons">search</i></div>
+                                <div id="dji-cwu-cancel-search" class="dji-cwu-icon-button"><i
+                                        class="dji-cwu-material-icons">arrow_back</i></div>
+                                <div class="dji-input-container">
+                                    <input id="dji-cwu-search-topic-dictionary" type="text"
+                                           placeholder="Search for topic dictionary"
+                                           dji-i18n-title="cwu_topic_dictionary"
+                                           dji-i18n-placeholder="cwu_search_topic_placeholder"/>
+                                </div>
+                                <div id="dji-cwu-speech-to-text" class="dji-cwu-icon-button"><i
+                                        class="dji-cwu-material-icons">mic</i></div>
+                                <div id="dji-cwu-reset-search" class="dji-cwu-icon-button"><i
+                                        class="dji-cwu-material-icons">close</i></div>
+                                <div class="dji-cwu-search-result-container">
+                                    <div id="dji-cwu-search-result">
+                                        <div id="dji-cwu-local-topic-list" class="dji-cwu-search-result-group"
+                                             dji-cwu-group-id="bookmark"></div>
+                                        <div id="dji-cwu-wiki-topic-list" class="dji-cwu-search-result-group"
+                                             dji-cwu-group-id="language"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="dji-cwu-active-topics-list">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="dji-cwu-options-group dji-cwu-y-padding">
+                    <div class="dji-cwu-absolute-child">
+                        <div id="dji-cwu-ime-sample"></div>
+                    </div>
+                    <div id="dji-cwu-prediction-language" class="dji-cwu-option-dropdown-item"
+                         dji-cwu-dropdown-id="dji-cwu-prediction-language">
+                        <div class="dji-cwu-option-item-label" dji-i18n="cwu_prediction_language">Prediction language
+                        </div>
+                        <div class="dji-cwu-option-item-value">Prediction language value</div>
+                        <div class="dji-cwu-option-dropdown-items"></div>
+                    </div>
+                    <div class="dji-cwu-options-group dji-cwu-y-padding">
+                        <div id="dji-cwu-main-dictionary" class="dji-cwu-option-dropdown-item"
+                             dji-cwu-dropdown-id="dji-cwu-main-dictionary-en">
+                            <div class="dji-cwu-option-item-label" dji-i18n="cwu_main_dictionary">Predict</div>
+                            <div class="dji-cwu-option-item-value">Predict words value</div>
+                            <div class="dji-cwu-option-dropdown-items"></div>
+                        </div>
+
+                        <div class="dji-cwu-option-switch-item">
+                            <div class="dji-cwu-option-item-label" dji-i18n="cwu_predict_from_page">Predict From Page
+                            </div>
+                            <div class="dji-cwu-option-switch-item-status">
+                                <div id="dji-cwu-momentary-topic" class="dji-cwu-switch-container">
+                                    <div class="dji-cwu-switch-track-bar"></div>
+                                    <div class="dji-cwu-switch-button"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="dji-cwu-option-switch-item">
+                            <div class="dji-cwu-option-item-label" dji-i18n="cwu_flexible_spelling">Flexible Spelling
+                            </div>
+                            <div class="dji-cwu-option-switch-item-status">
+                                <div id="dji-cwu-flexible-spelling" class="dji-cwu-switch-container">
+                                    <div class="dji-cwu-switch-track-bar"></div>
+                                    <div class="dji-cwu-switch-button"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="dji-cwu-options-group dji-cwu-y-padding">
+                        <div id="dji-cwu-translate-writing" class="dji-cwu-option-dropdown-item"
+                             dji-cwu-dropdown-id="dji-cwu-translate-writing">
+                            <div class="dji-cwu-option-item-label" dji-i18n="cwu_translate_writing">Translate writing into
+                            </div>
+                            <div class = "dji-cwu-values-wrapper">
+                                <div class="dji-cwu-option-item-value" style="display:inline-block" dji-i18n="cwu-no-translation">Translation off</div>
+                                <div class="dji-cwu-option-item-auxiliary"></div>
+                            </div>
+
+                            <div class="dji-cwu-option-dropdown-items"></div>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+
+            <div class="dji-cwu-column dji-cwu-have-overlay">
+                <div class="dji-cwu-column-overlay"></div>
+                <div class="dji-cwu-options-group dji-cwu-y-padding">
+
+                    <div class="dji-cwu-y-padding">
+                        <div id="dji-cwu-number-of-guesses" class="dji-cwu-option-dropdown-item"
+                             dji-cwu-dropdown-id="dji-cwu-number-of-guesses">
+                            <div class="dji-cwu-option-item-label" dji-i18n="cwu_number_of_guesses">Number of Guesses
+                            </div>
+                            <div class="dji-cwu-option-item-value">Number of Guesses value</div>
+                            <div class="dji-cwu-option-dropdown-items"></div>
+                        </div>
+                    </div>
+
+                    <div id="dji-cwu-text-font" class="dji-cwu-option-dropdown-item"
+                         dji-cwu-dropdown-id="dji-cwu-font-family">
+                        <div class="dji-cwu-option-item-label" dji-i18n="cwu_font">Font</div>
+                        <div class="dji-cwu-option-item-value">Font value</div>
+                        <div class="dji-cwu-option-dropdown-items"></div>
+                    </div>
+
+                    <div class="dji-cwu-option-slider-item">
+                        <div class="dji-cwu-slider-icon"><i class="dji-cwu-material-icons">format_size</i></div>
+                        <div class="dji-cwu-slider-input">
+                            <input id="dji-cwu-text-size" type="range" min="0" max="100" step="1" value="30"
+                                   dji-i18n-title="cwu_font_size">
+                        </div>
+                        <div class="dji-cwu-slider-label" dji-i18n="cwu_font_size">Font size</div>
+                        <div class="dji-cwu-slider-value">Font size Value</div>
+                    </div>
+
+                    <div class="dji-cwu-option-color-picker-item">
+                        <div class="dji-cwu-option-item-label" dji-i18n="cwu_text_color">Text color</div>
+                        <div class="dji-cwu-option-color-picker-value">
+                            <div id="dji-cwu-text-color" class="dji-cwu-color-picker-value">
+                                <div class="dji-cwu-option-dropdown-items"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="dji-cwu-option-color-picker-item">
+                        <div class="dji-cwu-option-item-label" dji-i18n="cwu_background_color">Background color</div>
+                        <div class="dji-cwu-option-color-picker-value">
+                            <div id="dji-cwu-text-background-color" class="dji-cwu-color-picker-value">
+                                <div class="dji-cwu-option-dropdown-items"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="dji-cwu-options-group dji-cwu-y-padding">
+                    <div id="dji-cwu-prediction-voice" class="dji-cwu-option-dropdown-item"
+                         dji-cwu-dropdown-id="dji-cwu-prediction-voice">
+                        <div class="dji-cwu-option-item-label" dji-i18n="cwu_prediction_voice">Prediction voice</div>
+                        <div class="dji-cwu-option-item-value">Prediction voice value</div>
+                        <div class="dji-cwu-option-dropdown-items"></div>
+                    </div>
+
+                    <div class="dji-cwu-option-switch-item">
+                        <div class="dji-cwu-option-item-label" dji-i18n="cwu_speak_letters">Speak letters</div>
+                        <div class="dji-cwu-option-switch-item-status">
+                            <div id="dji-cwu-speak-letters" class="dji-cwu-switch-container">
+                                <div class="dji-cwu-switch-track-bar"></div>
+                                <div class="dji-cwu-switch-button"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="dji-cwu-option-switch-item">
+                        <div class="dji-cwu-option-item-label" dji-i18n="cwu_speak_words">Speak words</div>
+                        <div class="dji-cwu-option-switch-item-status">
+                            <div id="dji-cwu-speak-words" class="dji-cwu-switch-container">
+                                <div class="dji-cwu-switch-track-bar"></div>
+                                <div class="dji-cwu-switch-button"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="dji-cwu-option-switch-item">
+                        <div class="dji-cwu-option-item-label" dji-i18n="cwu_speak_sentences">Speak sentences</div>
+                        <div class="dji-cwu-option-switch-item-status">
+                            <div id="dji-cwu-speak-sentences" class="dji-cwu-switch-container">
+                                <div class="dji-cwu-switch-track-bar"></div>
+                                <div class="dji-cwu-switch-button"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="dji-cwu-option-slider-item">
+                        <div class="dji-cwu-slider-icon"><i class="dji-cwu-material-icons">volume_up</i></div>
+                        <div class="dji-cwu-slider-input">
+                            <input id="dji-cwu-speak-volume" type="range" min="0.0" max="1.0" step="0.1" value="1.0"
+                                   dji-i18n-title="cwu_speak_volume">
+                        </div>
+                        <div class="dji-cwu-slider-label" dji-i18n="cwu_speak_volume">Volume</div>
+                        <div class="dji-cwu-slider-value">Volume Value</div>
+                    </div>
+
+                    <div class="dji-cwu-option-slider-item">
+                        <div class="dji-cwu-slider-icon"><i class="dji-cwu-material-icons">directions_run</i></div>
+                        <div class="dji-cwu-slider-input">
+                            <input id="dji-cwu-speak-rate" type="range" min="0.5" max="1.5" step="0.1" value="1.25"
+                                   dji-i18n-title="cwu_speak_speed">
+                        </div>
+                        <div class="dji-cwu-slider-label" dji-i18n="cwu_speak_speed">Speed</div>
+                        <div class="dji-cwu-slider-value">Speed Value</div>
+                    </div>
+
+                    <div class="dji-cwu-option-slider-item">
+                        <div class="dji-cwu-slider-icon"><i class="dji-cwu-material-icons">music_note</i></div>
+                        <div class="dji-cwu-slider-input">
+                            <input id="dji-cwu-speak-pitch" type="range" min="0.5" max="1.5" step="0.1" value="1.25"
+                                   dji-i18n-title="cwu_speak_pitch">
+                        </div>
+                        <div class="dji-cwu-slider-label" dji-i18n="cwu_speak_pitch">Pitch</div>
+                        <div class="dji-cwu-slider-value">Pitch Value</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="dji-cwu-footer-layout">
+        <div class="dji-cwu-first-column">
+            <div class="dji-cwu-company-logo"></div>
+            <div class="dji-cwu-info" dji-i18n-html="cwu_cowriter_product_info">Co:Writer&reg; Universal is a product of
+                Don Johnston Incorporated
+            </div>
+            <div class="dji-cwu-info" dji-i18n-html="cwu_cowriter_developer_info_1">Don Johnston Inc. was founded in
+                1980 to develop technologies<br/>that help people read and write
+            </div>
+            <div class="dji-cwu-info" dji-i18n-html="cwu_cowriter_developer_info_2">&copy; Copyright 2018 Don Johnston
+                Incorporated
+            </div>
+        </div>
+        <div class="dji-cwu-second-column">
+            <a href="#" target="_blank" dji-cowriter-url>
+                <div class="dji-cwu-info">cowriter.com</div>
+            </a>
+            <a href="mailto:info@donjohnston.com?Subject=Information">
+                <div class="dji-cwu-info">info@donjohnston.com</div>
+            </a>
+            <a href="http://help.donjohnston.net/co-writer-universal" target="_blank">
+                <div class="dji-cwu-info" dji-i18n="cwu_help_link">Help</div>
+            </a>
+            <a href="#" target="_blank" dji-cowriter-privacy-policy-url>
+                <div class="dji-cwu-info" dji-i18n="cwu_privacy_policy_link">Privacy Policy</div>
+            </a>
+            <a href="#" target="_blank" dji-cowriter-tos-url>
+                <div class="dji-cwu-info" dji-i18n="cwu_terms_of_service_link">Terms of Service</div>
+            </a>
+        </div>
+    </div>
+</div>
+
+<div id="dji-cwu-toast" class="dji-cwu-layout-horizontal">
+    <div class="dji-cwu-toast-message"></div>
+    <div class="dji-cwu-toast-close-button"><i class="dji-cwu-material-icons">clear</i></div>
+</div>
+
+<div id="dji-cwu-busy-overlay"></div>
+
+<div id="dji-cwu-main-overlay"></div>
+<div id="dji-cwu-modal-dlg-overlay"></div>
+
+<div template>
+    <div dji-cwu-template-id="dji-cwu-option-topic-dictionary" class="dji-cwu-option-switch-item">
+        <div class="dji-cwu-option-item-label">Topic Dictionary</div>
+        <div class="dji-cwu-option-switch-item-status">
+            <div class="dji-cwu-switch-container">
+                <div class="dji-cwu-switch-track-bar"></div>
+                <div class="dji-cwu-switch-button"></div>
+            </div>
+        </div>
+    </div>
+
+    <div dji-cwu-template-id="dji-cwu-color-popup" class="dji-cwu-popup dji-cwu-color-popup"
+         dji-cwu-view-mode="dji-cwu-colors">
+        <div class="dji-cwu-colors-tab-items dji-cwu-layout-horizontal">
+            <div class="dji-cwu-tab-button dji-cwu-selected" dji-cwu-item="dji-cwu-colors" dji-i18n="cwu_colors">
+                Colors
+            </div>
+            <div class="dji-cwu-tab-button" dji-cwu-item="dji-cwu-color-template" dji-i18n="cwu_templates">Templates
+            </div>
+        </div>
+        <div dji-cwu-colors>
+            <div class="dji-cwu-layout-horizontal">
+                <div style="background-color: #FFFFFF;" class="dji-cwu-color-item"
+                     dji-i18n-title="cwu_white_color"></div>
+                <div style="background-color: #FFFFCC;" class="dji-cwu-color-item"
+                     dji-i18n-title="cwu_yellow_20_color"></div>
+                <div style="background-color: #FFFF66;" class="dji-cwu-color-item"
+                     dji-i18n-title="cwu_yellow_60_color"></div>
+                <div style="background-color: #FFCC00;" class="dji-cwu-color-item"
+                     dji-i18n-title="cwu_golden_red_color"></div>
+            </div>
+            <div class="dji-cwu-layout-horizontal">
+                <div style="background-color: #FFA500;" class="dji-cwu-color-item"
+                     dji-i18n-title="cwu_orange_color"></div>
+                <div style="background-color: #FFCCCC;" class="dji-cwu-color-item"
+                     dji-i18n-title="cwu_red_20_color"></div>
+                <div style="background-color: #FF3333;" class="dji-cwu-color-item"
+                     dji-i18n-title="cwu_red_80_color"></div>
+                <div style="background-color: #FF0000;" class="dji-cwu-color-item"
+                     dji-i18n-title="cwu_red_100_color"></div>
+            </div>
+            <div class="dji-cwu-layout-horizontal">
+                <div style="background-color: #CCFFFF;" class="dji-cwu-color-item"
+                     dji-i18n-title="cwu_cyan_20_color"></div>
+                <div style="background-color: #CCFFCC;" class="dji-cwu-color-item"
+                     dji-i18n-title="cwu_green_20_color"></div>
+                <div style="background-color: #CCCCFF;" class="dji-cwu-color-item"
+                     dji-i18n-title="cwu_blue_20_color"></div>
+                <div style="background-color: #999999;" class="dji-cwu-color-item"
+                     dji-i18n-title="cwu_green_40_color"></div>
+            </div>
+            <div class="dji-cwu-layout-horizontal">
+                <div style="background-color: #99CCCC;" class="dji-cwu-color-item"
+                     dji-i18n-title="cwu_gray_green_color"></div>
+                <div style="background-color: #66CCFF;" class="dji-cwu-color-item"
+                     dji-i18n-title="cwu_light_blue_color"></div>
+                <div style="background-color: #33CC99;" class="dji-cwu-color-item"
+                     dji-i18n-title="cwu_medium_green_color"></div>
+                <div style="background-color: #333399;" class="dji-cwu-color-item"
+                     dji-i18n-title="cwu_dark_blue_color"></div>
+            </div>
+            <div class="dji-cwu-layout-horizontal">
+                <div style="background-color: #333366;" class="dji-cwu-color-item"
+                     dji-i18n-title="cwu_cobalt_color"></div>
+                <div style="background-color: #009999;" class="dji-cwu-color-item"
+                     dji-i18n-title="cwu_blue_green_color"></div>
+                <div style="background-color: #009966;" class="dji-cwu-color-item"
+                     dji-i18n-title="cwu_dark_green_color"></div>
+                <div style="background-color: #000000;" class="dji-cwu-color-item"
+                     dji-i18n-title="cwu_black_color"></div>
+            </div>
+        </div>
+        <div dji-cwu-color-template>
+            <div class="dji-cwu-color-template" style="background-color: #FFFFFF; color: #000000;"
+                 dji-i18n="cwu_black_on_white_template" dji-i18n-title="cwu_black_on_white_template">Black on White
+            </div>
+            <div class="dji-cwu-color-template" style="background-color: #FFFFCE; color: #000000;"
+                 dji-i18n="cwu_black_on_yellow_template" dji-i18n-title="cwu_black_on_yellow_template">Black on Yellow
+            </div>
+            <div class="dji-cwu-color-template" style="background-color: #99FFFF; color: #000000;"
+                 dji-i18n="cwu_black_on_blue_template" dji-i18n-title="cwu_black_on_blue_template">Black on Blue
+            </div>
+            <div class="dji-cwu-color-template" style="background-color: #FCFCE2; color: #000000;"
+                 dji-i18n="cwu_black_on_light_yellow_template" dji-i18n-title="cwu_black_on_light_yellow_template">Black
+                on Light Yellow
+            </div>
+            <div class="dji-cwu-color-template" style="background-color: #CFFFFF; color: #000000;"
+                 dji-i18n="cwu_black_on_light_blue" dji-i18n-title="cwu_black_on_light_blue_template">Black on Light
+                Blue
+            </div>
+            <div class="dji-cwu-color-template" style="background-color: #FFD0FF; color: #000000;"
+                 dji-i18n="cwu_black_on_magenta_template" dji-i18n-title="cwu_black_on_magenta_template">Black on
+                Magenta
+            </div>
+            <div class="dji-cwu-color-template" style="background-color: #FDE3FD; color: #000000;"
+                 dji-i18n="cwu_black_on_light_magenta_template" dji-i18n-title="cwu_black_on_light_magenta_template">
+                Black on Light Magenta
+            </div>
+            <div class="dji-cwu-color-template" style="background-color: #CECFCE; color: #000000;"
+                 dji-i18n="cwu_black_on_gray_template" dji-i18n-title="cwu_black_on_gray_template">Black on Gray
+            </div>
+            <div class="dji-cwu-color-template" style="background-color: #E5E5E5; color: #000000;"
+                 dji-i18n="cwu_black_on_light_gray_template" dji-i18n-title="cwu_black_on_light_gray_template">Black on
+                Light Gray
+            </div>
+            <div class="dji-cwu-color-template" style="background-color: #CFF799; color: #000000;"
+                 dji-i18n="cwu_black_on_green_template" dji-i18n-title="cwu_black_on_green_template">Black on Green
+            </div>
+            <div class="dji-cwu-color-template" style="background-color: #E0F6C1; color: #000000;"
+                 dji-i18n="cwu_black_on_light_green_template" dji-i18n-title="cwu_black_on_light_green_template">Black
+                on Light Green
+            </div>
+            <div class="dji-cwu-color-template" style="background-color: #003399; color: #FFCC00;"
+                 dji-i18n="cwu_yellow_on_blue_template" dji-i18n-title="cwu_yellow_on_blue_template">Yellow on Blue
+            </div>
+            <div class="dji-cwu-color-template" style="background-color: #000000; color: #FFFFFF;"
+                 dji-i18n="cwu_reverse_contrast_template" dji-i18n-title="cwu_reverse_contrast_template">Reverse
+                Contrast
+            </div>
+            <div class="dji-cwu-color-template" style="background-color: #003366; color: #FFFFFF;"
+                 dji-i18n="cwu_white_on_navy_template" dji-i18n-title="cwu_white_on_navy_template">White on Navy
+            </div>
+            <div class="dji-cwu-color-template" style="background-color: #E5E5E5; color: #666666;"
+                 dji-i18n="cwu_medium_gray_on_light_gray_template"
+                 dji-i18n-title="cwu_medium_gray_on_light_gray_template">Medium Gray on Light Gray
+            </div>
+            <div class="dji-cwu-color-template" style="background-color: #FFFACD; color: #000000;"
+                 dji-i18n="cwu_black_on_cream_template" dji-i18n-title="cwu_black_on_cream_template">Black on Cream
+            </div>
+            <div class="dji-cwu-color-template" style="background-color: #ADD8E6; color: #000000;"
+                 dji-i18n="cwu_black_on_light_blue_template" dji-i18n-title="cwu_black_on_light_blue_template">Black on
+                Light Blue
+            </div>
+            <div class="dji-cwu-color-template" style="background-color: #EE82EE; color: #000000;"
+                 dji-i18n="cwu_black_on_light_magenta_template" dji-i18n-title="cwu_black_on_light_magenta_template">
+                Black on Light Magenta
+            </div>
+            <div class="dji-cwu-color-template" style="background-color: #0000A0; color: #ADD8E6;"
+                 dji-i18n="cwu_light_blue_on_dark_blue_template" dji-i18n-title="cwu_light_blue_on_dark_blue_template">
+                Light Blue on Dark Blue
+            </div>
+        </div>
+    </div>
+
+    <div dji-cwu-template-id="dji-cwu-prediction-language" class="dji-cwu-popup">
+        <div class="dji-cwu-menu-item dji-cwu-check-icon" dji-cwu-prediction-language dji-cwu-value="US">
+            <div class = "dji-cwu-menu-item-text" dji-i18n="cwu_prediction_language_US">US</div>
+        </div>
+        <div class="dji-cwu-menu-item dji-cwu-check-icon" dji-cwu-prediction-language dji-cwu-value="CAN">
+            <div class = "dji-cwu-menu-item-text" dji-i18n="cwu_prediction_language_CAN">CAN</div>
+        </div>
+        <div class="dji-cwu-menu-item dji-cwu-check-icon" dji-cwu-prediction-language dji-cwu-value="UK">
+            <div class = "dji-cwu-menu-item-text" dji-i18n="cwu_prediction_language_UK">UK</div>
+        </div>
+        <div class="dji-cwu-menu-item dji-cwu-check-icon" dji-cwu-prediction-language dji-cwu-value="FR">
+            <div class = "dji-cwu-menu-item-text" dji-i18n-html="cwu_prediction_language_FR">FR</div>
+        </div>
+        <div class="dji-cwu-menu-item dji-cwu-check-icon" dji-cwu-prediction-language dji-cwu-value="GER">
+            <div class = "dji-cwu-menu-item-text" dji-i18n-html="cwu_prediction_language_GER">GER</div>
+        </div>
+        <div class="dji-cwu-menu-item dji-cwu-check-icon" dji-cwu-prediction-language dji-cwu-value="SPA">
+            <div class = "dji-cwu-menu-item-text" dji-i18n-html="cwu_prediction_language_SPA">SPA</div>
+        </div>
+    </div>
+
+    <div dji-cwu-template-id="dji-cwu-translate-writing" class="dji-cwu-popup">
+        <div  class="dji-cwu-menu-item dji-cwu-check-icon" dji-cwu-translate-writing dji-cwu-value="">
+            <div class="dji-cwu-menu-item-text">Translation off</div>
+        </div>
+    </div>
+
+    <div dji-cwu-template-id="dji-cwu-main-dictionary-en" class="dji-cwu-popup">
+        <div class="dji-cwu-menu-item dji-cwu-check-icon" dji-cwu-main-dictionary-en dji-cwu-value="0" >
+            <div class = "dji-cwu-menu-item-text" dji-i18n="cwu_all_words">All Words</div>
+        </div>
+        <div class="dji-cwu-menu-item dji-cwu-check-icon" dji-cwu-main-dictionary-en dji-cwu-value="4" >
+            <div class = "dji-cwu-menu-item-text" dji-i18n="cwu_core_words">Core Words</div>
+        </div>
+        <div class="dji-cwu-menu-item dji-cwu-check-icon" dji-cwu-main-dictionary-en dji-cwu-value="5" >
+            <div class = "dji-cwu-menu-item-text" dji-i18n="cwu_no_words">No Words</div>
+        </div>
+    </div>
+
+    <div dji-cwu-template-id="dji-cwu-main-dictionary-no-en" class="dji-cwu-popup">
+        <div class="dji-cwu-menu-item dji-cwu-check-icon" dji-cwu-main-dictionary-no-en dji-cwu-value="0">
+            <div class = "dji-cwu-menu-item-text" dji-i18n="cwu_all_words">All Words</div>
+        </div>
+        <div class="dji-cwu-menu-item dji-cwu-check-icon" dji-cwu-main-dictionary-no-en dji-cwu-value="5" >
+            <div class = "dji-cwu-menu-item-text" dji-i18n=dji-i18n="cwu_no_words">No Words</div>
+        </div>
+    </div>
+
+    <!-- not used -->
+   <!-- <div dji-cwu-template-id="dji-cwu-main-dictionary-no-en" class="dji-cwu-popup">
+        <div class="dji-cwu-menu-item" dji-cwu-main-dictionary-no-en dji-cwu-value="1"
+             dji-i18n="cwu_default_dictionary">default dictionary
+        </div>
+        <div class="dji-cwu-menu-item" dji-cwu-main-dictionary-no-en dji-cwu-value="5"
+             dji-i18n="cwu_no_main_dictionary">no main dictionary
+        </div>
+    </div> -->
+
+    <div dji-cwu-template-id = "dji-cwu-translate-language" class = "dji-cwu-menu-item dji-cwu-check-icon" dji-cwu-translate-writing dji-cwu-value="">
+        <div class = "dji-cwu-menu-item-text">Translation language</div>
+    </div>
+    <div dji-cwu-template-id = "dji-cwu-no-translation" dji-i18n="cwu_no_translation"></div>
+
+    <div dji-cwu-template-id="dji-cwu-prediction-voice" class="dji-cwu-popup"
+         style="max-height: 400px; overflow-y: auto;">
+    </div>
+
+    <div dji-cwu-template-id = "dji-cwu-voice" class = "dji-cwu-menu-item dji-cwu-check-icon"  dji-cwu-value="">
+        <div class = "dji-cwu-menu-item-text">Prediction Voice</div>
+    </div>
+
+    <div dji-cwu-template-id="dji-cwu-font-family-item" class="dji-cwu-menu-item dji-cwu-check-icon"  dji-cwu-value="">
+        <div class = "dji-cwu-menu-item-text">Font Family</div>
+    </div>
+
+    <div dji-cwu-template-id="dji-cwu-number-of-guesses" class="dji-cwu-popup">
+        <div class="dji-cwu-menu-item dji-cwu-check-icon" dji-cwu-number-of-guesses dji-cwu-value="1">
+            <div class = "dji-cwu-menu-item-text">1</div>
+        </div>
+        <div class="dji-cwu-menu-item dji-cwu-check-icon" dji-cwu-number-of-guesses dji-cwu-value="2">
+            <div class = "dji-cwu-menu-item-text">2</div>
+        </div>
+        <div class="dji-cwu-menu-item dji-cwu-check-icon" dji-cwu-number-of-guesses dji-cwu-value="3">
+            <div class = "dji-cwu-menu-item-text">3</div>
+        </div>
+        <div class="dji-cwu-menu-item dji-cwu-check-icon" dji-cwu-number-of-guesses dji-cwu-value="4">
+            <div class = "dji-cwu-menu-item-text">4</div>
+        </div>
+        <div class="dji-cwu-menu-item dji-cwu-check-icon" dji-cwu-number-of-guesses dji-cwu-value="5">
+            <div class = "dji-cwu-menu-item-text">5</div>
+        </div>
+        <div class="dji-cwu-menu-item dji-cwu-check-icon" dji-cwu-number-of-guesses dji-cwu-value="6">
+            <div class = "dji-cwu-menu-item-text">6</div>
+        </div>
+        <div class="dji-cwu-menu-item dji-cwu-check-icon" dji-cwu-number-of-guesses dji-cwu-value="7">
+            <div class = "dji-cwu-menu-item-text">7</div>
+        </div>
+        <div class="dji-cwu-menu-item dji-cwu-check-icon" dji-cwu-number-of-guesses dji-cwu-value="8">
+            <div class = "dji-cwu-menu-item-text">8</div>
+        </div>
+        <div class="dji-cwu-menu-item dji-cwu-check-icon" dji-cwu-number-of-guesses dji-cwu-value="9">
+            <div class = "dji-cwu-menu-item-text">9</div>
+        </div>
+    </div>
+
+    <div dji-cwu-template-id="dji-cwu-font-family" class="dji-cwu-popup">
+    </div>
+
+    <div dji-cwu-template-id="dji-cwu-user-context-menu" class="dji-cwu-popup" style="width: 235px;">
+        <div id="dji-cwu-connect-with-educator" class="dji-cwu-menu-item dji-cwu-layout-horizontal">
+            <div class="dji-cwu-icon"><i class="dji-cwu-material-icons">group_add</i></div>
+            <div class="dji-cwu-menu-item-text" dji-i18n="cwu_connect_with_educator">Connect with Educator</div>
+        </div>
+        <div id="dji-cwu-change-user-password" class="dji-cwu-menu-item dji-cwu-layout-horizontal">
+            <div class="dji-cwu-icon"><i class="dji-cwu-material-icons">lock</i></div>
+            <div class="dji-cwu-menu-item-text" dji-i18n="cwu_change_password">Change password</div>
+        </div>
+        <div id="dji-cwu-sign-out" class="dji-cwu-menu-item dji-cwu-layout-horizontal">
+            <div class="dji-cwu-icon"><i class="dji-cwu-material-icons">exit_to_app</i></div>
+            <div class="dji-cwu-menu-item-text" dji-i18n="cwu_sign_out">Sign out</div>
+        </div>
+    </div>
+
+    <div dji-cwu-template-id="dji-cwu-connect-with-educator" class="dji-cwu-modal-dlg dji-cwu-dialog" style="width: 300px;">
+        <div class="dji-cwu-dlg-title" dji-i18n="cwu_connect_with_educator">Connect with educator</div>
+        <div class="dji-cwu-dlg-row">
+            <input type="text" id="dji-cwu-activation-code" placeholder="Activation Code (8 characters)"
+                   dji-i18n-placeholder="cwu_8_digit_activation_code">
+        </div>
+        <div class="dji-cwu-dlg-buttons">
+            <div class="dji-cwu-dlg-button" dji-cwu-cancel dji-i18n="cwu_cancel_button">CANCEL</div>
+            <div class="dji-cwu-dlg-button" dji-cwu-done dji-i18n="cwu_connect_button">CONNECT</div>
+        </div>
+    </div>
+
+    <div dji-cwu-template-id="dji-cwu-change-user-password" class="dji-cwu-modal-dlg dji-cwu-dialog" style="width: 300px;">
+        <div class="dji-cwu-dlg-title" dji-i18n="cwu_change_password">Change Password</div>
+        <div class="dji-cwu-dlg-row">
+            <input type="password" id="dji-cwu-user-old-password" placeholder="Old password"
+                   dji-i18n-placeholder="cwu_old_password">
+        </div>
+        <div class="dji-cwu-dlg-row">
+            <input type="password" id="dji-cwu-user-new-password" placeholder="New password"
+                   dji-i18n-placeholder="cwu_new_password">
+        </div>
+        <div class="dji-cwu-dlg-buttons">
+            <div class="dji-cwu-dlg-button" dji-cwu-cancel dji-i18n="cwu_cancel_button">CANCEL</div>
+            <div class="dji-cwu-dlg-button" dji-cwu-done dji-i18n="cwu_change_button">CHANGE</div>
+        </div>
+    </div>
+
+    <div dji-cwu-template-id="dji-cwu-topic-active-limit" class="dji-cwu-modal-dlg dji-cwu-dialog" style="width: 300px;">
+        <div class="dji-cwu-dlg-title" dji-i18n="cwu_activate_topic">Activate Topic</div>
+        <div class="dji-cwu-dlg-message" dji-i18n="cwu_activate_topic_limit_message">You may have at most 6 active
+            topics!
+        </div>
+        <div class="dji-cwu-dlg-buttons">
+            <div class="dji-cwu-dlg-button" dji-cwu-done dji-i18n="cwu_ok_button">OK</div>
+        </div>
+    </div>
+
+    <div dji-cwu-template-id="dji-cwu-topic-create" class="dji-cwu-modal-dlg dji-cwu-dialog" style="width: 300px;">
+        <div class="dji-cwu-dlg-title" dji-i18n="cwu_create_topic">Create Topic</div>
+        <div class="dji-cwu-dlg-message" dji-i18n-html="cwu_create_topic_message">You may have at most 6 active
+            topics!<br>The new topic will be created but cannot be activated!
+        </div>
+        <div class="dji-cwu-dlg-buttons">
+            <div class="dji-cwu-dlg-button" dji-cwu-done dji-i18n="cwu_ok_button">OK</div>
+        </div>
+    </div>
+
+    <div dji-cwu-template-id="dji-cwu-topic-update" class="dji-cwu-modal-dlg dji-cwu-dialog" style="width: 300px;">
+        <div class="dji-cwu-dlg-title" dji-i18n="cwu_update_topic">Update Topic</div>
+        <div class="dji-cwu-dlg-message" dji-i18n-html="cwu_update_topic_message">You may have at most 6 active
+            topics!<br>The new topic will be updated but cannot be activated!
+        </div>
+        <div class="dji-cwu-dlg-buttons">
+            <div class="dji-cwu-dlg-button" dji-cwu-done dji-i18n="cwu_ok_button">OK</div>
+        </div>
+    </div>
+
+    <div dji-cwu-template-id="dji-cwu-failed-download-hunspell" class="dji-cwu-modal-dlg dji-cwu-dialog" style="width: 300px;">
+        <div class="dji-cwu-dlg-title" dji-i18n="cwu_change_translation">Change Translation Language</div>
+        <div class="dji-cwu-dlg-message" dji-i18n-html="cwu_failed_message">Could not download hunspell resources for
+            the chosen language!
+        </div>
+        <div class="dji-cwu-dlg-buttons">
+            <div class="dji-cwu-dlg-button" dji-cwu-done dji-i18n="cwu_ok_button">OK</div>
+        </div>
+    </div>
+
+    <div dji-cwu-template-id="dji-cwu-failed-download-language-resources" class="dji-cwu-modal-dlg dji-cwu-dialog" style="width: 300px;">
+        <div class="dji-cwu-dlg-title" dji-i18n="cwu_change_translation">Change Prediction Language</div>
+        <div class="dji-cwu-dlg-message" dji-i18n-html="cwu_failed_message">Could not download language resources for
+            the chosen language!
+        </div>
+        <div class="dji-cwu-dlg-buttons">
+            <div class="dji-cwu-dlg-button" dji-cwu-done dji-i18n="cwu_ok_button">OK</div>
+        </div>
+    </div>
+
+    <div dji-cwu-template-id="dji-cwu-message" class="dji-cwu-modal-dlg dji-cwu-single-line">
+    </div>
+
+    <div dji-cwu-template-id="dji-cwu-loading-message" class="dji-cwu-modal-dlg dji-cwu-single-line">
+        <div class="dji-cwu-dlg-message dji-cwu-large-message" dji-i18n="cwu_loading_with_dots">Loading ...</div>
+    </div>
+
+    <div dji-cwu-template-id="dji-cwu-activating-topic-message" class="dji-cwu-modal-dlg dji-cwu-single-line">
+        <div class="dji-cwu-dlg-message dji-cwu-large-message" dji-i18n="cwu_activating_topic">Activating Topic</div>
+    </div>
+
+    <div dji-cwu-template-id="dji-cwu-changing-language-message" class="dji-cwu-modal-dlg dji-cwu-single-line">
+        <div class="dji-cwu-dlg-message dji-cwu-large-message" dji-i18n="cwu_changing_language">Changing Language</div>
+    </div>
+
+    <div dji-cwu-template-id="dji-cwu-change-language-wait-message" class="dji-cwu-modal-dlg">
+        <div class="dji-cwu-dlg-large-title" dji-i18n="cwu_loading">Loading<br></div>
+        <div class="dji-cwu-dlg-message dji-cwu-large-message dji-cwu-small-padding" dji-i18n-html="cwu_change_language_wait_message">
+            Please give us a moment to<br/>load the new language ...
+        </div>
+    </div>
+
+    <div dji-cwu-template-id="dji-cwu-download-resources-wait-message" class="dji-cwu-modal-dlg">
+        <div class="dji-cwu-dlg-large-title" dji-i18n="cwu_downloading_resources">Downloading resources<br></div>
+        <div class="dji-cwu-dlg-message dji-cwu-large-message dji-cwu-small-padding" dji-i18n-html="cwu_downloading_resources_wait_message">
+            Please give us a moment to check resources for the new language...
+        </div>
+    </div>
+
+    <div dji-cwu-template-id="dji-cwu-creating-topic-message" class="dji-cwu-modal-dlg dji-cwu-single-line">
+        <div class="dji-cwu-dlg-message dji-cwu-large-message" dji-i18n="cwu_creating_topic">Creating Topic</div>
+    </div>
+
+    <div dji-cwu-template-id="dji-cwu-updating-topic-message" class="dji-cwu-modal-dlg dji-cwu-single-line">
+        <div class="dji-cwu-dlg-message dji-cwu-large-message" dji-i18n="cwu_updating_topic">Updating Topic</div>
+    </div>
+
+    <div dji-cwu-template-id="dji-cwu-signing-out-message" class="dji-cwu-modal-dlg dji-cwu-single-line">
+        <div class="dji-cwu-dlg-message dji-cwu-large-message" dji-i18n="cwu_signing_out">Signing Out</div>
+    </div>
+
+    <div dji-cwu-template-id="dji-cwu-language-has-been-changed-message" class="dji-cwu-modal-dlg">
+        <div class="dji-cwu-dlg-large-title" dji-i18n="cwu_language_changed">Language Changed</div>
+        <div class="dji-cwu-dlg-message dji-cwu-large-message dji-cwu-small-padding" dji-i18n-html="cwu-language_has_been_changed_message">The prediction language
+            has been changed<br/>to match your options and it will take effect<br/>after you restart the computer!
+        </div>
+    </div>
+
+    <div dji-cwu-template-id="dji-cwu-please-sign-in-message" class="dji-cwu-modal-dlg dji-cwu-single-line">
+        <div class="dji-cwu-dlg-message dji-cwu-large-message" dji-i18n-html="cwu_please_sign_in_message">Please Sign In to
+            Co:Writer by clicking on the Co:Writer extension cloud&nbsp;&nbsp;<img src="../Graphics/CoWriterIcon-NotLoggedIn_38.png" width="24px" height="24px"/>
+        </div>
+    </div>
+</div>
+
+<script src="../Common/cweLogger.js" type="text/javascript"></script>
+<script src="../Common/cweChromeUtilities.js" type="text/javascript"></script>
+<script src="../Background/cweWikiReader.js" type="text/javascript"></script>
+<script src="cweAccountOptions.js" type="text/javascript"></script>
+<script src="cweTextOptions.js" type="text/javascript"></script>
+<script src="cweSpeechOptions.js" type="text/javascript"></script>
+<script src="cwePredictionOptions.js" type="text/javascript"></script>
+
+<script src="dji-cwu-templates.js" type="text/javascript"></script>
+<script src="dji-cwu-dropdown.js" type="text/javascript"></script>
+<script src="dji-cwu-color-picker.js" type="text/javascript"></script>
+<script src="dji-cwu-modal-dlg.js" type="text/javascript"></script>
+<script src="dji-cwu-toast.js" type="text/javascript"></script>
+<script src="options.js" type="text/javascript"></script>
+
+</body>
+</html>

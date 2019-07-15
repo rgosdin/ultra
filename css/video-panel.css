@@ -1,0 +1,682 @@
+
+@font-face {
+    font-family: 'Noto Sans';
+    src: url('chrome-extension://__MSG_@@extension_id__/fonts/NotoSans-Italic.eot');
+    src: url('chrome-extension://__MSG_@@extension_id__/fonts/NotoSans-Italic.eot?#iefix') format('embedded-opentype'), url('chrome-extension://__MSG_@@extension_id__/fonts/NotoSans-Italic.woff') format('woff'), url('chrome-extension://__MSG_@@extension_id__/fonts/NotoSans-Italic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Noto Sans';
+    src: url('chrome-extension://__MSG_@@extension_id__/fonts/NotoSans.eot');
+    src: url('chrome-extension://__MSG_@@extension_id__/fonts/NotoSans.eot?#iefix') format('embedded-opentype'), url('chrome-extension://__MSG_@@extension_id__/fonts/NotoSans.woff') format('woff'), url('chrome-extension://__MSG_@@extension_id__/fonts/NotoSans.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Noto Sans';
+    src: url('chrome-extension://__MSG_@@extension_id__/fonts/NotoSans-BoldItalic.eot');
+    src: url('chrome-extension://__MSG_@@extension_id__/fonts/NotoSans-BoldItalic.eot?#iefix') format('embedded-opentype'), url('chrome-extension://__MSG_@@extension_id__/fonts/NotoSans-BoldItalic.woff') format('woff'), url('chrome-extension://__MSG_@@extension_id__/fonts/NotoSans-BoldItalic.ttf') format('truetype');
+    font-weight: bold;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Noto Sans';
+    src: url('chrome-extension://__MSG_@@extension_id__/fonts/NotoSans-Bold.eot');
+    src: url('chrome-extension://__MSG_@@extension_id__/fonts/NotoSans-Bold.eot?#iefix') format('embedded-opentype'), url('chrome-extension://__MSG_@@extension_id__/fonts/NotoSans-Bold.woff') format('woff'), url('chrome-extension://__MSG_@@extension_id__/fonts/NotoSans-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+/*.nsc-panel * {*/
+    /*outline: none;*/
+/*}*/
+
+/*.nsc-panel button::-moz-focus-inner {*/
+    /*padding: 0;*/
+    /*border: 0;*/
+/*}*/
+
+/*.nsc-panel a {*/
+    /*text-decoration: none;*/
+/*}*/
+
+.nsc-panel {
+    font-family: 'Noto Sans', Arial;
+    font-size: 12px;
+    background: #f2f2f2;
+    border-bottom: 1px solid #B6B4B6;
+    position: fixed;
+    z-index: 999999;
+    left: 0;
+    top: 0;
+    width: 100%;
+}
+
+.nsc-panel-layout {
+    max-width: 1500px;
+    margin: 0 auto;
+    padding: 6px;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    position: relative;
+    z-index: 100;
+    background: #f2f2f2;
+}
+
+.nsc-panel-group {
+    border-right: 1px solid #B6B4B6;
+    padding: 1px 4px;
+    position: relative;
+}
+
+.nsc-panel-group:last-child {
+    border: none;
+}
+
+.nsc-panel-group-title {
+    height: 26px;
+    line-height: 26px;
+    padding: 0 6px;
+    white-space: nowrap;
+}
+
+.nsc-panel-tooltip,
+.nsc-panel-tooltip-layout {
+    -webkit-transition: all 0.3s ease-out;
+    -moz-transition: all 0.3s ease-out;
+    transition: all 0.3s ease-out;
+}
+
+.nsc-panel-tooltip {
+    position: absolute;
+    left: 100%;
+    top: 0;
+    white-space: nowrap;
+    height: 100%;
+    padding: 4px 0;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+}
+
+.nsc-panel-tooltip-layout {
+    background: rgba(59, 59, 59, 0.90);
+    border-radius: 0 8px 8px 0;
+    color: #fff;
+    height: 100%;
+    padding: 8px 16px;
+    font-size: 12px;
+    margin: 0 0 0 -100%;
+}
+
+.nsc-panel.nsc-tooltip .nsc-panel-tooltip {
+    visibility: visible;
+}
+
+.nsc-panel.nsc-tooltip .nsc-panel-tooltip-layout {
+    margin: 0;
+}
+
+/* panel button */
+.nsc-panel-button {
+    position: relative;
+    background: none;
+    border: 1px solid #f2f2f2;
+    border-radius: 2px;
+    margin: 0 2px;
+}
+
+.nsc-panel-button,
+.nsc-panel-trigger,
+.nsc-panel-text {
+    -webkit-transition: all 0.1s ease-out;
+    -moz-transition: all 0.1s ease-out;
+    transition: all 0.1s ease-out;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+
+button.nsc-panel-button {
+    cursor: pointer;
+    padding: 4px;
+}
+
+.nsc-panel-button .nsc-icon {
+    width: 16px;
+    height: 16px;
+    display: block;
+    background-position: center !important;
+}
+
+.nsc-panel-button .nsc-panel-select {
+    cursor: pointer;
+}
+
+.nsc-panel-button .nsc-panel-select .nsc-panel-text {
+    font-size: 11px;
+    height: 24px;
+    line-height: 24px;
+    border-radius: 2px;
+    padding: 0 2px;
+}
+
+.nsc-panel-button .nsc-panel-select .nsc-panel-text .nsc-icon {
+    margin: 0 2px;
+}
+
+.nsc-panel-button .nsc-panel-select .nsc-panel-text .nsc-panel-text-value {
+    padding: 0 2px;
+}
+
+.nsc-panel-button .nsc-panel-select .nsc-panel-text .nsc-panel-text-font {
+    padding: 0 2px;
+    font-weight: bold;
+}
+
+.nsc-panel-button .nsc-panel-select .nsc-panel-trigger {
+    padding: 3px 0;
+    border-radius: 2px;
+    border: 1px solid #f2f2f2;
+    margin: 0 2px;
+}
+
+.nsc-panel-button.inert {
+    opacity: 0.5;
+}
+
+.nsc-panel-button.change .nsc-panel-button-change-icon {
+    display: none;
+}
+
+/* panel dropdwon */
+.nsc-panel-button .nsc-panel-dropdown {
+    position: absolute;
+    left: 0;
+    top: 100%;
+    padding: 6px 0 0 0;
+    display: none;
+}
+
+.nsc-panel-button .nsc-panel-dropdown ul {
+    margin: 0;
+    padding: 4px 0;
+    background: #f2f2f2;
+    border: 1px solid #cfcfcf;
+    box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.18);
+    border-radius: 2px;
+}
+
+.nsc-panel-button .nsc-panel-dropdown .nsc-panel-drop-area ul {
+    background: none;
+    border: none;
+    box-shadow: none;
+}
+
+.nsc-panel-button .nsc-panel-dropdown ul li {
+    list-style: none;
+    white-space: nowrap;
+    font-size: 12px;
+    color: #171717;
+    cursor: pointer;
+}
+
+.nsc-panel-button .nsc-panel-dropdown ul li.nsc-panel-dropdown-text {
+    padding: 4px 10px;
+}
+
+.nsc-panel-button .nsc-panel-dropdown ul li.nsc-panel-dropdown-text .nsc-panel-dropdown-text-value {
+    padding: 0 2px;
+}
+
+.nsc-panel-button .nsc-panel-dropdown ul li.nsc-panel-dropdown-icon {
+    padding: 2px 6px;
+}
+
+.nsc-panel-button .nsc-panel-dropdown ul li .nsc-icon {
+    width: 24px;
+    height: 24px;
+    border-radius: 2px;
+}
+
+.nsc-panel-button .nsc-panel-dropdown ul li.nsc-panel-dropdown-text:hover {
+    background: #d1d1d1;
+}
+
+.nsc-panel-button .nsc-panel-dropdown ul li.nsc-panel-dropdown-icon:hover .nsc-icon {
+    background-color: #d1d1d1;
+}
+
+.nsc-panel-button .nsc-panel-drop-area {
+    background: #f2f2f2;
+    border: 1px solid #cfcfcf;
+    box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.18);
+    border-radius: 2px;
+    padding: 10px;
+}
+
+.nsc-panel-button .nsc-panel-drop-area-no-spacing {
+    padding: 0;
+}
+
+.nsc-panel-drop-area .nsc-panel-drop-actions .button {
+    margin: 0 4px;
+}
+
+.nsc-panel-drop-area .nsc-panel-resize-content {
+    padding: 0 0 10px 0;
+}
+
+.nsc-panel-drop-area .nsc-panel-dimension-field {
+    padding: 0 0 6px 0;
+}
+
+.nsc-panel-drop-area .nsc-panel-dimension-field label {
+    width: 60px;
+    cursor: pointer;
+    padding: 0 6px 0 0;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+
+.nsc-panel-drop-area .nsc-panel-dimension-input input {
+    border: 1px solid #d2d2d2;
+    border-radius: 1px;
+    display: block;
+    width: 80px;
+    padding: 2px 3px;
+}
+
+.nsc-panel-drop-area .nsc-panel-dimension-type {
+    padding: 0 0 0 6px;
+}
+
+.nsc-panel-drop-area .nsc-panel-drop-check {
+    padding: 0 0 6px 46px;
+}
+
+.nsc-panel-drop-area .nsc-panel-drop-check label {
+    cursor: pointer;
+}
+
+.nsc-panel-drop-area .nsc-panel-drop-check .nsc-panel-drop-check-input {
+    display: block;
+    height: 14px;
+    width: 14px;
+    margin: 0 6px 0 0;
+    padding: 0;
+}
+
+.nsc-panel-shadow-content .nsc-panel-drop-check {
+    padding: 0 4px 0 0;
+}
+
+.nsc-panel-shadow-content .nsc-panel-dimension-field {
+    padding: 0 0 0 4px;
+}
+
+.nsc-panel-shadow-content .nsc-panel-dimension-field label {
+    width: auto;
+}
+
+.nsc-panel-shadow-content .nsc-panel-dimension-input input {
+    width: 50px;
+}
+
+.nsc-panel-colors {
+}
+
+.nsc-colors-picked {
+    width: 192px;
+}
+
+.nsc-colors-picked-item {
+    position: relative;
+    padding: 4px;
+}
+
+.nsc-colors-picked-button {
+    width: 16px;
+    height: 16px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    display: block;
+}
+
+.nsc-colors-picked-button-inner {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.nsc-colors-picked-remove {
+    display: block;
+    position: absolute;
+    right: 0;
+    top: 0;
+    background: none;
+    border: none;
+    cursor: pointer;
+    margin: 0;
+    position: absolute;
+    z-index: 2;
+    width: 12px;
+    height: 12px;
+    padding: 0;
+}
+
+.nsc-colors-picked-remove .nsc-icon {
+    width: 12px;
+    height: 12px;
+    min-height: 1px;
+    min-width: 1px;
+}
+
+.nsc-panel-font-field {
+    border-bottom: 1px solid #d1d1d1;
+    padding: 10px 12px;
+}
+
+.nsc-panel-font-field label {
+    padding: 0 12px 0 0;
+}
+
+.nsc-panel-font-input input {
+    border: 1px solid #d2d2d2;
+    border-radius: 1px;
+    display: block;
+    width: 50px;
+    padding: 2px 3px;
+}
+
+.nsc-panel-font-type {
+    padding: 0 0 0 8px;
+}
+
+/* panel-button active opened hover*/
+.nsc-panel-button.opened {
+    z-index: 10;
+}
+
+.nsc-panel-button.opened .nsc-panel-dropdown {
+    display: block;
+}
+
+.nsc-panel-button.opened .nsc-panel-dropdown .nsc-panel-button .nsc-panel-dropdown {
+    display: none;
+}
+
+.nsc-panel-button .nsc-panel-dropdown .nsc-panel-button.opened .nsc-panel-dropdown {
+    display: block;
+}
+
+.nsc-panel-button.assembled .nsc-panel-select .nsc-panel-trigger {
+    border: none;
+    padding: 4px 1px;
+}
+
+button.nsc-panel-button:hover,
+.nsc-panel-button.assembled:hover {
+    border-color: #bbb;
+}
+
+.nsc-panel-button.separated .nsc-panel-select .nsc-panel-trigger:hover {
+    border-color: #bbb;
+}
+
+button.nsc-panel-button:active,
+.nsc-panel-button.assembled:active {
+}
+
+button.nsc-panel-button.active,
+.nsc-panel-button.assembled.active {
+    background: #d1d1d1;
+    border-color: #d1d1d1;
+}
+
+.nsc-panel-button.separated.active > .nsc-panel-select .nsc-panel-text {
+    background: #d1d1d1;
+}
+
+.nsc-panel-button.instant.active {
+    background: none;
+    border-color: #f2f2f2;
+}
+
+.nsc-panel-button.instant:active {
+    background: #d1d1d1;
+    border-color: #d1d1d1;
+}
+
+.nsc-panel-button.change.active .nsc-icon {
+    display: none;
+}
+
+.nsc-panel-button.change.active .nsc-panel-button-change-icon {
+    display: block;
+}
+
+/* fill icon */
+.nsc-panel-icon-fill {
+    position: relative;
+}
+
+.nsc-panel-icon-fill .nsc-panel-icon-fill-inner {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+}
+
+.nsc-panel-icon-fill-border {
+    position: relative;
+}
+
+.nsc-panel-icon-fill-border .nsc-panel-icon-fill-inner {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    border: 2px solid transparent;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+}
+
+/* panel actions */
+.nsc-panel-actions {
+    padding: 0;
+}
+
+.nsc-panel-actions .button {
+    display: block;
+    margin: 0;
+}
+
+.nsc-panel-actions .button .button-layout {
+    min-width: 70px;
+    height: 26px;
+    line-height: 26px;
+    padding: 0 6px;
+}
+
+.nsc-panel-recording {
+    padding: 0 10px;
+    height: 26px;
+    line-height: 26px;
+}
+
+.nsc-panel-recording-time {
+    font-weight: bold;
+}
+
+/* panel togglers */
+.nsc-panel-togglers {
+    margin: -6px -2px -2px -2px;
+}
+
+.nsc-panel-toggle-button {
+    display: block;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 2px;
+    margin: 0 2px;
+}
+
+.nsc-panel-toggle-button .nsc-icon {
+    min-width: 12px;
+    min-height: 12px;
+    display: block;
+}
+
+/* panel compact */
+.nsc-panel-compact {
+    width: auto;
+    box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.14);
+    border-radius: 4px;
+    border: 1px solid #c9c9c9;
+    min-width: 1px;
+    top: auto;
+    bottom: 0;
+}
+
+.nsc-panel-compact .nsc-panel-layout {
+    max-width: 100%;
+    min-width: 1px;
+    padding: 8px 6px;
+    border-radius: 4px;
+    position: relative;
+}
+
+.nsc-panel-compact .nsc-panel-button .nsc-panel-dropdown {
+    top: auto;
+    bottom: 100%;
+    padding: 0px 0px 6px;
+}
+
+.nsc-panel-compact .nsc-panel-move {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 0;
+    height: 100%;
+    border: 2px dashed #ccc;
+    cursor: pointer;
+    z-index: 101;
+}
+
+.nsc-video-editor {
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 999998;
+    width: 100%;
+    height: 100%;
+}
+
+.nsc-video-editor.events {
+    pointer-events: none;
+}
+
+.nsc-content-camera {
+    font-family: 'Noto Sans', Arial;
+    font-size: 12px;
+    overflow: hidden;
+    border-radius: 6px;
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    width: auto;
+    height: auto;
+    z-index: 999999;
+    background-color: rgba(255, 255, 255, 1);
+}
+
+.nsc-content-camera.hide {
+    display: none;
+}
+
+.nsc-content-camera.move {
+    cursor: move;
+}
+
+.nsc-content-camera:hover .nsc-content-camera-shadow {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.nsc-content-camera:hover .nsc-content-camera-buttons {
+    display: flex;
+}
+
+.nsc-content-camera-container {
+    position: relative;
+    padding: 0;
+    margin: 0;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.5);
+    background: url(chrome-extension://__MSG_@@extension_id__/images/loader/loading.gif) no-repeat center;
+}
+
+.nsc-content-camera-container iframe {
+    position: relative;
+    width: 300px;
+    height: 150px;
+    display: block;
+    border: none;
+    margin: 0 -2px;
+    padding: 0;
+    z-index: 1;
+    opacity: 0;
+}
+
+.nsc-content-camera-shadow {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0);
+    z-index: 2;
+}
+
+.nsc-content-camera-buttons {
+    display: none;
+    position: absolute;
+    z-index: 3;
+    top: 5px;
+    right: 5px;
+}
+
+.nsc-content-camera-button {
+    display: block;
+    border: none;
+    background-color: #eee;
+    border-radius: 50%;
+    padding: 0;
+    margin: 2px;
+    width: 20px;
+    height: 20px;
+}
+
+.nsc-content-camera-button .nsc-icon {
+    width: 10px;
+    height: 10px;
+    min-width: 10px;
+    min-height: 10px;
+    margin: 0 -1px 0 0;
+}

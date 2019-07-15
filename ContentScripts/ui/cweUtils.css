@@ -1,0 +1,438 @@
+/*************************************************************************************************************/
+#__DJI_CWE_IME_WINDOW {
+	display: none;
+	width: 0px;
+	height: 0px;
+	padding: 0px !important;
+	margin: 0px !important;
+	-webkit-user-select: none !important;
+	font-weight: normal !important;
+}
+
+#__DJI_CWE_IME_WINDOW_BODY {
+	background-color: rgba(250, 250, 250, 0.8);
+	border-radius: 7px 7px 7px 7px;
+	box-shadow: 0px 0px 5px rgba(30, 30, 30, 0.5);
+	display: table !important;
+	margin: 1px 0px 0px 2px !important;
+	min-height: 105px;
+	padding: 0px 7px 0px 7px !important;
+}
+
+#__DJI_CWE_IME_WINDOW_NUMBERHINT {
+	display: table-cell !important;
+	vertical-align: middle;
+}
+
+#__DJI_CWE_IME_WINDOW_NUMBERHINT div {
+	width: 6px !important;
+	height: 10px !important;
+}
+
+#__DJI_CWE_IME_WINDOW_GUESSES_CONTAINER {
+	display: table-cell !important;
+}
+
+#__DJI_CWE_IME_WINDOW_GUESSES {
+	min-height: 105px;
+	min-width: 100px;
+	padding: 0px;
+	margin: 0px;
+	vertical-align: top;
+}
+
+#__DJI_CWE_IME_WINDOW_GUESSES div.guess {
+	padding: 0px;
+	min-width: 100px;
+	max-width: 300px;
+	line-height: normal !important;
+	font-size: 14px;
+	margin: 1px 0px 0px 4px;
+	cursor: pointer;
+	text-align: left;
+	font-family: sans-serif;
+	-webkit-user-select: none !important;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
+	-o-text-overflow: ellipsis;
+}
+
+#__DJI_CWE_IME_WINDOW_GUESSES div.guess.speech-recognition span {
+	background-image: url('chrome-extension://__MSG_@@extension_id__/Graphics/ic_mic_black_24px.svg');
+	background-repeat: no-repeat;
+	background-position: 0px center;
+    background-size: 16px 16px;
+
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+}
+
+#__DJI_CWE_IME_WINDOW_GUESSES[dji-cwe-speech-recognition="true"] div.guess.speech-recognition span {
+	background-image: url('chrome-extension://__MSG_@@extension_id__/Graphics/ic_mic_off_black_24px.svg');
+}
+
+/****************************** MEASUREMENT WINDOWS ******************************************/
+
+#__DJI_CWE_MEASUREMENT_WINDOW {
+	z-index: 999999920 !important;
+	display: block;
+	border: solid 1px #DD0000;
+	background-color: #EEEEDD;
+	position: absolute;
+	left: -5000px;
+	top: -5000px;
+	min-height: 100px;
+	min-width: 100px;
+	float: none;
+	-webkit-user-select: none !important;
+}
+
+#__DJI_CWE_MEASUREMENT_WINDOW_CARET {
+	z-index: 44447;
+	border: none;
+	background-color: #EE0000;
+	position: absolute;
+	min-height: 1px;
+	min-width: 1px;
+	-webkit-user-select: none !important;
+}
+
+#__DJI_CWE_MEASUREMENT_WINDOW_GENERIC {
+	display: block;
+	position: absolute;
+	left:-5000px; 
+	top: -5000px;
+	-webkit-user-select: none !important;
+}
+
+#__DJI_CWE_MEASUREMENT_WINDOW_GENERIC_DIV {
+	-webkit-user-select: none !important;
+	}
+
+#__DJI_CWE_MEASUREMENT_WINDOW_GENERIC_CARET {
+	width: 0;
+	border-left: solid 1px red;
+	padding: 0px;
+	margin: 0px;
+	margin-left: -1px;
+	-webkit-user-select: none !important;
+}
+
+#__DJI_CWE_CHROME_GOOGLE_DOCS_PROXY {
+	display: block;
+	position: absolute;
+	left:-5000px; 
+	top: -5000px;
+	-webkit-user-select: none !important;
+}
+
+/****************************** DJI Dialog ***********************/
+div.__dji_cwe_dialog {
+	position: relative !important;
+	padding-top: 0px;
+	background-color: rgba(254, 254, 254, 1);
+	box-shadow: 0px 0px 3px rgba(30, 30, 30, 0.8);
+	-webkit-user-select: none !important;
+	width: 300px;
+	font-family: sans, sans-serif;
+	font-weight: lighter;
+	cursor: default;
+	margin: auto;
+	margin-top: 200px;
+	z-index: 2000;
+	display: none;
+}
+
+div.__dji_cwe_dialog div.__dji_cwe_dialog_header {
+	height: 36px;
+	font-size: 14px;
+	color: #777777;
+	background-color: #E7E7E7;
+	border-bottom: solid 1px #CCCCCC;
+	font-weight: normal;
+	clear: both;
+}
+
+div.__dji_cwe_dialog div.__dji_cwe_dialog_header div.__dji_cwe_dialog_text {
+	float: left;
+	vertical-align: middle;
+	margin: 0px 10px;
+	padding-top: 11px;
+	height: 26px;
+	width: 240px;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
+	-o-text-overflow: ellipsis;
+}
+
+div.__dji_cwe_dialog div.__dji_cwe_dialog_header div.__dji_cwe_dialog_close {
+	float: right;
+	padding: 0;
+}
+
+div.__dji_cwe_dialog div.__dji_cwe_dialog_header div.__dji_cwe_dialog_close button {
+	width: 23px;
+	height: 23px;
+	color: #777777;
+	font-family: sans, sans-serif;
+	font-weight: bold;
+	font-size: 14px;
+	text-align: center;
+	padding: 0px 0px 2px 0px;
+	background-color: #EDEDED;
+	border: solid 1px #C0C0C0;
+	outline: none;
+	cursor: pointer;
+	margin-top: 6px;
+	margin-right: 6px;
+}
+
+div.__dji_cwe_dialog div.__dji_cwe_dialog_header div.__dji_cwe_dialog_close button:hover {
+	background-color: #F5F5F5;
+}
+
+div.__dji_cwe_dialog div.__dji_cwe_dialog_header div.__dji_cwe_dialog_close button:focus {
+	outline: none;
+}
+
+div.__dji_cwe_dialog div.__dji_cwe_dialog_body {
+	padding: 4px 10px 10px 10px;
+	width: 280px;
+    font-size: 14px;
+}
+
+div.__dji_cwe_dialog div.__dji_cwe_dialog_body div {
+	margin-top: 6px;
+	margin-bottom: 2px;	
+}
+
+div.__dji_cwe_dialog div.__dji_cwe_dialog_footer {
+	border-top: solid 1px #CCCCCC;
+	height: 40px;
+	text-align: center;
+}
+
+div.__dji_cwe_dialog div.__dji_cwe_dialog_footer button {
+	height: 32px;
+	margin-top: 4px;
+	padding: 0px 20px;
+	background-color: #EDEDED;
+	border: solid 1px #C0C0C0;
+	outline: none;
+	cursor: pointer;
+	font-size: 14px;
+	font-family: sans, sans-serif;
+	color: #777777;
+}
+
+div.__dji_cwe_dialog div.__dji_cwe_dialog_footer button:hover {
+	background-color: #F5F5F5;
+}
+
+div.__dji_cwe_dialog div.__dji_cwe_dialog_footer button:focus {
+	outline: none;
+}
+
+/*********************** DJI Please Wait *****************************/
+div#__dji_cwe_pleaseWait {
+	position: relative !important;
+	-webkit-box-sizing: initial !important;
+	height: 60px;
+	width: 200px;
+	margin: auto;
+	margin-top: 200px;
+    /* color: #777777; */
+    color: #0073ff;
+	background-color: #FAFAFA;
+	box-shadow: 0px 0px 3px rgba(30, 30, 30, 0.8);
+	display: none;
+	text-align: center;
+	font-family: sans-serif;
+	padding: 40px 50px;
+
+}
+
+div#__dji_cwe_pleaseWait div#__dji_cwe_pleaseWait_message {
+	font-size: 24px;
+}
+
+div#__dji_cwe_pleaseWait div#__dji_cwe_pleaseWait_wait {
+	font-size: 18px;
+	margin-top: 20px;
+}
+
+/****************************** QUICK TOPIC ******************************************/
+
+#__DJI_CWE_QUICKTOPIC_WINDOW {
+	display: none;
+	/* background-color: #DDEEEE; */
+	background-color: #FAFAFA;
+	box-shadow: 0px 0px 3px rgba(30, 30, 30, 0.8);
+	position: replative !important;
+	width: 358px;
+	margin: auto;
+	margin-top: 100px;
+	font-family: sans-serif;
+	font-size: 14px;
+	-webkit-user-select: none !important;	
+}
+
+#__DJI_CWE_QUICKTOPIC_WINDOW_HEADER {
+	font-size: 14px;
+	color: #777777;
+	background-color: #E7E7E7;
+	border-bottom: solid 1px #CCCCCC;
+	font-weight: normal;
+}
+
+#__DJI_CWE_QUICKTOPIC_WINDOW_HEADER div {
+	vertical-align: middle;
+	height: 26px;
+	margin: 0px 10px;
+	padding-top: 11px;
+}
+
+#__DJI_CWE_QUICKTOPIC_WINDOW_HEADER button {
+	height: 24px;
+	margin-top: -4px;
+	padding: 0px 20px;
+	background-color: #EDEDED;
+	border: solid 1px #C0C0C0;
+	outline: none;
+	cursor: pointer;
+	font-size: 14px;
+	font-family: sans, sans-serif;
+	color: #777777;
+}
+
+#__DJI_CWE_QUICKTOPIC_WINDOW_HEADER button:hover {
+	background-color: #F5F5F5;
+}
+
+#__DJI_CWE_QUICKTOPIC_WINDOW_HEADER button:focus {
+	outline: none;
+}
+
+#__DJI_CWE_QUICKTOPIC_WINDOW_HEADER input#__DJI_CWE_QUICKTOPIC_WINDOW_SEARCH_INPUT {
+	vertical-align: middle;
+	height: 32px;
+	margin: 0px 10px 4px 10px;
+	width: 338px;
+
+	border: none;
+	font-weight: normal;
+	font-family: sans-serif;
+	font-size: 14px;
+	
+	box-shadow: 0px 0px 1px #FFFFFF;
+	-webkit-appearance: none;
+	outline: none;
+	background-color: #FFFFFF;
+	border-radius: 3px 3px 3px 3px;
+	border: 0;
+    padding: 0px 4px;
+}
+
+#__DJI_CWE_QUICKTOPIC_WINDOW_HEADER input#__DJI_CWE_QUICKTOPIC_WINDOW_SEARCH_INPUT:focus {
+	outline: none;
+}
+
+#__DJI_CWE_QUICKTOPIC_WINDOW_CONTENT {
+	padding-left: 10px;
+	cursor: default;	
+	height: 319px;
+	overflow-y: scroll;
+}
+
+#__DJI_CWE_QUICKTOPIC_WINDOW_CONTENT div.topic {
+	color: #777777;
+	border-bottom: solid 1px #E7E7E7;
+	clear: both;
+	overflow: hidden;
+	height: 25px;
+	cursor: pointer;
+	font-weight: normal;
+	text-align: left;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
+	-o-text-overflow: ellipsis;
+	padding-top: 6px;
+	padding-left: 4px;
+}
+
+#__DJI_CWE_QUICKTOPIC_WINDOW_CONTENT div:LAST-CHILD.topic {
+	border-bottom: none 0px;
+}
+
+#__DJI_CWE_QUICKTOPIC_WINDOW_FOOTER {
+	/*border-top: solid 1px #DD0000;
+	background-color: #EEEEEE;*/
+	padding: 0px;
+	height: 0px;
+	line-height: 0px;
+	font-family: sans-serif;
+	font-size: 12px;
+	-webkit-user-select: none !important;
+}
+
+/*********************** DJI Body Overlay *****************************/
+div#__DJI_CWE_BODY_OVERLAY {
+	display:    none;
+    position:   fixed;
+    z-index:    2147483640; /* max z-index is 2147483647 */
+    top:        0;
+    left:       0;
+    height:     100%;
+    width:      100%;
+    background-color: rgba(20, 20, 20, 0.5);
+    cursor: default;
+}
+
+html[__dji_cwe_working="true"] body, html[__dji_cwe_dialog="true"] body, html[__DJI_CWE_QUICKTOPIC_ACTIVE="true"] body {
+	overflow: hidden;
+}
+
+html[__dji_cwe_working="true"] #__DJI_CWE_BODY_OVERLAY, html[__dji_cwe_dialog="true"] #__DJI_CWE_BODY_OVERLAY, html[__DJI_CWE_QUICKTOPIC_ACTIVE="true"] #__DJI_CWE_BODY_OVERLAY {
+	display: block;
+}
+html[__dji_cwe_working="true"] div#__dji_cwe_pleaseWait {
+	display: block;
+}
+
+html[__DJI_CWE_QUICKTOPIC_ACTIVE="true"] #__DJI_CWE_QUICKTOPIC_WINDOW {
+    display: block;
+}
+
+/***************************************************************************/
+div.__dji_cwe_clear {
+	clear: both;
+	overflow: hidden;
+	width: 0px;
+	height: 0px;
+}
+
+/***************************************************************************/
+#__DJI_CWE_SPEECHRECOGNITION_PERMISSION {
+    background-color: red;
+    border: solid 2px red;
+    position: absolute;
+    top: -5000px;
+    left: -5000px;
+    width: 100px;
+    height: 100px;
+}
+
+/***************************************************************************/
+.dji-x-highlighted {
+	background-color: #ff565b !important;
+	transition: none !important;
+}
+
+.dji-x-highlighted.dji-selected {
+	background-color: #c64b4f !important;
+	transition: none !important;
+}

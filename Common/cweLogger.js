@@ -1,0 +1,2 @@
+function LoggerInstance(){return Logger.instance}function Logger(){return this}Logger.instance=null;Logger.initialize=function(){null===Logger.instance&&(Logger.instance=console,Logger.instance=new Logger)};Logger.prototype.group=function(){};Logger.prototype.groupCollapsed=function(){};Logger.prototype.groupEnd=function(){};Logger.prototype.debug=function(){};Logger.prototype.error=function(){};Logger.prototype.info=function(){};Logger.prototype.log=function(){};Logger.prototype.warn=function(){};
+Logger.initialize();

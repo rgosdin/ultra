@@ -1,0 +1,1140 @@
+/*********************** Main View ********************************/
+
+dji-cwu-main-view {
+    all: initial;
+}
+
+dji-cwu-main-view::before, dji-cwu-main-view::after,
+dji-cwu-main-view *::before, dji-cwu-main-view *::after,
+dji-cwu-main-view * {
+    all: unset;
+}
+
+dji-cwu-main-view input::before, dji-cwu-main-view input::after,
+dji-cwu-main-view input {
+    all: unset !important;
+}
+
+dji-cwu-main-view {
+    --dji-cwu-transform-scale: var(--dji-cwu-opt-transform-scale, 1);
+
+    --dji-cwu-main-view-width: 170px;
+    --dji-cwu-main-view-height: calc(
+            var(--dji-cwu-suggestion-elem-count) * var(--dji-cwu-suggestion-elem-height) +
+            var(--dji-cwu-suggestion-elem-count) * var(--dji-cwu-suggestion-elem-margin-top-size) +
+            calc(var(--dji-cwu-suggestion-elem-count) - 1) * var(--dji-cwu-suggestion-elem-margin-bottom-size) + 160px
+    );
+
+    --dji-cwu-suggestion-elem-count: var(--dji-cwu-opt-suggestion-elem-count, 6);
+    --dji-cwu-suggestion-elem-height: calc(var(--dji-cwu-suggestion-elem-label-font-size) + 6px);
+    --dji-cwu-suggestion-elem-margin-top-size: 0px;
+    --dji-cwu-suggestion-elem-margin-bottom-size: 1px;
+
+    --dji-cwu-suggestion-elem-label-font-size: 24px;
+    --dji-cwu-suggestion-elem-label-translate-y: 2px;
+    --dji-cwu-suggestion-elem-text-font-size: 16px;
+    --dji-cwu-suggestion-elem-text-line-height: var(--dji-cwu-suggestion-elem-label-font-size);
+
+    --dji-cwu-keyboard-key-size: 30px;
+    --dji-cwu-keyboard-key-space-size: 6px;
+    --dji-cwu-keyboard-key-font-size: 16px;
+
+    /***************************************************/
+    --dji-cwu-text-font-family: "Roboto", "sans-serif";
+    --dji-cwu-icons-font-family: "Material Icons";
+
+    /***************************************************/
+    --dji-cwu-text-color-rgb: 0, 0, 0;
+    --dji-cwu-bkgnd-color-rgb: 255, 255, 255;
+
+    /***************************************************/
+    --dji-cwu-main-color: #008CCD;
+    --dji-cwu-main-complementary-color: #FFFFFF;
+    --dji-cwu-main-background-color: rgb(var(--dji-cwu-bkgnd-color-rgb));
+    --dji-cwu-separator-color: rgba(var(--dji-cwu-text-color-rgb), 0.30);
+    --dji-cwu-hover-color: rgba(var(--dji-cwu-text-color-rgb), 0.12);
+
+    --dji-cwu-suggestion-elem-label-color: rgba(var(--dji-cwu-text-color-rgb), 0.54);
+    --dji-cwu-suggestion-elem-text-color: rgba(var(--dji-cwu-text-color-rgb), 0.87);
+    --dji-cwu-keyboard-key-text-color: rgba(var(--dji-cwu-text-color-rgb), 0.87);
+
+    --dji-cwu-second-color: rgba(var(--dji-cwu-text-color-rgb), 0.87);
+    --dji-cwu-third-color: rgba(var(--dji-cwu-text-color-rgb), 0.54);
+    --dji-cwu-fourth-color: rgba(255, 255, 255, 0.4);
+
+    --dji-cwu-first-active-color: yellow;
+
+    --dji-cwu-main-container-box-shadow-color-1: rgba(0, 0, 0, 0.12);
+    --dji-cwu-main-container-box-shadow-color-2: rgba(0, 0, 0, 0.24);
+
+    --dji-cwu-speech-recognition-toolbar-box-shadow-color: #C0C0C0;
+    --dji-cwu-speech-recognition-icon-box-shadow-color: #C0C0C0;
+
+    --dji-cwu-speech-recognition-icon-box-shadow-color-0-1: #D0D0D0;
+    --dji-cwu-speech-recognition-icon-box-shadow-color-0-2: #A0A0A0;
+
+    --dji-cwu-speech-recognition-icon-box-shadow-color-50-1: #F0F0F0;
+    --dji-cwu-speech-recognition-icon-box-shadow-color-50-2: #A0A0A0;
+
+    --dji-cwu-speech-recognition-icon-box-shadow-color-100-1: #D0D0D0;
+    --dji-cwu-speech-recognition-icon-box-shadow-color-100-2: #A0A0A0;
+}
+
+/*********************** Main View ********************************/
+dji-cwu-main-view[dji-cwu-mode="type"] {
+    --dji-cwu-text-color-rgb: var(--dji-cwu-opt-text-color-rgb, 0, 0, 0);
+    --dji-cwu-bkgnd-color-rgb: var(--dji-cwu-opt-bkgnd-color-rgb, 255, 226, 59);
+
+    --dji-cwu-main-color: rgba(var(--dji-cwu-text-color-rgb), 0.87);
+
+    --dji-cwu-text-font-family: var(--dji-cwu-opt-text-font-family, "Roboto", "sans-serif");
+}
+
+dji-cwu-main-view {
+    position: absolute;
+
+    display: block;
+
+    margin: 0px;
+    padding: 0px;
+
+    line-height: 0px;
+    font-size: 0px;
+    font-family: var(--dji-cwu-text-font-family);
+    font-weight: normal;
+
+    transform: scale(var(--dji-cwu-transform-scale), var(--dji-cwu-transform-scale));
+    transform-origin: left top;
+
+    background-color: var(--dji-cwu-main-background-color);
+    box-shadow:
+            0 0px 6px 1px var(--dji-cwu-main-container-box-shadow-color-1),
+            0 2px 6px 1px var(--dji-cwu-main-container-box-shadow-color-2);
+
+    text-rendering: optimizeLegibility;
+    font-smooth: subpixel-antialiased;
+    font-feature-settings: "liga" 0;
+
+    user-select: none !important;
+}
+
+dji-cwu-main-view > dji-cwu-main-container {
+    position: relative;
+
+    display: grid;
+    padding: 0px;
+    margin: 0px;
+
+    min-width: var(--dji-cwu-main-view-width);
+}
+
+/*********************** Demo (Options page) ********************************/
+
+dji-cwu-main-view[dji-cwu-demo] {
+    top: 0;
+    right: 0;
+    left: auto;
+    bottom: auto;
+    transform-origin: right top;
+}
+dji-cwu-main-view[dji-cwu-demo] > * {
+    pointer-events: none;
+}
+
+/*********************** Generics ********************************/
+
+dji-cwu-main-view[dji-cwu-hidden], dji-cwu-main-view [dji-cwu-hidden] {
+    display: none !important;
+}
+
+/*********************** Generics ********************************/
+
+dji-cwu-main-view dji-cwu-icon {
+    position: relative;
+    display: inline-block;
+
+    width: 24px;
+    height: 24px;
+    line-height: 24px;
+    font-size: 24px;
+
+    text-align: center;
+
+    font-family: var(--dji-cwu-icons-font-family);
+}
+dji-cwu-main-view dji-cwu-icon[dji-cwu-shape-round] {
+    border-radius: 50%;
+}
+
+dji-cwu-main-view dji-cwu-icon[dji-cwu-src]:before {
+    display: inline-block;
+
+    width: 100%;
+    height: 100%;
+
+    margin: 0;
+    padding: 0;
+
+    content: attr(dji-cwu-src);
+
+    text-align: center;
+}
+dji-cwu-main-view dji-cwu-icon[dji-cwu-src][dji-cwu-shape-round]:before {
+    border-radius: 50%;
+}
+
+dji-cwu-main-view dji-cwu-h2 {
+    position: relative;
+    display: block;
+    margin-bottom: 16px;
+    line-height: 24px;
+    font-size: 20px;
+    font-weight: normal;
+}
+
+dji-cwu-main-view dji-cwu-div {
+    position: relative;
+    display: block;
+    line-height: inherit;
+    font-size: inherit;
+    font-weight: normal;
+}
+
+dji-cwu-main-view dji-cwu-span {
+    position: relative;
+    display: inline-block;
+    line-height: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+}
+
+/*********************** Tab View ********************************/
+
+dji-cwu-main-view > dji-cwu-main-container > dji-cwu-tab-view {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding: 0px;
+}
+
+/*********************** Tab View - Toolbar ********************************/
+
+dji-cwu-main-view > dji-cwu-main-container > dji-cwu-tab-view > dji-cwu-tab-view-toolbar {
+    --dji-cwu-this-height: 56px;
+
+    position: relative;
+
+    display: flex;
+    flex-direction: row;
+
+    justify-content: space-evenly;
+    text-align: center;
+
+    box-sizing: border-box;
+
+    width: 100%;
+    height: var(--dji-cwu-this-height);
+    min-height: var(--dji-cwu-this-height);
+    max-height: var(--dji-cwu-this-height);
+
+    line-height: var(--dji-cwu-this-height);
+
+    border-top: solid 1px var(--dji-cwu-separator-color);
+
+    z-index: 1;
+}
+
+dji-cwu-main-view > dji-cwu-main-container > dji-cwu-tab-view > dji-cwu-tab-view-toolbar > dji-cwu-tab-view-toolbar-button {
+
+    display: inline-block;
+    flex: 0 0 auto;
+
+    box-sizing: border-box;
+
+    width: 35px;
+    min-width: 35px;
+    max-width: 35px;
+
+    padding-top: 6px;
+    padding-bottom: 8px;
+
+    text-align: center;
+    cursor: pointer;
+
+    color: var(--dji-cwu-third-color);
+}
+dji-cwu-main-view > dji-cwu-main-container > dji-cwu-tab-view > dji-cwu-tab-view-toolbar > dji-cwu-tab-view-toolbar-button[dji-cwu-active] {
+    color: var(--dji-cwu-main-color);
+}
+
+dji-cwu-main-view > dji-cwu-main-container > dji-cwu-tab-view > dji-cwu-tab-view-toolbar > dji-cwu-tab-view-toolbar-button > dji-cwu-icon {
+    display: block;
+
+    width: 100%;
+    height: 42px;
+    line-height: 42px;
+    font-size: 22px;
+}
+dji-cwu-main-view > dji-cwu-main-container > dji-cwu-tab-view > dji-cwu-tab-view-toolbar > dji-cwu-tab-view-toolbar-button[dji-cwu-active] > dji-cwu-icon {
+    height: 24px;
+    line-height: 24px;
+    font-size: 22px;
+}
+
+dji-cwu-main-view > dji-cwu-main-container > dji-cwu-tab-view > dji-cwu-tab-view-toolbar > dji-cwu-tab-view-toolbar-button > dji-cwu-label {
+    display: none;
+
+    height: 14px;
+    line-height: 14px;
+    font-size: 12px;
+}
+dji-cwu-main-view > dji-cwu-main-container > dji-cwu-tab-view > dji-cwu-tab-view-toolbar > dji-cwu-tab-view-toolbar-button[dji-cwu-active] > dji-cwu-label {
+    display: block;
+}
+
+/*********************** Tab View - Pages ********************************/
+
+dji-cwu-main-view > dji-cwu-main-container > dji-cwu-tab-view > dji-cwu-tab-view-pages {
+    position: relative;
+
+    display: grid;
+    flex: 1 0;
+    padding: 0px;
+
+    z-index: 2;
+}
+
+dji-cwu-main-view > dji-cwu-main-container > dji-cwu-tab-view > dji-cwu-tab-view-pages > dji-cwu-tab-view-page {
+    display: none;
+}
+dji-cwu-main-view > dji-cwu-main-container > dji-cwu-tab-view > dji-cwu-tab-view-pages > dji-cwu-tab-view-page[dji-cwu-active] {
+    display: block;
+}
+
+/*********************** Type Page View - Suggestions ********************************/
+
+dji-cwu-main-view > dji-cwu-main-container > dji-cwu-tab-view > dji-cwu-tab-view-pages > dji-cwu-tab-view-page[dji-cwu-role="type"] > dji-cwu-suggestions-pane {
+    display: none;
+
+    box-sizing: border-box;
+
+    margin-top: 8px;
+
+    height: calc(
+            var(--dji-cwu-suggestion-elem-count) * var(--dji-cwu-suggestion-elem-height) +
+            var(--dji-cwu-suggestion-elem-count) * var(--dji-cwu-suggestion-elem-margin-top-size) +
+            var(--dji-cwu-suggestion-elem-count) * var(--dji-cwu-suggestion-elem-margin-bottom-size)
+    );
+
+    counter-reset: dji-cwu-suggestion-index 0;
+}
+dji-cwu-main-view > dji-cwu-main-container > dji-cwu-tab-view > dji-cwu-tab-view-pages > dji-cwu-tab-view-page[dji-cwu-role="type"] > dji-cwu-suggestions-pane[dji-cwu-options="translations"] {
+    height: calc(
+            var(--dji-cwu-suggestion-elem-count) * var(--dji-cwu-suggestion-elem-height) +
+            var(--dji-cwu-suggestion-elem-count) * var(--dji-cwu-suggestion-elem-margin-top-size) +
+            var(--dji-cwu-suggestion-elem-count) * var(--dji-cwu-suggestion-elem-margin-bottom-size) +
+            24px
+    );
+}
+dji-cwu-main-view > dji-cwu-main-container > dji-cwu-tab-view > dji-cwu-tab-view-pages > dji-cwu-tab-view-page[dji-cwu-role="type"] > dji-cwu-suggestions-pane[dji-cwu-active] {
+    display: block;
+}
+
+dji-cwu-main-view > dji-cwu-main-container > dji-cwu-tab-view > dji-cwu-tab-view-pages > dji-cwu-tab-view-page[dji-cwu-role="type"] > dji-cwu-suggestions-pane > dji-cwu-guesses-pane {
+    display: block;
+}
+dji-cwu-main-view > dji-cwu-main-container > dji-cwu-tab-view > dji-cwu-tab-view-pages > dji-cwu-tab-view-page[dji-cwu-role="type"] > dji-cwu-suggestions-pane > dji-cwu-translations-pane {
+    display: none;
+}
+dji-cwu-main-view > dji-cwu-main-container > dji-cwu-tab-view > dji-cwu-tab-view-pages > dji-cwu-tab-view-page[dji-cwu-role="type"] > dji-cwu-suggestions-pane[dji-cwu-options="translations"] > dji-cwu-translations-pane {
+    display: block;
+}
+
+dji-cwu-main-view > dji-cwu-main-container > dji-cwu-tab-view > dji-cwu-tab-view-pages > dji-cwu-tab-view-page[dji-cwu-role="type"] > dji-cwu-suggestions-pane > dji-cwu-translations-pane[dji-cwu-restart-numbering] {
+    counter-reset: dji-cwu-suggestion-index -1;
+}
+
+dji-cwu-main-view > dji-cwu-main-container > dji-cwu-tab-view > dji-cwu-tab-view-pages > dji-cwu-tab-view-page[dji-cwu-role="type"] > dji-cwu-suggestions-pane dji-cwu-suggestion {
+    display: block;
+    box-sizing: border-box;
+
+    margin: var(--dji-cwu-suggestion-elem-margin-top-size) 0 var(--dji-cwu-suggestion-elem-margin-bottom-size) 0;
+    padding: 0 16px 0 0;
+
+    height: var(--dji-cwu-suggestion-elem-height);
+    font-size: var(--dji-cwu-suggestion-elem-text-font-size);
+    line-height: var(--dji-cwu-suggestion-elem-text-line-height);
+
+    min-width: 100px;
+    max-width: 300px;
+
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+
+    color: var(--dji-cwu-suggestion-elem-text-color);
+    cursor: pointer;
+}
+dji-cwu-main-view > dji-cwu-main-container > dji-cwu-tab-view > dji-cwu-tab-view-pages > dji-cwu-tab-view-page[dji-cwu-role="type"] > dji-cwu-suggestions-pane dji-cwu-suggestion:hover:not([dji-cwu-role="translation-placeholder"]) {
+    background-color: var(--dji-cwu-hover-color);
+}
+dji-cwu-main-view > dji-cwu-main-container > dji-cwu-tab-view > dji-cwu-tab-view-pages > dji-cwu-tab-view-page[dji-cwu-role="type"] > dji-cwu-suggestions-pane dji-cwu-suggestion::before {
+    display: inline-block;
+    box-sizing: border-box;
+
+    padding: 0 30px 0 0;
+
+    width: 62px;
+    height: var(--dji-cwu-suggestion-elem-height);
+
+    font-size: var(--dji-cwu-suggestion-elem-label-font-size);
+    transform: translateY(var(--dji-cwu-suggestion-elem-label-translate-y));
+
+    counter-increment: dji-cwu-suggestion-index;
+    content: counter(dji-cwu-suggestion-index);
+
+    text-align: right;
+    color: var(--dji-cwu-suggestion-elem-label-color);
+}
+
+dji-cwu-main-view > dji-cwu-main-container > dji-cwu-tab-view > dji-cwu-tab-view-pages > dji-cwu-tab-view-page[dji-cwu-role="type"] > dji-cwu-suggestions-pane
+dji-cwu-suggestion[dji-cwu-role="translation-placeholder"] {
+    color: var(--dji-cwu-separator-color);
+    cursor: default;
+}
+dji-cwu-main-view > dji-cwu-main-container > dji-cwu-tab-view > dji-cwu-tab-view-pages > dji-cwu-tab-view-page[dji-cwu-role="type"] > dji-cwu-suggestions-pane
+dji-cwu-suggestion[dji-cwu-role="translation-placeholder"] dji-cwu-icon {
+    margin-left: -5px;
+    margin-right: -5px;
+    height: 29px;
+    line-height: inherit;
+    font-size: 22px;
+    vertical-align: middle;
+}
+
+dji-cwu-main-view > dji-cwu-main-container > dji-cwu-tab-view > dji-cwu-tab-view-pages > dji-cwu-tab-view-page[dji-cwu-role="type"] > dji-cwu-suggestions-pane dji-cwu-icon-hr {
+    display: block;
+    box-sizing: border-box;
+
+    width: 100%;
+    height: 24px;
+    line-height: 24px;
+
+    font-family: var(--dji-cwu-icons-font-family);
+    font-size: 16px;
+}
+dji-cwu-main-view > dji-cwu-main-container > dji-cwu-tab-view > dji-cwu-tab-view-pages > dji-cwu-tab-view-page[dji-cwu-role="type"] > dji-cwu-suggestions-pane dji-cwu-icon-hr::before {
+    display: inline-block;
+    box-sizing: border-box;
+
+    padding: 0 30px 0 0;
+    margin: 0;
+
+    width: 62px;
+
+    content: "translate";
+    color: var(--dji-cwu-suggestion-elem-label-color);
+    text-align: right;
+}
+dji-cwu-main-view > dji-cwu-main-container > dji-cwu-tab-view > dji-cwu-tab-view-pages > dji-cwu-tab-view-page[dji-cwu-role="type"] > dji-cwu-suggestions-pane dji-cwu-icon-hr::after {
+    display: inline-block;
+    box-sizing: border-box;
+
+    padding: 0;
+    margin: 0;
+
+    width: calc(100% - 62px);
+    height: 1px;
+    line-height: 1px;
+    transform: translateY(-6px);
+    font-size: 0;
+
+    content: "x";
+    text-align: left;
+
+    background-color: var(--dji-cwu-separator-color);
+
+    cursor: pointer;
+}
+
+/*********************** Type Page View - Numeric Keyboard ********************************/
+
+dji-cwu-main-view > dji-cwu-main-container > dji-cwu-tab-view > dji-cwu-tab-view-pages > dji-cwu-tab-view-page[dji-cwu-role="type"] > dji-cwu-keyboard-pane {
+    display: none;
+    box-sizing: border-box;
+
+    grid-template-columns: repeat(5, var(--dji-cwu-keyboard-key-size));
+    grid-column-gap: var(--dji-cwu-keyboard-key-space-size);
+    grid-row-gap: var(--dji-cwu-keyboard-key-space-size);
+    padding: var(--dji-cwu-keyboard-key-space-size);
+}
+dji-cwu-main-view > dji-cwu-main-container > dji-cwu-tab-view > dji-cwu-tab-view-pages > dji-cwu-tab-view-page[dji-cwu-role="type"] > dji-cwu-keyboard-pane[dji-cwu-active] {
+    display: grid;
+}
+
+dji-cwu-main-view > dji-cwu-main-container > dji-cwu-tab-view > dji-cwu-tab-view-pages > dji-cwu-tab-view-page[dji-cwu-role="type"] > dji-cwu-keyboard-pane > dji-cwu-keyboard-key {
+    display: block;
+    box-sizing: border-box;
+
+    width: var(--dji-cwu-keyboard-key-size);
+    height: var(--dji-cwu-keyboard-key-size);
+    line-height: var(--dji-cwu-keyboard-key-size);
+    font-size: var(--dji-cwu-keyboard-key-font-size);
+
+    border-radius: 50%;
+
+    text-align: center;
+    color: var(--dji-cwu-keyboard-key-text-color);
+    cursor: pointer;
+}
+dji-cwu-main-view > dji-cwu-main-container > dji-cwu-tab-view > dji-cwu-tab-view-pages > dji-cwu-tab-view-page[dji-cwu-role="type"] > dji-cwu-keyboard-pane > dji-cwu-keyboard-key:hover {
+    background-color: var(--dji-cwu-hover-color);
+}
+
+/*********************** Type Page View - Toolbar ********************************/
+
+dji-cwu-main-view > dji-cwu-main-container > dji-cwu-tab-view > dji-cwu-tab-view-pages > dji-cwu-tab-view-page[dji-cwu-role="type"] > dji-cwu-toolbar {
+    display: block;
+    box-sizing: border-box;
+
+    height: 28px;
+    padding: 6px;
+
+    line-height: 16px;
+    font-size: 14px;
+
+    text-align: right;
+    color: var(--dji-cwu-suggestion-elem-text-color);
+}
+
+dji-cwu-main-view > dji-cwu-main-container > dji-cwu-tab-view > dji-cwu-tab-view-pages > dji-cwu-tab-view-page[dji-cwu-role="type"] > dji-cwu-toolbar > dji-cwu-toolbar-button {
+    display: inline-block;
+    line-height: 16px;
+
+    cursor: pointer;
+}
+dji-cwu-main-view > dji-cwu-main-container > dji-cwu-tab-view > dji-cwu-tab-view-pages > dji-cwu-tab-view-page[dji-cwu-role="type"] > dji-cwu-toolbar > dji-cwu-toolbar-button[dji-cwu-active] {
+    display: none;
+}
+dji-cwu-main-view > dji-cwu-main-container > dji-cwu-tab-view > dji-cwu-tab-view-pages > dji-cwu-tab-view-page[dji-cwu-role="type"] > dji-cwu-toolbar > dji-cwu-toolbar-button:hover {
+    background-color: var(--dji-cwu-hover-color);
+}
+
+/*********************** Speech recognition - Tab Page ********************************/
+
+dji-cwu-main-view > dji-cwu-main-container > dji-cwu-tab-view > dji-cwu-tab-view-pages > dji-cwu-tab-view-page[dji-cwu-role="speech-recognition"] {
+    width: 180px;
+    background-color: var(--dji-cwu-main-background-color);
+}
+
+/*********************** Speech recognition - Error pane ********************************/
+
+dji-cwu-main-view > dji-cwu-main-container > dji-cwu-tab-view > dji-cwu-tab-view-pages > dji-cwu-tab-view-page[dji-cwu-role="speech-recognition"] > dji-cwu-error-pane {
+    position: absolute;
+    display: none;
+
+    box-sizing: border-box;
+
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    padding: 24px 16px;
+
+    font-size: 16px;
+    line-height: 20px;
+
+    color: var(--dji-cwu-third-color);
+    background-color: var(--dji-cwu-main-background-color);
+}
+dji-cwu-main-view > dji-cwu-main-container > dji-cwu-tab-view > dji-cwu-tab-view-pages > dji-cwu-tab-view-page[dji-cwu-role="speech-recognition"][dji-cwu-error] > dji-cwu-error-pane {
+    display: block;
+}
+
+dji-cwu-main-view > dji-cwu-main-container > dji-cwu-tab-view > dji-cwu-tab-view-pages > dji-cwu-tab-view-page[dji-cwu-role="speech-recognition"] > dji-cwu-error-pane > dji-cwu-h2 {
+    color: var(--dji-cwu-second-color);
+}
+
+/*********************** Speech recognition - Main pane ********************************/
+
+dji-cwu-main-view > dji-cwu-main-container > dji-cwu-tab-view > dji-cwu-tab-view-pages > dji-cwu-tab-view-page[dji-cwu-role="speech-recognition"] > dji-cwu-speech-recognition-pane {
+    display: grid;
+    box-sizing: border-box;
+    grid-template-rows: 1fr;
+}
+
+/*********************** Speech recognition - Toolbar ********************************/
+
+dji-cwu-main-view > dji-cwu-main-container > dji-cwu-tab-view > dji-cwu-tab-view-pages > dji-cwu-tab-view-page[dji-cwu-role="speech-recognition"] >
+dji-cwu-speech-recognition-pane > dji-cwu-toolbar {
+    --dji-cwu-this-height: 59px;
+
+    position: relative;
+
+    display: none;
+    grid-template-columns: 1fr 1fr;
+
+    box-sizing: border-box;
+
+    width: 100%;
+    height: var(--dji-cwu-this-height);
+    min-height: var(--dji-cwu-this-height);
+    max-height: var(--dji-cwu-this-height);
+
+    line-height: var(--dji-cwu-this-height);
+    font-size: 16px;
+
+    text-align: center;
+
+    color: var(--dji-cwu-fourth-color);
+    background-color: var(--dji-cwu-main-color);
+
+    box-shadow: -5px 0 transparent, 5px 0 transparent, 0 5px 5px 0px var(--dji-cwu-speech-recognition-toolbar-box-shadow-color);
+}
+dji-cwu-main-view > dji-cwu-main-container > dji-cwu-tab-view > dji-cwu-tab-view-pages > dji-cwu-tab-view-page[dji-cwu-role="speech-recognition"] >
+dji-cwu-speech-recognition-pane[dji-cwu-options="multiple-languages"] > dji-cwu-toolbar {
+    display: grid;
+}
+
+dji-cwu-main-view > dji-cwu-main-container > dji-cwu-tab-view > dji-cwu-tab-view-pages > dji-cwu-tab-view-page[dji-cwu-role="speech-recognition"] >
+dji-cwu-speech-recognition-pane > dji-cwu-toolbar > dji-cwu-toolbar-button {
+    box-sizing: border-box;
+    height: 59px;
+    border-bottom: solid 4px transparent;
+    cursor: pointer;
+}
+dji-cwu-main-view > dji-cwu-main-container > dji-cwu-tab-view > dji-cwu-tab-view-pages > dji-cwu-tab-view-page[dji-cwu-role="speech-recognition"] >
+dji-cwu-speech-recognition-pane > dji-cwu-toolbar > dji-cwu-toolbar-button[dji-cwu-active] {
+    color: var(--dji-cwu-main-complementary-color);
+    border-bottom-color: var(--dji-cwu-first-active-color);
+}
+
+dji-cwu-main-view > dji-cwu-main-container > dji-cwu-tab-view > dji-cwu-tab-view-pages > dji-cwu-tab-view-page[dji-cwu-role="speech-recognition"] >
+dji-cwu-speech-recognition-pane > dji-cwu-toolbar > dji-cwu-toolbar-button > dji-cwu-icon {
+    margin-left: -3px;
+    margin-right: -3px;
+    height: 57px;
+    width: 20px;
+    line-height: 53px;
+    font-size: 20px;
+    font-weight: inherit;
+    vertical-align: middle;
+}
+
+/*********************** Speech recognition - Microphone pane ********************************/
+
+dji-cwu-main-view > dji-cwu-main-container > dji-cwu-tab-view > dji-cwu-tab-view-pages > dji-cwu-tab-view-page[dji-cwu-role="speech-recognition"] >
+dji-cwu-speech-recognition-pane > dji-cwu-info {
+    box-sizing: border-box;
+
+    margin-top: 10px;
+    line-height: 36px;
+    font-size: 14px;
+
+    text-align: center;
+}
+
+dji-cwu-main-view > dji-cwu-main-container > dji-cwu-tab-view > dji-cwu-tab-view-pages > dji-cwu-tab-view-page[dji-cwu-role="speech-recognition"] >
+dji-cwu-speech-recognition-pane > dji-cwu-icon {
+    box-sizing: border-box;
+    margin: 15px auto 30px auto;
+
+    width: 74px;
+    height: 74px;
+    line-height: 74px;
+    font-size: 24px;
+
+    border-radius: 50%;
+
+    box-shadow: 0 3px 8px 1px var(--dji-cwu-speech-recognition-icon-box-shadow-color);
+    color: var(--dji-cwu-main-color);
+
+    text-align: center;
+    cursor: pointer;
+}
+
+dji-cwu-main-view > dji-cwu-main-container > dji-cwu-tab-view > dji-cwu-tab-view-pages > dji-cwu-tab-view-page[dji-cwu-role="speech-recognition"] >
+dji-cwu-speech-recognition-pane > dji-cwu-icon[dji-cwu-state="active"] {
+    background-color: var(--dji-cwu-main-color);
+    color: var(--dji-cwu-main-complementary-color);
+}
+
+dji-cwu-main-view > dji-cwu-main-container > dji-cwu-tab-view > dji-cwu-tab-view-pages > dji-cwu-tab-view-page[dji-cwu-role="speech-recognition"] >
+dji-cwu-speech-recognition-pane > dji-cwu-icon[dji-cwu-state="pulse"] {
+    background-color: var(--dji-cwu-main-color);
+    color: var(--dji-cwu-main-complementary-color);
+    box-shadow:
+            0 0 0 12px var(--dji-cwu-speech-recognition-icon-box-shadow-color-0-1),
+            0 3px 3px 12px var(--dji-cwu-speech-recognition-icon-box-shadow-color-0-2);
+
+    animation: dji-speech-recognition-pulse-anination 4s infinite;
+    animation-direction: alternate;
+}
+
+@keyframes dji-speech-recognition-pulse-anination {
+    0% {
+        box-shadow:
+                0 0 0 12px var(--dji-cwu-speech-recognition-icon-box-shadow-color-0-1),
+                3px 6px 12px var(--dji-cwu-speech-recognition-icon-box-shadow-color-0-2);
+    }
+    50% {
+        box-shadow:
+                0 0 0 12px var(--dji-cwu-speech-recognition-icon-box-shadow-color-50-1),
+                3px 6px 12px var(--dji-cwu-speech-recognition-icon-box-shadow-color-50-2);
+    }
+    100% {
+        box-shadow:
+                0 0 0 12px var(--dji-cwu-speech-recognition-icon-box-shadow-color-100-1),
+                3px 6px 12px var(--dji-cwu-speech-recognition-icon-box-shadow-color-100-2);
+    }
+}
+
+/*********************** Topics ********************************/
+
+dji-cwu-main-view > dji-cwu-main-container > dji-cwu-tab-view > dji-cwu-tab-view-pages > dji-cwu-tab-view-page[dji-cwu-role="topics"] {
+}
+
+/*********************** Topics - Search box ********************************/
+
+dji-cwu-main-view > dji-cwu-main-container > dji-cwu-tab-view > dji-cwu-tab-view-pages > dji-cwu-tab-view-page[dji-cwu-role="topics"] > dji-cwu-search-box {
+    position: relative;
+
+    display: block;
+    box-sizing: border-box;
+
+    height: 50px;
+    width: 300px;
+
+    z-index: 1;
+
+    background-color: var(--dji-cwu-main-color);
+}
+
+
+/*********************** Topics - Search box - Search bar ********************************/
+
+dji-cwu-main-view > dji-cwu-main-container > dji-cwu-tab-view > dji-cwu-tab-view-pages > dji-cwu-tab-view-page[dji-cwu-role="topics"] >
+dji-cwu-search-box > dji-cwu-search-bar {
+    position: relative;
+
+    display: grid;
+    box-sizing: border-box;
+
+    top: 5px;
+    left: 5px;
+    width: calc(100% - 10px);
+    height: calc(100% - 10px);
+    line-height: calc(100% - 10px);
+
+    grid-template-columns: 40px 1fr 40px;
+    grid-column-gap: 3px;
+
+    color: var(--dji-cwu-third-color);
+    background-color: var(--dji-cwu-main-background-color);
+}
+
+dji-cwu-main-view > dji-cwu-main-container > dji-cwu-tab-view > dji-cwu-tab-view-pages > dji-cwu-tab-view-page[dji-cwu-role="topics"] >
+dji-cwu-search-box > dji-cwu-search-bar > input {
+    width: 100% !important;
+}
+
+dji-cwu-main-view > dji-cwu-main-container > dji-cwu-tab-view > dji-cwu-tab-view-pages > dji-cwu-tab-view-page[dji-cwu-role="topics"] >
+dji-cwu-search-box > dji-cwu-search-bar > dji-cwu-icon {
+    width: 32px;
+    height: 32px;
+    line-height: 32px;
+
+    margin: auto;
+}
+dji-cwu-main-view > dji-cwu-main-container > dji-cwu-tab-view > dji-cwu-tab-view-pages > dji-cwu-tab-view-page[dji-cwu-role="topics"] >
+dji-cwu-search-box > dji-cwu-search-bar > dji-cwu-icon[dji-cwu-role] {
+    display: none;
+    cursor: pointer;
+}
+dji-cwu-main-view > dji-cwu-main-container > dji-cwu-tab-view > dji-cwu-tab-view-pages > dji-cwu-tab-view-page[dji-cwu-role="topics"] >
+dji-cwu-search-box > dji-cwu-search-bar > dji-cwu-icon[dji-cwu-role]:hover {
+    background-color: var(--dji-cwu-hover-color);
+}
+dji-cwu-main-view > dji-cwu-main-container > dji-cwu-tab-view > dji-cwu-tab-view-pages > dji-cwu-tab-view-page[dji-cwu-role="topics"] >
+dji-cwu-search-box > dji-cwu-search-bar > dji-cwu-icon[dji-cwu-role="start_speak"] {
+    display: inline-block;
+}
+
+dji-cwu-main-view > dji-cwu-main-container > dji-cwu-tab-view > dji-cwu-tab-view-pages > dji-cwu-tab-view-page[dji-cwu-role="topics"] >
+dji-cwu-search-box[dji-cwu-active] > dji-cwu-search-bar > dji-cwu-icon:not([dji-cwu-role]) {
+    display: none;
+}
+
+dji-cwu-main-view > dji-cwu-main-container > dji-cwu-tab-view > dji-cwu-tab-view-pages > dji-cwu-tab-view-page[dji-cwu-role="topics"] >
+dji-cwu-search-box[dji-cwu-active] > dji-cwu-search-bar > dji-cwu-icon[dji-cwu-role="back"] {
+    display: inline-block;
+}
+dji-cwu-main-view > dji-cwu-main-container > dji-cwu-tab-view > dji-cwu-tab-view-pages > dji-cwu-tab-view-page[dji-cwu-role="topics"] >
+dji-cwu-search-box[dji-cwu-active][dji-cwu-speech-recognition] > dji-cwu-search-bar > dji-cwu-icon[dji-cwu-role="start_speak"] {
+    display: none;
+}
+dji-cwu-main-view > dji-cwu-main-container > dji-cwu-tab-view > dji-cwu-tab-view-pages > dji-cwu-tab-view-page[dji-cwu-role="topics"] >
+dji-cwu-search-box[dji-cwu-active][dji-cwu-speech-recognition] > dji-cwu-search-bar > dji-cwu-icon[dji-cwu-role="stop_speak"] {
+    display: inline-block;
+}
+
+dji-cwu-main-view > dji-cwu-main-container > dji-cwu-tab-view > dji-cwu-tab-view-pages > dji-cwu-tab-view-page[dji-cwu-role="topics"] >
+dji-cwu-search-box > dji-cwu-search-bar > input:not(:placeholder-shown) ~ dji-cwu-icon[dji-cwu-role="start_speak"] {
+    display: none;
+}
+dji-cwu-main-view > dji-cwu-main-container > dji-cwu-tab-view > dji-cwu-tab-view-pages > dji-cwu-tab-view-page[dji-cwu-role="topics"] >
+dji-cwu-search-box > dji-cwu-search-bar > input:not(:placeholder-shown) ~ dji-cwu-icon[dji-cwu-role="clear"] {
+    display: inline-block;
+}
+
+
+dji-cwu-main-view > dji-cwu-main-container > dji-cwu-tab-view > dji-cwu-tab-view-pages > dji-cwu-tab-view-page[dji-cwu-role="topics"] >
+dji-cwu-search-box > dji-cwu-search-bar > input {
+    font-size: 14px !important;
+    line-height: 40px !important;
+    box-sizing: border-box !important;
+
+    border: none !important;
+    padding: 0 5px !important;
+    margin: 0 !important;
+
+    color: var(--dji-cwu-second-color) !important;
+}
+dji-cwu-main-view > dji-cwu-main-container > dji-cwu-tab-view > dji-cwu-tab-view-pages > dji-cwu-tab-view-page[dji-cwu-role="topics"] >
+dji-cwu-search-box[dji-cwu-speech-recognition] > dji-cwu-search-bar > input {
+    user-select: none !important;
+    pointer-events: none !important;
+}
+dji-cwu-main-view[dji-cwu-update-topics]:not([dji-cwu-update-topics="too-many-active"]):not([dji-cwu-update-topics="on-off"]) >
+dji-cwu-main-container > dji-cwu-tab-view > dji-cwu-tab-view-pages > dji-cwu-tab-view-page[dji-cwu-role="topics"] >
+dji-cwu-search-box > dji-cwu-search-bar > input {
+    font-size: 20px !important;
+    font-weight: normal !important;
+    user-select: none !important;
+}
+
+/*********************** Topics - Search box - Search results ********************************/
+
+dji-cwu-search-box > dji-cwu-search-results {
+    position: absolute;
+
+    display: none;
+    box-sizing: border-box;
+
+    top: 45px;
+    left: 5px;
+    width: calc(100% - 10px);
+    height: 295px;
+
+    overflow-y: auto;
+
+    border-top: solid 1px var(--dji-cwu-separator-color);
+    background-color: var(--dji-cwu-main-complementary-color);
+
+    box-shadow: 0 2px 1px 0 var(--dji-cwu-main-container-box-shadow-color-2);
+}
+dji-cwu-search-box[dji-cwu-active][dji-cwu-expanded] > dji-cwu-search-results {
+    display: block;
+}
+dji-cwu-main-view > dji-cwu-main-container > dji-cwu-tab-view > dji-cwu-tab-view-pages > dji-cwu-tab-view-page[dji-cwu-role="topics"] >
+dji-cwu-search-box[dji-cwu-active][dji-cwu-input] > dji-cwu-search-results {
+    display: block;
+}
+
+
+dji-cwu-search-box > dji-cwu-search-results > dji-cwu-search-results-group {
+    position: relative;
+    display: block;
+    padding: 0 0 0 62px;
+}
+dji-cwu-search-box > dji-cwu-search-results > dji-cwu-search-results-group:before {
+    position: absolute;
+
+    display: block;
+    box-sizing: border-box;
+
+    padding: 0;
+    left: 10px;
+    top: 0px;
+
+    line-height: 40px;
+    font-size: 24px;
+
+    font-family: "Material Icons";
+    text-align: left;
+    cursor: default;
+
+    content: attr(dji-cwu-icon);
+    color: var(--dji-cwu-suggestion-elem-label-color);
+}
+dji-cwu-search-box > dji-cwu-search-results > dji-cwu-search-results-group:empty {
+    display: none;
+}
+dji-cwu-main-view[dji-cwu-update-topics] dji-cwu-search-box > dji-cwu-search-results > dji-cwu-search-results-group {
+    display: none;
+}
+
+dji-cwu-search-box > dji-cwu-search-results > dji-cwu-search-results-group > dji-cwu-topic {
+    display: block;
+    box-sizing: border-box;
+
+    height: 40px;
+    line-height: 40px;
+    font-size: 14px;
+
+    margin-top: 1px;
+    padding: 0 10px 0 8px;
+
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+
+    cursor: pointer;
+}
+dji-cwu-search-box > dji-cwu-search-results > dji-cwu-search-results-group > dji-cwu-topic:hover {
+    background-color: var(--dji-cwu-hover-color);
+}
+
+dji-cwu-search-box > dji-cwu-search-results > dji-cwu-search-results-group[dji-cwu-role="dji-cwu-local"]:not(:empty) +
+dji-cwu-search-results-group[dji-cwu-role="dji-cwu-web"] > dji-cwu-topic:first-child {
+    border-top: solid 1px var(--dji-cwu-separator-color);
+}
+
+dji-cwu-search-box > dji-cwu-search-results > dji-cwu-info-pane {
+    position: absolute;
+
+    display: none;
+
+    box-sizing: border-box;
+
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+
+    padding: 20px;
+
+    font-size: 14px;
+    line-height: 20px;
+
+    text-align: center;
+
+    background-color: var(--dji-cwu-main-background-color);
+}
+dji-cwu-search-box > dji-cwu-search-results > dji-cwu-info-pane > dji-cwu-div[dji-cwu-role="name"] {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+
+    margin-top: 8px;
+
+    font-weight: bold;
+    font-style: italic;
+}
+dji-cwu-main-view dji-cwu-search-results > dji-cwu-info-pane[dji-cwu-role="info-update-topics"] > dji-cwu-div[dji-cwu-role^="message-"] {
+    display: none;
+}
+dji-cwu-main-view dji-cwu-search-results > dji-cwu-info-pane[dji-cwu-role="info-update-topics"] > dji-cwu-div[dji-cwu-role^="hint-"] {
+    display: none;
+
+    position: absolute;
+    left: 20px;
+    right: 20px;
+    bottom: 20px;
+    font-style: italic;
+}
+
+dji-cwu-search-box[dji-cwu-no-results] > dji-cwu-search-results > dji-cwu-info-pane[dji-cwu-role="info-no-results"] {
+    display: block;
+}
+
+dji-cwu-main-view[dji-cwu-update-topics] dji-cwu-search-results > dji-cwu-info-pane[dji-cwu-role="info-update-topics"] {
+    display: block;
+}
+dji-cwu-main-view[dji-cwu-update-topics="too-many-active"] dji-cwu-search-results > dji-cwu-info-pane[dji-cwu-role="info-update-topics"] > dji-cwu-div[dji-cwu-role="message-too-many-active"],
+dji-cwu-main-view[dji-cwu-update-topics="activate"] dji-cwu-search-results > dji-cwu-info-pane[dji-cwu-role="info-update-topics"] > dji-cwu-div[dji-cwu-role="message-activate"],
+dji-cwu-main-view[dji-cwu-update-topics="update"] dji-cwu-search-results > dji-cwu-info-pane[dji-cwu-role="info-update-topics"] > dji-cwu-div[dji-cwu-role="message-update"],
+dji-cwu-main-view[dji-cwu-update-topics="create"] dji-cwu-search-results > dji-cwu-info-pane[dji-cwu-role="info-update-topics"] > dji-cwu-div[dji-cwu-role="message-create"] {
+    display: block;
+}
+dji-cwu-main-view[dji-cwu-update-topics="too-many-active"] dji-cwu-search-results > dji-cwu-info-pane[dji-cwu-role="info-update-topics"] > dji-cwu-div[dji-cwu-role="name"] {
+    display: none;
+}
+dji-cwu-main-view[dji-cwu-update-topics] dji-cwu-search-box > dji-cwu-search-results {
+    overflow: hidden;
+}
+dji-cwu-main-view[dji-cwu-update-topics]:not([dji-cwu-update-topics="too-many-active"]) > * {
+    pointer-events: none;
+    cursor: wait;
+}
+
+dji-cwu-main-view[dji-cwu-update-topics="update"][dji-cwu-update-topics-hint="hint-too-many-active"] dji-cwu-search-results >
+dji-cwu-info-pane[dji-cwu-role="info-update-topics"] > dji-cwu-div[dji-cwu-role="hint-update-too-many-active"] {
+    display: block;
+}
+
+dji-cwu-main-view[dji-cwu-update-topics="create"][dji-cwu-update-topics-hint="hint-too-many-active"] dji-cwu-search-results >
+dji-cwu-info-pane[dji-cwu-role="info-update-topics"] > dji-cwu-div[dji-cwu-role="hint-create-too-many-active"] {
+    display: block;
+}
+
+/*********************** Topics - Topics Pane ********************************/
+
+dji-cwu-main-view > dji-cwu-main-container > dji-cwu-tab-view > dji-cwu-tab-view-pages > dji-cwu-tab-view-page[dji-cwu-role="topics"] > dji-cwu-topics-pane > dji-cwu-topic {
+    display: grid;
+    box-sizing: border-box;
+
+    height: 40px;
+    line-height: 40px;
+    font-size: 14px;
+
+    grid-template-columns: 233px 32px;
+    grid-column-gap: 10px;
+    padding: 0px 10px 0px 15px;
+
+    color: var(--dji-cwu-second-color);
+}
+
+dji-cwu-main-view > dji-cwu-main-container > dji-cwu-tab-view > dji-cwu-tab-view-pages > dji-cwu-tab-view-page[dji-cwu-role="topics"] > dji-cwu-topics-pane > dji-cwu-topic > dji-cwu-label {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+dji-cwu-main-view > dji-cwu-main-container > dji-cwu-tab-view > dji-cwu-tab-view-pages > dji-cwu-tab-view-page[dji-cwu-role="topics"] > dji-cwu-topics-pane > dji-cwu-topic > dji-cwu-switch {
+    position: relative;
+    display: block;
+    width: 32px;
+    height: 20px;
+    margin: auto;
+    cursor: pointer;
+    background-color: transparent;
+}
+dji-cwu-main-view > dji-cwu-main-container > dji-cwu-tab-view > dji-cwu-tab-view-pages > dji-cwu-tab-view-page[dji-cwu-role="topics"] > dji-cwu-topics-pane > dji-cwu-topic > dji-cwu-switch:before {
+    position: absolute;
+    display: block;
+
+    top: calc((100% - 12px) / 2);
+    left: calc((100% - 30px) / 2);
+    width: 30px;
+    height: 12px;
+    border-radius: 6px;
+
+    background-color: #c6c5c5;
+
+    content: "x";
+    font-size: 0;
+    line-height: 0;
+    color: transparent;
+}
+dji-cwu-main-view > dji-cwu-main-container > dji-cwu-tab-view > dji-cwu-tab-view-pages > dji-cwu-tab-view-page[dji-cwu-role="topics"] > dji-cwu-topics-pane > dji-cwu-topic > dji-cwu-switch:after {
+    position: absolute;
+    display: block;
+
+    top: calc((100% - 18px) / 2);
+    left: calc((100% - 30px) / 2);
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+
+    background-color: #f1f1f1;
+    box-shadow: rgba(0, 0, 0, 0.14) 0px 0px 2px 0px, rgba(0, 0, 0, 0.12) 0px 2px 2px 0px, rgba(0, 0, 0, 0.2) 0px 1px 3px 0px;
+
+    content: "x";
+    font-size: 0;
+    line-height: 0;
+    color: transparent;
+}
+dji-cwu-main-view > dji-cwu-main-container > dji-cwu-tab-view > dji-cwu-tab-view-pages > dji-cwu-tab-view-page[dji-cwu-role="topics"] > dji-cwu-topics-pane > dji-cwu-topic > dji-cwu-switch[dji-cwu-on]:before {
+    background-color: #B3E3FA;
+}
+dji-cwu-main-view > dji-cwu-main-container > dji-cwu-tab-view > dji-cwu-tab-view-pages > dji-cwu-tab-view-page[dji-cwu-role="topics"] > dji-cwu-topics-pane > dji-cwu-topic > dji-cwu-switch[dji-cwu-on]:after {
+    left: auto;
+    right: calc((100% - 30px) / 2);
+
+    background-color: #008CCD;
+}
+
+/*********************** General - Others ********************************/
+
+dji-cwu-main-view[dji-cwu-update-topics="on-off"] {
+    cursor: wait;
+}
+
+/*********************** Toast ********************************/
+dji-cwu-toast {
+    all: initial;
+}
+
+dji-cwu-toast::before, dji-cwu-toast::after,
+dji-cwu-toast *::before, dji-cwu-toast *::after,
+dji-cwu-toast * {
+    all: unset;
+}
+
+dji-cwu-toast {
+    position: fixed;
+
+    display: block;
+    box-sizing: border-box;
+
+    width: 100%;
+    height: 0px;
+    bottom: 0px;
+
+    margin: 0;
+    padding: 0;
+    line-height: 0;
+
+    z-index: 2147483640 !important;
+    background-color: transparent;
+}
+
+dji-cwu-toast > dji-cwu-toast-content {
+    position: relative;
+
+    display: block;
+    box-sizing: border-box;
+
+    width: 433px;
+    bottom: 50px;
+
+    margin: 0 auto;
+    padding: 10px 24px;
+    border-radius: 2px;
+
+    line-height: 30px;
+
+    font-family: "Roboto", "sans-serif";
+    font-weight: 400;
+    font-size: 14px;
+
+    color: white;
+    background-color: black;
+
+    user-select: none;
+}
+
+dji-cwu-toast[dji-cwu-mode="action"] > dji-cwu-toast-content {
+    display: grid;
+
+    width: 444px;
+
+    grid-template-columns: 300px 49px;
+    grid-column-gap: 48px;
+}
+
+dji-cwu-toast > dji-cwu-toast-content > dji-cwu-toast-content-text {
+    position: relative;
+    display: block;
+    width: 100%;
+}
+dji-cwu-toast > dji-cwu-toast-content > dji-cwu-toast-content-action {
+    position: relative;
+    display: block;
+    width: 100%;
+    font-weight: 500;
+    color: #68EFAD;
+    cursor: pointer;
+}

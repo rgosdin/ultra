@@ -1,0 +1,2 @@
+function CWETimeTracker(){this.m_total=this.m_start=0;this.reset()}CWETimeTracker.prototype.start=function(){0==this.m_start&&(this.m_start=Date.now())};CWETimeTracker.prototype.stop=function(){0!=this.m_start&&(this.m_total+=Date.now()-this.m_start,this.m_start=0)};CWETimeTracker.prototype.reset=function(){this.m_start=this.m_start?Date.now():0;this.m_total=0};CWETimeTracker.prototype.total=function(){return this.m_total+(0==this.m_start?0:Date.now()-this.m_start)};
+CWETimeTracker.prototype.elapsed=function(){return 0==this.m_start?0:Date.now()-this.m_start};

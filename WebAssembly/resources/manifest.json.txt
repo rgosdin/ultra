@@ -1,0 +1,16 @@
+{
+    "name": "Co:Writer",
+    "description": "Resources for Co:Writer",
+    "version": 2,
+
+    "entries": [
+        {
+            "name": "Prediction",
+            "location": "prediction"
+        },
+        {
+            "name": "Hunspell",
+            "location": "hunspell"
+        }
+    ]
+}

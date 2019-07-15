@@ -1,0 +1,54 @@
+:root {
+    --dji-cwu-switch-padding-x: 5px;
+    --dji-cwu-switch-padding-y: 10px;
+    --dji-cwu-switch-width: 30px;
+    --dji-cwu-switch-track-bar-height: 12px;
+    --dji-cwu-switch-track-bar-border-radius: calc(var(--dji-cwu-switch-track-bar-height) / 2);
+    --dji-cwu-switch-track-bar-background-color: #C6C5C5;
+    --dji-cwu-switch-on-track-bar-background-color: #B3E3FA;
+    --dji-cwu-switch-button-offset: 4px;
+    --dji-cwu-switch-button-size: 18px;
+    --dji-cwu-switch-button-border-radius: 50%;
+    --dji-cwu-switch-button-top: calc((var(--dji-cwu-switch-track-bar-height) + 2 * var(--dji-cwu-switch-padding-y) - var(--dji-cwu-switch-button-size)) / 2);
+    --dji-cwu-switch-button-background-color: #F1F1F1;
+    --dji-cwu-switch-on-button-background-color: #008CCD;
+    --dji-cwu-switch-button-shadow: 0 0 2px 0 rgba(0,0,0,0.14), 0 2px 2px 0 rgba(0,0,0,0.12), 0 1px 3px 0 rgba(0,0,0,0.20);
+}
+
+.dji-cwu-switch-container {
+    position: relative;
+    padding: var(--dji-cwu-switch-padding-y) var(--dji-cwu-switch-padding-x);
+    width: var(--dji-cwu-switch-width);
+    cursor: pointer;
+}
+
+.dji-cwu-switch-container .dji-cwu-switch-track-bar {
+    border-radius: var(--dji-cwu-switch-track-bar-border-radius);
+    height: var(--dji-cwu-switch-track-bar-height);
+    background-color: var(--dji-cwu-switch-track-bar-background-color);
+    transition: background-color 0.3s;
+}
+
+.dji-cwu-switch-container .dji-cwu-switch-button {
+    position: absolute;
+    top: var(--dji-cwu-switch-button-top);
+    width: var(--dji-cwu-switch-button-size);
+    height: var(--dji-cwu-switch-button-size);
+    border-radius: var(--dji-cwu-switch-button-border-radius);
+    background-color: var(--dji-cwu-switch-button-background-color);
+    box-shadow: var(--dji-cwu-switch-button-shadow);
+    transition: background-color 0.3s, left 0.3s;
+}
+
+.dji-cwu-switch-container.dji-cwu-on .dji-cwu-switch-track-bar {
+    background-color: var(--dji-cwu-switch-on-track-bar-background-color);
+}
+
+.dji-cwu-switch-container:not(.dji-cwu-on) .dji-cwu-switch-button {
+    left: var(--dji-cwu-switch-button-offset);
+}
+
+.dji-cwu-switch-container.dji-cwu-on .dji-cwu-switch-button {
+    left: calc(2 * var(--dji-cwu-switch-padding-x) + var(--dji-cwu-switch-width) - var(--dji-cwu-switch-button-size) - var(--dji-cwu-switch-button-offset));
+    background-color: var(--dji-cwu-switch-on-button-background-color);
+}

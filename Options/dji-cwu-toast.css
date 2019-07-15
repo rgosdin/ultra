@@ -1,0 +1,102 @@
+:root {
+    --dji-cwu-toast-left: 50%;
+    --dji-cwu-toast-bottom: 30px;
+    --dji-cwu-toast-width: 450px;
+    --dji-cwu-toast-border-radius: 2px;
+    --dji-cwu-toast-padding: 10px 16px;
+    --dji-cwu-toast-background-color: #333333;
+    --dji-cwu-toast-text-color: #FFFFFF;
+}
+
+#dji-cwu-toast {
+    z-index: 1;
+    visibility: hidden;
+    position: fixed;
+    left: var(--dji-cwu-toast-left);
+    bottom: var(--dji-cwu-toast-bottom);
+    margin-left: calc(var(--dji-cwu-toast-width) / -2);
+    border-radius: var(--dji-cwu-toast-border-radius);
+    padding: var(--dji-cwu-toast-padding);
+    width: var(--dji-cwu-toast-width);
+    background-color: var(--dji-cwu-toast-background-color);
+    color: var(--dji-cwu-toast-text-color);
+}
+
+#dji-cwu-toast.dji-cwu-visible {
+    visibility: visible;
+    -webkit-animation: fadein 0.5s, fadeout 0.5s 4.5s;
+    animation: fadein 0.5s, fadeout 0.5s 4.5s;
+}
+
+#dji-cwu-toast .dji-cwu-toast-message {
+    -webkit-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    text-align: left;
+    font-size: 14px;
+}
+
+#dji-cwu-toast .dji-cwu-toast-close-button {
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+    width: 32px;
+    height: 32px;
+    color: var(--dji-cwu-toast-text-color);
+    font-size: 20px;
+    cursor: pointer;
+}
+
+#dji-cwu-toast .dji-cwu-toast-close-button i {
+    user-select: none;
+}
+
+
+@-webkit-keyframes fadein {
+    from {
+        bottom: 0;
+        opacity: 0;
+    }
+    to {
+        bottom: 30px;
+        opacity: 1;
+    }
+}
+
+@keyframes fadein {
+    from {
+        bottom: 0;
+        opacity: 0;
+    }
+    to {
+        bottom: 30px;
+        opacity: 1;
+    }
+}
+
+@-webkit-keyframes fadeout {
+    from {
+        bottom: 30px;
+        opacity: 1;
+    }
+    to {
+        bottom: 0;
+        opacity: 0;
+    }
+}
+
+@keyframes fadeout {
+    from {
+        bottom: 30px;
+        opacity: 1;
+    }
+    to {
+        bottom: 0;
+        opacity: 0;
+    }
+}

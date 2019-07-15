@@ -1,20 +1,100 @@
 {
-"update_url": "https://clients2.google.com/service/update2/crx",
-
-	"manifest_version": 2,
-	"name": "Audiotool",
-	"short_name": "Audiotool",
-	"version": "1.2",
-	"description": "Produce music online with builtin synthesizers, drum machines, effects and samples.",
-	"app": {
-		"launch": {
-			"web_url" : "http://www.audiotool.com/app/chrome",
-			"width": 1280,
-			"height": 900
-		}
-	},
-	"icons": {
-		"16": "icon_16.png",
-		"128": "icon_128.png"
-	}
+  "background": {
+    "page": "background.html"
+  },
+  "browser_action": {
+    "default_icon": {
+      "128": "images/icons/128x128.png",
+      "48": "images/icons/48x48.png",
+      "16": "images/icons/16x16.png"
+    },
+    "default_popup": "popup.html",
+    "default_title": "__MSG_appName__"
+  },
+  "content_scripts": [
+    {
+      "js": [
+        "js/hotkeys.js"
+      ],
+      "matches": [
+        "\u003Call_urls>"
+      ],
+      "run_at": "document_end"
+    }
+  ],
+  "commands": {
+    "start_tab_video": {
+      "description": "Start record tab/page",
+      "suggested_key": {
+        "default": "Ctrl+Shift+7",
+        "mac": "Command+Shift+7"
+      }
+    },
+    "start_desktop_video": {
+      "description": "Start record desktop",
+      "suggested_key": {
+        "default": "Ctrl+Shift+8",
+        "mac": "Command+Shift+8"
+      }
+    },
+    "stop_video": {
+      "description": "Stop video recording",
+      "suggested_key": {
+        "default": "Ctrl+Shift+9",
+        "mac": "Command+Shift+9"
+      }
+    },
+    "pause_video": {
+      "description": "Pause video recording",
+      "suggested_key": {
+        "default": "Ctrl+Shift+0",
+        "mac": "Command+Shift+0"
+      }
+    }
+  },
+  "content_security_policy": "script-src 'self' 'sha256-bWudtI49bUP3yqw/DfdAHUG521cS+L8FtgDHub6jJSY=' 'sha256-4tYUSlxiirH+9jdjYT6pq0oJmPDOZ2cemKrEN3BdeCk=' 'sha256-GvN2YmG9gGdxY6iBkmNraQKtxr3m9f5klKtjj4fh6PM=' 'sha256-iKUlTGqDOEnFp/VuiNgMoL/AlLmZ9N0yzHG4SYTG30U=' https://www.google-analytics.com https://apis.google.com; object-src 'self'",
+  "key": "MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCE2FIgHdWkDJH0H3Idf+PaGQcCsuKkw1BpBXVjfVKprO9xu3LiZM8/4NVUAOGBktLe3NiBFurwNLsLMTO7WsknokwWvm15Z4wM6YGFuUta39/y07CDKq49OaAoui0RrN8ogf6gjcAQW3fDfO4a24vqSoYk3ypWX5ZjD/+egMUvIQIDAQAB",
+  "default_locale": "en",
+  "description": "__MSG_appDesc__",
+  "homepage_url": "https://nimbus.everhelper.me",
+  "short_name": "screen capture",
+  "icons": {
+    "128": "images/icons/128x128.png",
+    "48": "images/icons/48x48.png",
+    "16": "images/icons/16x16.png"
+  },
+  "manifest_version": 2,
+  "minimum_chrome_version": "43",
+  "name": "__MSG_appName__",
+  "offline_enabled": true,
+  "options_page": "options.html",
+  "incognito": "spanning",
+  "permissions": [
+    "<all_urls>",
+    "*://*/*",
+    "cookies",
+    "downloads",
+    "clipboardWrite",
+    "clipboardRead",
+    "tabs",
+    "activeTab",
+    "storage",
+    "unlimitedStorage",
+    "contextMenus",
+    "identity",
+    "desktopCapture",
+    "tabCapture"
+  ],
+  "update_url": "http://clients2.google.com/service/update2/crx",
+  "version": "8.8.3",
+  "web_accessible_resources": [
+    "favicon.png",
+    "print.html",
+    "video.html",
+    "media_access/*",
+    "fonts/*",
+    "images/*",
+    "css/*",
+    "template/*"
+  ]
 }

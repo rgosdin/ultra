@@ -1,10 +1,1037 @@
 {
   "appName": {
-    "message": "Cut the Rope",
-    "description": "The title of the application, displayed in the web store."
+    "message": "Nimbus Screenshot & Screen Video Recorder"
+  },
+  "appNameMini": {
+    "message": "Nimbus Screenshot"
   },
   "appDesc": {
-    "message": "Cut the Rope, catch a star, and feed Om Nom candy in this award-winning game!",
-    "description":"The description of the application, displayed in the web store."
+    "message": "Screen Capture FULL Web page or any part. Edit screenshots. Record screencasts - record video from your screen."
+  },
+  "btnVisiblePage": {
+    "message": "Visible part of page"
+  },
+  "btnDelayedScreen": {
+    "message": "Delayed screen"
+  },
+  "btnCaptureFragment": {
+    "message": "Capture Fragment"
+  },
+  "btnSelectedArea": {
+    "message": "Selected area"
+  },
+  "btnSelectedScroll": {
+    "message": "Selected & Scroll"
+  },
+  "btnEntirePage": {
+    "message": "Entire page"
+  },
+  "btnBrowserWindow": {
+    "message": "Browser window"
+  },
+  "btnDesktop": {
+    "message": "Capture from Desktop"
+  },
+  "btnBlankScreen": {
+    "message": "Blank Screen"
+  },
+  "btnAndroidVersion": {
+    "message": "Android Version"
+  },
+  "btnCaptureVideo": {
+    "message": "Record Video"
+  },
+  "btnOptions": {
+    "message": "Settings"
+  },
+  "btnOptionsWatermark": {
+    "message": "Watermark settings"
+  },
+  "btnEnableEdit": {
+    "message": "Edit"
+  },
+  "btnEnableSave": {
+    "message": "Download"
+  },
+  "btnEnableDownload": {
+    "message": "Send to Nimbus/Google/Slack"
+  },
+  "btnConnectSlack": {
+    "message": "Connect Slack"
+  },
+  "btnEnableCopy": {
+    "message": "Copy to clipboard"
+  },
+  "btnAccessMic": {
+    "message": "Access to microphone and camera"
+  },
+  "btnReadyVideo": {
+    "message": "I'm ready to record video"
+  },
+  "btnManual": {
+    "message": "Manual"
+  },
+  "popupTitle": {
+    "message": "Nimbus Capture"
+  },
+  "popupVideoTitle": {
+    "message": "Record video"
+  },
+  "popupLabelSetting": {
+    "message": "Setting"
+  },
+  "popupLabelRecordMic": {
+    "message": "Record Mic Sound"
+  },
+  "popupLabelRecordCamera": {
+    "message": "Record WebCam"
+  },
+  "popupLabelRecordTab": {
+    "message": "Record Tab Sound"
+  },
+  "popupLabelVideoSetting": {
+    "message": "Video settings"
+  },
+  "popupLabelCursorAnimate": {
+    "message": "Animated cursor"
+  },
+  "popupLabelShowDrawingTools": {
+    "message": "Show drawing tools"
+  },
+  "popupLabelCountdown": {
+    "message": "Countdown"
+  },
+  "popupRecordTypeTitle": {
+    "message": "What do you want to record"
+  },
+  "popupSizeAutoLabel": {
+    "message": "Auto"
+  },
+  "popupSizeAutoDescription": {
+    "message": "(current resolution)"
+  },
+  "popupBitrateAudioLabel": {
+    "message": "Audio Bitrate"
+  },
+  "popupBitrateVideoLabel": {
+    "message": "Video Bitrate"
+  },
+  "popupFrameRateLabel": {
+    "message": "Frame frequency"
+  },
+  "popupAutoDeleteDrawing": {
+    "message": "Auto Delete Drawing"
+  },
+  "popupAutoDeleteDrawingDescription": {
+    "message": "You can specify a time period after which the figures drawn will be deleted while recording a video"
+  },
+  "popupSelectMicLabel": {
+    "message": "Microphone"
+  },
+  "popupSelectWebCamLabel": {
+    "message": "Webcam"
+  },
+  "popupBtnTabRecord": {
+    "message": "Tab"
+  },
+  "popupBtnDesktopRecord": {
+    "message": "Desktop"
+  },
+  "popupBtnCameraRecord": {
+    "message": "Webcam only"
+  },
+  "popupBtnBack": {
+    "message": "back"
+  },
+  "popupVideoQualityTitle": {
+    "message": "Video and audio quality"
+  },
+  "popupRecordTitle": {
+    "message": "Video is recording"
+  },
+  "popupBtnStopRecord": {
+    "message": "Stop Recording"
+  },
+  "popupBtnStopPause": {
+    "message": "Pause"
+  },
+  "popupBtnStopResume": {
+    "message": "Resume"
+  },
+  "popupBtnStartRecord": {
+    "message": "Start record"
+  },
+  "popupBtnResetVideoSetting": {
+    "message": "Reset Settings"
+  },
+  "popupAfterCapture": {
+    "message": "Action after the capture"
+  },
+  "popupSec": {
+    "message": "sec."
+  },
+  "popupMyNotes": {
+    "message": "My Uploads"
+  },
+  "popupWelcomeVideo": {
+    "message": "Welcome to the video recording"
+  },
+  "popupAccessMic": {
+    "message": "For starters, you have to allow access to your microphone"
+  },
+  "popupReadManual": {
+    "message": "Also, you can read the instructions for using the application"
+  },
+  "popupVideoReEncoding": {
+    "message": "Enable video re-encoding"
+  },
+  "popupVideoReEncodingTitle": {
+    "message": "This option adjusts timeline length. If you turn this option off, video processing (when you stop recording) will be much faster for slow computers but in some cases, timeline scroll will not work. (Recommended for slow computers or Chrome Books)"
+  },
+  "popupErrorLocalFileTitle": {
+    "message": "File access needed"
+  },
+  "popupErrorLocalFileMessage": {
+    "message": "Please go to your Chrome extension settings and enable <strong>'Allow access to file URLs'</strong>, so the extension can access this page."
+  },
+  "popupOpenExtensions": {
+    "message": "Extension settings"
+  },
+  "popupVideoEditorOk": {
+    "message": "Ok, Got It"
+  },
+  "popupVideoEditorWelcomeTitle": {
+    "message": "Welcome to the video editor!"
+  },
+  "popupVideoEditorWelcomeDescription": {
+    "message": "Here you can crop and trim videos. You can read the guide on working with the editor by following this <a href='https://everhelper.desk.com/customer/portal/articles/2966742' target='_blank'>link</a>."
+  },
+  "popupVideoEditorCrop": {
+    "message": "Select region you want to crop and hit on check mark."
+  },
+  "popupVideoEditorTrim": {
+    "message": "Using the blue markers, select a part of the video that needs to be trimmed and click on Remove selected."
+  },
+  "optionsTitle": {
+    "message": "Screenshots Settings"
+  },
+  "optionsGeneral": {
+    "message": "General"
+  },
+  "optionsWatermark": {
+    "message": "Watermark"
+  },
+  "optionsSettingImage": {
+    "message": "Image settings"
+  },
+  "optionsCaptureSettings": {
+    "message": "Screenshot Settings"
+  },
+  "optionsSettingsSave": {
+    "message": "Save settings"
+  },
+  "optionsMainMenu": {
+    "message": "Main menu settings"
+  },
+  "optionsShortcutSettings": {
+    "message": "Hotkeys settings"
+  },
+  "optionLabelEnableWatermark": {
+    "message": "Add your watermark"
+  },
+  "optionLabelWatermarkImage": {
+    "message": "Image"
+  },
+  "optionLabelWatermarkText": {
+    "message": "Text"
+  },
+  "optionLabelWatermarkSelectFile": {
+    "message": "Select file"
+  },
+  "optionLabelWatermarkFont": {
+    "message": "Font"
+  },
+  "optionLabelWatermarkFontSize": {
+    "message": "Size"
+  },
+  "optionLabelWatermarkFontColor": {
+    "message": "Color"
+  },
+  "optionLabelWatermarkSelectPosition": {
+    "message": "Select position of your watermark"
+  },
+  "optionLabelWatermarkSize": {
+    "message": "Watermark size:"
+  },
+  "optionLabelWatermarkSizeSmall": {
+    "message": "Small"
+  },
+  "optionLabelWatermarkSizeLarge": {
+    "message": "Large"
+  },
+  "optionLabelWatermarkTransparent": {
+    "message": "Watermark transparency:"
+  },
+  "optionLabelWatermarkTransparentSmall": {
+    "message": "No transparent"
+  },
+  "optionLabelWatermarkTransparentLarge": {
+    "message": "Large"
+  },
+  "optionsLabelImageFormat": {
+    "message": "Format"
+  },
+  "optionsLabelImageQuality": {
+    "message": "Quality"
+  },
+  "optionsLabelSaveAs": {
+    "message": "Display 'Save As' dialog box"
+  },
+  "optionsLabelFilenameTemplateScreenshot": {
+    "message": "File name pattern screenshot"
+  },
+  "optionsLabelFilenameTemplateScreencast": {
+    "message": "File name pattern screencast"
+  },
+  "optionsLabelCanUse": {
+    "message": "Available designations:"
+  },
+  "optionsLabelDelayedScreenshotTime": {
+    "message": "Delay before delayed screen (s)"
+  },
+  "optionsLabelTimeScrollEntirePage": {
+    "message": "Entire page scrolling delay time (ms)"
+  },
+  "optionsLabelDepthScreenshot": {
+    "message": "Color depth filter (1 - disabled)"
+  },
+  "optionsLabelHideFixedElements": {
+    "message": "Hide the fixed elements"
+  },
+  "optionsLabelShowInfoPrint": {
+    "message": "Display URL/date in Printing"
+  },
+  "optionsLabelSaveCropPosition": {
+    "message": "Save the position of the selected area"
+  },
+  "optionsLabelShowContentMenu": {
+    "message": "Show in context menu"
+  },
+  "optionsLabelShowNewButton": {
+    "message": "Show 'New' after app update"
+  },
+  "optionsLabelKeepOriginalResolution": {
+    "message": "Keep original resolution (for Retina)"
+  },
+  "optionsLabelAutoShortUrl": {
+    "message": "Auto-short url after upload"
+  },
+  "optionsLabelQuickCaptureEnable": {
+    "message": "Enable quick screenshot (without opening the menu)"
+  },
+  "optionsLabelAfterClicking": {
+    "message": "After clicking on the icon"
+  },
+  "optionsLabelWantCapture": {
+    "message": "make a screenshot"
+  },
+  "optionsLabelAndThen": {
+    "message": "and then"
+  },
+  "optionsLabelLoadToNS": {
+    "message": "Send to Nimbus/Slack"
+  },
+  "optionsLabelTabVideo": {
+    "message": "Start record tab/page"
+  },
+  "optionsLabelDesktopVideo": {
+    "message": "Start record desktop"
+  },
+  "optionsLabelStopVideo": {
+    "message": "Stop video recording"
+  },
+  "labelDropImage": {
+    "message": "drop image here"
+  },
+  "labelCaptureHelper": {
+    "message": "Select one of the screens to Snap!"
+  },
+  "panelSize": {
+    "message": "Size"
+  },
+  "panelTools": {
+    "message": "Drawing tools"
+  },
+  "panelActions": {
+    "message": "Actions"
+  },
+  "panelParameters": {
+    "message": "Parameters"
+  },
+  "panelShadow": {
+    "message": "Shadow"
+  },
+  "panelWidth": {
+    "message": "Width"
+  },
+  "panelHeight": {
+    "message": "Height"
+  },
+  "panelProportional": {
+    "message": "Proportional"
+  },
+  "panelCancel": {
+    "message": "Cancel"
+  },
+  "panelChange": {
+    "message": "Change"
+  },
+  "panelAlfaChanel": {
+    "message": "Move slider to change opacity"
+  },
+  "tooltipZoomPlus": {
+    "message": "Zoom +"
+  },
+  "tooltipZoomMinus": {
+    "message": "Zoom -"
+  },
+  "tooltipChangeZoom": {
+    "message": "Change zoom"
+  },
+  "tooltipResize": {
+    "message": "Resize"
+  },
+  "tooltipCrop": {
+    "message": "Crop"
+  },
+  "tooltipTrim": {
+    "message": "Trim"
+  },
+  "tooltipPen": {
+    "message": "Pen"
+  },
+  "tooltipMarker": {
+    "message": "Marker"
+  },
+  "tooltipSquare": {
+    "message": "Square"
+  },
+  "tooltipRounded": {
+    "message": "Rounded"
+  },
+  "tooltipCircle": {
+    "message": "Circle"
+  },
+  "tooltipEllipse": {
+    "message": "Ellipse"
+  },
+  "tooltipArrowLine": {
+    "message": "Arrow line"
+  },
+  "tooltipArrowCurve": {
+    "message": "Arrow curve"
+  },
+  "tooltipArrowDouble": {
+    "message": "Arrow double"
+  },
+  "tooltipLine": {
+    "message": "Line"
+  },
+  "tooltipLineCurve": {
+    "message": "Line curve"
+  },
+  "tooltipLineDotted": {
+    "message": "Line dotted"
+  },
+  "tooltipTextArrow": {
+    "message": "Text arrow"
+  },
+  "tooltipNoteText": {
+    "message": "Note text"
+  },
+  "tooltipText": {
+    "message": "Text"
+  },
+  "tooltipBlur": {
+    "message": "Blur all"
+  },
+  "tooltipLineWidth": {
+    "message": "Line width"
+  },
+  "tooltipFontAndSize": {
+    "message": "Font and size"
+  },
+  "tooltipColorLineAndText": {
+    "message": "Color line and text"
+  },
+  "tooltipColorFull": {
+    "message": "Color fill"
+  },
+  "tooltipColorAndSizeShadow": {
+    "message": "Shadow Color and Size"
+  },
+  "tooltipLock": {
+    "message": "Lock figures"
+  },
+  "tooltipUndo": {
+    "message": "Undo"
+  },
+  "tooltipRedo": {
+    "message": "Redo"
+  },
+  "tooltipUndoAll": {
+    "message": "Undo all"
+  },
+  "tooltipNumber": {
+    "message": "Numbered markers"
+  },
+  "tooltipNumbers": {
+    "message": "Auto numbering"
+  },
+  "tooltipCopy": {
+    "message": "Copy to Clipboard"
+  },
+  "tooltipShortUrl": {
+    "message": "Short url"
+  },
+  "tooltipWrongEmail": {
+    "message": "Wrong email"
+  },
+  "tooltipPassInfo": {
+    "message": "Password must be at least 8 symbols"
+  },
+  "tooltipPassMatch": {
+    "message": "Passwords do not match"
+  },
+  "tooltipOpenFile": {
+    "message": "Open file"
+  },
+  "tooltipMakeScreenshot": {
+    "message": "Make screenshot"
+  },
+  "tooltipclassroomSend": {
+    "message": "Send to Google Classroom"
+  },
+  "tooltipVideoEditor": {
+    "message": "Crop/Trim"
+  },
+  "cropBtnEdit": {
+    "message": "Edit"
+  },
+  "cropBtnSave": {
+    "message": "Save"
+  },
+  "cropBtnCancel": {
+    "message": "Cancel"
+  },
+  "cropBtnCopy": {
+    "message": "Copy to clipboard"
+  },
+  "cropBtnNimbus": {
+    "message": "Send to Nimbus"
+  },
+  "notificationCrop": {
+    "message": "Drag and Capture Page (Press Esc to Exit)"
+  },
+  "notificationCopy": {
+    "message": "Image has been copied to the clipboard."
+  },
+  "notificationInsertInfo": {
+    "message": "You can insert only image."
+  },
+  "notificationWrong": {
+    "message": "Something wrong. Please try again."
+  },
+  "notificationLoginFail": {
+    "message": "Please try to logout and login again."
+  },
+  "notificationEmailFail": {
+    "message": "This email is already registered."
+  },
+  "notificationRegisterFail": {
+    "message": "Register fail. Please try again."
+  },
+  "notificationRestoreSent": {
+    "message": "Restore instructions have been sent to your E-mail."
+  },
+  "notificationEmailIncorrect": {
+    "message": "Incorrect email. Please try again."
+  },
+  "notificationUrlCopied": {
+    "message": "URL has been copied to the clipboard."
+  },
+  "notificationUploaded": {
+    "message": "Upload has completed."
+  },
+  "notificationReachedLimit": {
+    "message": "You have reached your monthly traffic limit (100 MB). To continue, you have to purchase Nimbus Pro."
+  },
+  "notificationNetworkError": {
+    "message": "Problem with server or your Internet-connection. Please try again."
+  },
+  "notificationErrorActiveTab": {
+    "message": "Nimbus Capture can't start the recording while it's being initialized. To activate the extension you need to click on the Nimbus Capture icon on the panel."
+  },
+  "notificationErrorChromeTab": {
+    "message": "Recording of the Internal Chrome pages or App's pages is currently not supported."
+  },
+  "notificationDesktopTabSound": {
+    "message": "System sound is not available in Desktop Recording Mode. Use Tab Record instead."
+  },
+  "notificationDesktopDrawingTools": {
+    "message": "Drawing tools is not available in Desktop Recording Mode. Use Tab Record instead."
+  },
+  "notificationDesktopVideoCamera": {
+    "message": "Video camera is not available in Desktop Recording Mode. Use Tab Record instead."
+  },
+  "editVideoTitle": {
+    "message": "Video editor"
+  },
+  "editBtnDone": {
+    "message": "Done"
+  },
+  "editBtnDiscard": {
+    "message": "Discard"
+  },
+  "editBtnBack": {
+    "message": "Back"
+  },
+  "editBtnNimbus": {
+    "message": "Send to Nimbus"
+  },
+  "editBtnSave": {
+    "message": "Save as Image"
+  },
+  "editBtnSavePDF": {
+    "message": "Save as PDF"
+  },
+  "editBtnSaveVideo": {
+    "message": "Save video"
+  },
+  "editBtnDrive": {
+    "message": "Send to Google"
+  },
+  "editBtnDropbox": {
+    "message": "Send to Dropbox"
+  },
+  "editBtnCopy": {
+    "message": "Copy to Clipboard"
+  },
+  "editBtnPrint": {
+    "message": "Print"
+  },
+  "nimbusYoutubeSend": {
+    "message": "Publish on Youtube"
+  },
+  "nimbusSlackSend": {
+    "message": "Send to Slack"
+  },
+  "nimbusSlackWelcome": {
+    "message": "Take a moment to read:"
+  },
+  "nimbusSlackWelcome2": {
+    "message": "Nimbus Screenshot will not have access to the messages in chat rooms. All your conversations will remain private. Nimbus Screenshot can only upload screenshots in Slack"
+  },
+  "nimbusSlackWelcome3": {
+    "message": "If you have any questions, please write on email"
+  },
+  "nimbusSend": {
+    "message": "Send to Nimbus Note"
+  },
+  "nimbusCommentPlaceholder": {
+    "message": "Comment your screenshot"
+  },
+  "nimbusRegistration": {
+    "message": "Registration"
+  },
+  "nimbusLabelEmail": {
+    "message": "Email"
+  },
+  "nimbusLabelPassword": {
+    "message": "Password"
+  },
+  "nimbusLabelPasswordAndInfo": {
+    "message": "Password (min. 8 symbol)"
+  },
+  "nimbusRemindPass": {
+    "message": "Remind password"
+  },
+  "nimbusLabelRetypePass": {
+    "message": "Retype password"
+  },
+  "nimbusPlaceholderPassword": {
+    "message": "Password"
+  },
+  "nimbusPlaceholderEmail": {
+    "message": "Email"
+  },
+  "nimbusPlaceholderEnterText": {
+    "message": "Enter the text"
+  },
+  "nimbusSelectFolder": {
+    "message": "Select folder"
+  },
+  "nimbusPrivate": {
+    "message": "Private"
+  },
+  "nimbusBtnLogin": {
+    "message": "Sign In to Nimbus Note"
+  },
+  "nimbusBtnSignup": {
+    "message": "Create account"
+  },
+  "nimbusBtnRemind": {
+    "message": "Forgot your password?"
+  },
+  "nimbusRate": {
+    "message": "Like Nimbus Screenshot? Put it a rating!"
+  },
+  "nimbusBad": {
+    "message": "Bad"
+  },
+  "nimbusBeBetter": {
+    "message": "Be better"
+  },
+  "nimbusGood": {
+    "message": "Good!"
+  },
+  "nimbusDid": {
+    "message": "Did"
+  },
+  "nimbusEnter": {
+    "message": "Sign In to Nimbus Note"
+  },
+  "nimbusViewUploads": {
+    "message": "View my Nimbus uploads"
+  },
+  "nimbusViewUploadsToDropbox": {
+    "message": "Open file in Dropbox"
+  },
+  "nimbusLimitUsage": {
+    "message": "Usage:"
+  },
+  "nimbusLimitOf": {
+    "message": "of"
+  },
+  "nimbusUpgradePro": {
+    "message": "Why Nimbus Pro is better"
+  },
+  "nimbusCaptureUpgradePro": {
+    "message": "More features with<br>Nimbus Capture Pro"
+  },
+  "nimbusLimitSpace": {
+    "message": "You can't upload this file because you have almost reached your monthly data limit of 100 MB."
+  },
+  "nimbusLimitDescription": {
+    "message": "You can switch to Nimbus Pro to increase your monthly data limit to 1 GB."
+  },
+  "nimbusGoPro": {
+    "message": "Upgrade to Nimbus Pro"
+  },
+  "nimbusIsPro": {
+    "message": "I have Nimbus Pro"
+  },
+  "nimbusThanksYou": {
+    "message": "Thank you for information"
+  },
+  "nimbusNoThanks": {
+    "message": "No thanks"
+  },
+  "nimbusOr": {
+    "message": "or"
+  },
+  "nimbusSlackLogout": {
+    "message": "Logout Slack"
+  },
+  "nimbusLimitVideoFree": {
+    "message": "Your video is too big!<br>But all is not lost ..."
+  },
+  "nimbusLimitVideoDestructionFree": {
+    "message": "Max. file size for free accounts = 10MB<br>Upgrade to Nimbus Pro to raise the file limit."
+  },
+  "nimbusLimitVideo": {
+    "message": "Your video is too big!<br>But all is not lost ..."
+  },
+  "nimbusLimitVideoDestruction": {
+    "message": "Max.file size for Nimbus Pro = 1GB<br>Please write to <b>team@nimbusweb.co</b> to raise the file limit."
+  },
+  "nimbusShareFriends": {
+    "message": "Send screenshots and screencasts to friends and colleagues;"
+  },
+  "nimbusAccessAnyTimes": {
+    "message": "Access the screenshots and screencasts at any time and from any device;"
+  },
+  "nimbusOrganizeUploadFolders": {
+    "message": "Organize your uploads by folders, subfolders, and tags;"
+  },
+  "nimbusProConvertMP4": {
+    "message": "Convert video to MP4"
+  },
+  "nimbusProConvertGIF": {
+    "message": "Convert video to GIF"
+  },
+  "nimbusProCropVideo": {
+    "message": "Crop your video"
+  },
+  "nimbusProTrimVideo": {
+    "message": "Trim your video"
+  },
+  "nimbusProSendYoutube": {
+    "message": "Send video to Youtube"
+  },
+  "nimbusProSendGoogleDrive": {
+    "message": "Send video to Google Drive"
+  },
+  "nimbusProSendDropbox": {
+    "message": "Send images and video to Dropbox"
+  },
+  "nimbusProAddWaterMark": {
+    "message": "Add your watermark for branding"
+  },
+  "nimbusProSupport": {
+    "message": "Priority Support"
+  },
+  "nimbusLimitDeviceTitle": {
+    "message": "Your Nimbus Capture account is already being used on the maximum number of devices."
+  },
+  "nimbusLimitDeviceDestruction": {
+    "message": "If you want to use Nimbus Capture on more than two devices, you will need to upgrade your plan."
+  },
+  "nimbusBannedDeviceDestruction": {
+    "message": "This device was banned by you."
+  },
+  "nimbusManageDevices": {
+    "message": "Manage devices"
+  },
+  "nimbusIncreaseLimit": {
+    "message": "Increase limit"
+  },
+  "nimbusSaveScreenshot": {
+    "message": "Save screenshot"
+  },
+  "nimbusSaveScreencast": {
+    "message": "Save screencast"
+  },
+  "nimbusComment": {
+    "message": "Comment"
+  },
+  "nimbusRateUs": {
+    "message": "Rate Us"
+  },
+  "nimbusSupport": {
+    "message": "Support"
+  },
+  "nimbusHelp": {
+    "message": "Help"
+  },
+  "nimbusSlackHidePanel": {
+    "message": "Hide Slack panel"
+  },
+  "nimbusChannels": {
+    "message": "Channels"
+  },
+  "nimbusPrivateMessage": {
+    "message": "Private message"
+  },
+  "nimbusSelectChannel": {
+    "message": "Select channel"
+  },
+  "nimbusSlackAccount": {
+    "message": "Slack account"
+  },
+  "nimbusAccount": {
+    "message": "Nimbus account"
+  },
+  "nimbusSearch": {
+    "message": "Search"
+  },
+  "nimbusEnvironmentInfo": {
+    "message": "Add information about system and page"
+  },
+  "nimbusBtnAuthGoogle": {
+    "message": "Using Google"
+  },
+  "nimbusBtnAuthFacebook": {
+    "message": "Using Facebook"
+  },
+  "nimbusNotAccount": {
+    "message": "I do not have an account"
+  },
+  "nimbusCreateAccount": {
+    "message": "Create Free Account"
+  },
+  "tooltipUploadTo": {
+    "message": "Upload to"
+  },
+  "nimbusNoteName": {
+    "message": "Note name"
+  },
+  "nimbusInfoPage": {
+    "message": "Web Page"
+  },
+  "nimbusInfoScreen": {
+    "message": "Screen Resolution"
+  },
+  "nimbusInfoBrowser": {
+    "message": "User Browser"
+  },
+  "nimbusInfoAgent": {
+    "message": "User Agent"
+  },
+  "nimbusInfoPlatform": {
+    "message": "User Platform"
+  },
+  "newReleaseTitle": {
+    "message": "Welcome to new version of Nimbus Screenshot"
+  },
+  "newReleaseText": {
+    "message": "<li>New design;</li><li>A lock that prevents elements from being edited;</li><li>Delayed screenshot;</li><li>Possibility to customize the main menu removing the unnecessary;</li><li>Possibility to deliberately add numbers next to the needed shapes;</li><li>Possibility to quickly send to  Nimbus/Slack from the editor using the Ctrl+Enter hotkey;</li><li>Fixed some other bugs;</li>"
+  },
+  "rateText": {
+    "message": "Like Nimbus Capture?<br>Please write your review! Thank you."
+  },
+  "rateRate": {
+    "message": "Rate Nimbus Capture"
+  },
+  "rateNotShow": {
+    "message": "Don’t show it again"
+  },
+  "disable": {
+    "message": "Disable"
+  },
+  "gDriveLabelFolders": {
+    "message": "Screenshot will be saved"
+  },
+  "gDriveTitle": {
+    "message": "Send to Google Drive"
+  },
+  "gDriveLabel": {
+    "message": "Select folder you want to save screenshot"
+  },
+  "gDriveMainFolder": {
+    "message": "This is Main Folder"
+  },
+  "gDriveNoItems": {
+    "message": "No items"
+  },
+  "gDriveBtnDone": {
+    "message": "Done"
+  },
+  "gDriveNotAuthorized": {
+    "message": "You are not logged in to your account"
+  },
+  "gDriveSendTo": {
+    "message": "Send to"
+  },
+  "gDriveUploadPrivate": {
+    "message": "Upload as private"
+  },
+  "gDriveLogout": {
+    "message": "Logout"
+  },
+  "labelPreviewLoading": {
+    "message": "Loading..."
+  },
+  "labelRedactorLoading": {
+    "message": "Loading… please wait…"
+  },
+  "labelPreviewLoadingVideo": {
+    "message": "Processing video - please wait..."
+  },
+  "videoPanelSimpleCursor": {
+    "message": "Simple cursor - Alt+S"
+  },
+  "videoPanelFocusMouse": {
+    "message": "Focus mouse - Alt+G"
+  },
+  "videoPanelAnimatedCursor": {
+    "message": "Animated cursor - Alt+L"
+  },
+  "videoPanelPen": {
+    "message": "Pen - Alt+P"
+  },
+  "videoPanelArrow": {
+    "message": "Arrow - Alt+A"
+  },
+  "videoPanelSquare": {
+    "message": "Square - Alt+R"
+  },
+  "videoPanelMark": {
+    "message": "Mark - Alt+M"
+  },
+  "videoPanelQuestion": {
+    "message": "Question - Alt+Q"
+  },
+  "videoPanelCheckmark": {
+    "message": "Checkmark - Alt+C"
+  },
+  "videoPanelClear": {
+    "message": "Clear - Alt+N"
+  },
+  "videoPanelClearAll": {
+    "message": "Clear All - Alt+U"
+  },
+  "videoPanelCamera": {
+    "message": "Turn on/off webcam"
+  },
+  "videoPanelHideShowPanel": {
+    "message": "Hide/Show panel - Alt+V"
+  },
+  "videoConvertOpen": {
+    "message": "Convert to MP4 or Gif"
+  },
+  "videoEditor": {
+    "message": "Video editor"
+  },
+  "videoConvertSize": {
+    "message": "Size"
+  },
+  "videoConvertFrameRate": {
+    "message": "Frame rate"
+  },
+  "videoConvert": {
+    "message": "Convert"
+  },
+  "videoConvertInfo": {
+    "message": "It might take some time to convert your video to MP4 or GIF format. You`ll be able to save your video as soon as the conversion is finished."
+  },
+  "videoEditorTrimApply": {
+    "message": "Remove selected"
+  },
+  "videoEditorTrimCancel": {
+    "message": "Cancel"
+  },
+  "videoEditorTimeline": {
+    "message": "Timeline zoom"
+  },
+  "youtubeName": {
+    "message": "Name"
+  },
+  "youtubePublic": {
+    "message": "Public"
+  },
+  "youtubeUnlisted": {
+    "message": "Unlisted"
+  },
+  "youtubePrivate": {
+    "message": "Private"
+  },
+  "youtubeCreate": {
+    "message": "Create"
+  },
+  "youtubePlaylist": {
+    "message": "Playlist"
+  },
+  "hotKeys": {
+    "message": "Hotkeys"
+  },
+  "onlyForChrome": {
+    "message": "Only for Chrome"
+  },
+  "onlyForFirefox": {
+    "message": "Only for Chrome"
+  },
+  "watermarkLimit": {
+    "message": "Max.size of watermark -1mb"
   }
 }

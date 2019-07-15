@@ -1,0 +1,641 @@
+{
+  "appName": {
+    "message": "Nimbus Screenshot & Screen Video Recorder"
+  },
+  "appNameMini": {
+    "message": "Nimbus Screenshot"
+  },
+  "appDesc": {
+    "message": "ウェブページ全体やページの一部、またはブラウザウィンドウ全体をキャプチャ、スクリーンショットを編集し、ローカルファイルまたはGoogleドライブに画像を保存します。"
+  },
+  "btnVisiblePage": {
+    "message": "ページの可視部分"
+  },
+  "btnDelayedScreen": {
+    "message": "Delayed screen"
+  },
+  "btnCaptureFragment": {
+    "message": "キャプチャ フラグメント"
+  },
+  "btnSelectedArea": {
+    "message": "選択したエリア"
+  },
+  "btnSelectedScroll": {
+    "message": "選択＆スクロール"
+  },
+  "btnEntirePage": {
+    "message": "ページ全体"
+  },
+  "btnBrowserWindow": {
+    "message": "ブラウザ ウィンドウ"
+  },
+  "btnDesktop": {
+    "message": "デスクトップからのキャプチャ"
+  },
+  "btnBlankScreen": {
+    "message": "白紙の画面"
+  },
+  "btnAndroidVersion": {
+    "message": "Androidのバージョン"
+  },
+  "btnCaptureVideo": {
+    "message": "Record Video"
+  },
+  "btnOptions": {
+    "message": "オプション"
+  },
+  "btnEnableEdit": {
+    "message": "編集を有効にする"
+  },
+  "btnEnableSave": {
+    "message": "ダウンロード"
+  },
+  "btnEnableDownload": {
+    "message": "Send to Nimbus/Google/Slack"
+  },
+  "btnConnectSlack": {
+    "message": "Connect Slack"
+  },
+  "btnEnableCopy": {
+    "message": "クリップボードにコピーする"
+  },
+  "btnAccessMic": {
+    "message": "Access to microphone"
+  },
+  "btnReadyVideo": {
+    "message": "I'm ready to record video"
+  },
+  "btnManual": {
+    "message": "Manual"
+  },
+  "popupTitle": {
+    "message": "Types screenshots"
+  },
+  "popupVideoTitle": {
+    "message": "Record video"
+  },
+  "popupLabelRecordMic": {
+    "message": "Record Mic Sound"
+  },
+  "popupLabelRecordTab": {
+    "message": "Record Tab Sound"
+  },
+  "popupLabelCursorAnimate": {
+    "message": "Animated cursor"
+  },
+  "popupLabelCountdown": {
+    "message": "Countdown"
+  },
+  "popupBtnTabRecord": {
+    "message": "Tab"
+  },
+  "popupBtnDesktopRecord": {
+    "message": "Desktop"
+  },
+  "popupBtnBack": {
+    "message": "戻る"
+  },
+  "popupRecordTitle": {
+    "message": "Video is recording"
+  },
+  "popupBtnStopRecord": {
+    "message": "Stop Recording"
+  },
+  "popupAfterCapture": {
+    "message": "Action after the capture"
+  },
+  "popupSec": {
+    "message": "sec."
+  },
+  "popupMyNotes": {
+    "message": "My Uploads"
+  },
+  "popupWelcomeVideo": {
+    "message": "Welcome to the video recording"
+  },
+  "popupAccessMic": {
+    "message": "For starters, you have to allow access to your microphone"
+  },
+  "popupReadManual": {
+    "message": "Also, you can read the instructions for using the application"
+  },
+  "optionsTitle": {
+    "message": "スクリーンショット設定"
+  },
+  "optionsSettingImage": {
+    "message": "Image settings"
+  },
+  "optionsCaptureSettings": {
+    "message": "Screenshot Settings"
+  },
+  "optionsSettingsSave": {
+    "message": "Save settings"
+  },
+  "optionsMainMenu": {
+    "message": "Main menu settings"
+  },
+  "optionsShortcutSettings": {
+    "message": "Hotkeys settings"
+  },
+  "optionsLabelImageFormat": {
+    "message": "画像の形式"
+  },
+  "optionsLabelImageQuality": {
+    "message": "画質"
+  },
+  "optionsLabelSaveAs": {
+    "message": "ダイアログ「名前を付けて保存」を有効にする"
+  },
+  "optionsLabelFilenameTemplate": {
+    "message": "ファイル名テンプレート"
+  },
+  "optionsLabelCanUse": {
+    "message": "ご利用いただけます"
+  },
+  "optionsLabelDelayedScreenshotTime": {
+    "message": "Delay before delayed screen (s)"
+  },
+  "optionsLabelHideFixedElements": {
+    "message": "固定要素を非表示にする"
+  },
+  "optionsLabelShowInfoPrint": {
+    "message": "Display URL/date in Printing"
+  },
+  "optionsLabelSaveCropPosition": {
+    "message": "クロップの位置を保存する"
+  },
+  "optionsLabelQuickCaptureEnable": {
+    "message": "Enable quick screenshot (without opening the menu)"
+  },
+  "optionsLabelAfterClicking": {
+    "message": "After clicking on the icon"
+  },
+  "optionsLabelWantCapture": {
+    "message": "make a screenshot"
+  },
+  "optionsLabelAndThen": {
+    "message": "and then"
+  },
+  "optionsLabelLoadToNS": {
+    "message": "Send to Nimbus/Slack"
+  },
+  "labelDropImage": {
+    "message": "drop image here"
+  },
+  "labelCaptureHelper": {
+    "message": "Select one of the screens to Snap!"
+  },
+  "panelSize": {
+    "message": "サイズ"
+  },
+  "panelTools": {
+    "message": "描画ツール"
+  },
+  "panelActions": {
+    "message": "アクション"
+  },
+  "panelParameters": {
+    "message": "パラメータ"
+  },
+  "panelShadow": {
+    "message": "Shadow"
+  },
+  "panelWidth": {
+    "message": "Width"
+  },
+  "panelHeight": {
+    "message": "Height"
+  },
+  "panelProportional": {
+    "message": "Proportional"
+  },
+  "panelCancel": {
+    "message": "Cancel"
+  },
+  "panelChange": {
+    "message": "Change"
+  },
+  "panelAlfaChanel": {
+    "message": "Move slider to change opacity"
+  },
+  "tooltipZoomPlus": {
+    "message": "ズーム+"
+  },
+  "tooltipZoomMinus": {
+    "message": "ズーム -"
+  },
+  "tooltipChangeZoom": {
+    "message": "Change zoom"
+  },
+  "tooltipResize": {
+    "message": "リサイズ"
+  },
+  "tooltipCrop": {
+    "message": "クロップ"
+  },
+  "tooltipPen": {
+    "message": "ペン"
+  },
+  "tooltipMarker": {
+    "message": "Marker"
+  },
+  "tooltipSquare": {
+    "message": "Square"
+  },
+  "tooltipRounded": {
+    "message": "Rounded"
+  },
+  "tooltipCircle": {
+    "message": "Circle"
+  },
+  "tooltipEllipse": {
+    "message": "Ellipse"
+  },
+  "tooltipArrowLine": {
+    "message": "Arrow line"
+  },
+  "tooltipArrowCurve": {
+    "message": "Arrow curve"
+  },
+  "tooltipArrowDouble": {
+    "message": "Arrow double"
+  },
+  "tooltipLine": {
+    "message": "線を引く"
+  },
+  "tooltipLineCurve": {
+    "message": "Line curve"
+  },
+  "tooltipLineDotted": {
+    "message": "Line dotted"
+  },
+  "tooltipTextArrow": {
+    "message": "Text arrow"
+  },
+  "tooltipNoteText": {
+    "message": "Note text"
+  },
+  "tooltipText": {
+    "message": "テキストを書く"
+  },
+  "tooltipBlur": {
+    "message": "Blur all"
+  },
+  "tooltipLineWidth": {
+    "message": "Line width"
+  },
+  "tooltipFontAndSize": {
+    "message": "Font and size"
+  },
+  "tooltipColorLineAndText": {
+    "message": "Color line and text"
+  },
+  "tooltipColorFull": {
+    "message": "Color fill"
+  },
+  "tooltipColorAndSizeShadow": {
+    "message": "Color and size shadow"
+  },
+  "tooltipLock": {
+    "message": "Lock figures"
+  },
+  "tooltipUndo": {
+    "message": "取り消す"
+  },
+  "tooltipRedo": {
+    "message": "やり直す"
+  },
+  "tooltipUndoAll": {
+    "message": "すべて元に戻す"
+  },
+  "tooltipNumber": {
+    "message": "Numbered markers"
+  },
+  "tooltipNumbers": {
+    "message": "番号を表示する"
+  },
+  "tooltipCopy": {
+    "message": "クリップボードにコピーする"
+  },
+  "tooltipShortUrl": {
+    "message": "短縮URLを作成する"
+  },
+  "tooltipWrongEmail": {
+    "message": "間違ったメールアドレス"
+  },
+  "tooltipPassInfo": {
+    "message": "パスワードは少なくとも、８文字以上で設定する必要があります"
+  },
+  "tooltipPassMatch": {
+    "message": "パスワードが一致しません"
+  },
+  "tooltipOpenFile": {
+    "message": "ファイルを開く"
+  },
+  "tooltipMakeScreenshot": {
+    "message": "スクリーンショットを撮る"
+  },
+  "cropBtnEdit": {
+    "message": "編集する"
+  },
+  "cropBtnSave": {
+    "message": "保存する"
+  },
+  "cropBtnCancel": {
+    "message": "キャンセル"
+  },
+  "cropBtnCopy": {
+    "message": "クリップボードにコピーする"
+  },
+  "cropBtnNimbus": {
+    "message": "Nimbusへ送信する"
+  },
+  "notificationCrop": {
+    "message": "Drag and Capture Page (Press Esc to Exit)"
+  },
+  "notificationCopy": {
+    "message": "画像はクリップボードにコピーされました。"
+  },
+  "notificationInsertInfo": {
+    "message": "お好きな画像を挿入することができます。"
+  },
+  "notificationWrong": {
+    "message": "エラーが発生しました。もう一度やり直してください。"
+  },
+  "notificationLoginFail": {
+    "message": "ログインできませんでした。もう一度やり直してください。"
+  },
+  "notificationEmailFail": {
+    "message": "このEメールアドレスは既に登録されています。"
+  },
+  "notificationRegisterFail": {
+    "message": "登録できませんでした。もう一度やり直してください。"
+  },
+  "notificationRestoreSent": {
+    "message": "あなたのメールアドレスに、復元の手順が送信されました。"
+  },
+  "notificationEmailIncorrect": {
+    "message": "不正なEメールアドレスです。もう一度やり直してください。"
+  },
+  "notificationUrlCopied": {
+    "message": "URLがクリップボードにコピーされました。"
+  },
+  "notificationUploaded": {
+    "message": "アップロードが完了しました。"
+  },
+  "notificationReachedLimit": {
+    "message": "ひと月の間に使えるトラフィック制限(100メガバイト)に達しました。続行するには、Nimbusプロを購入する必要があります。"
+  },
+  "notificationNetworkError": {
+    "message": "Problem with server or your Internet-connection. Please try again."
+  },
+  "editBtnDone": {
+    "message": "完了"
+  },
+  "editBtnBack": {
+    "message": "戻る"
+  },
+  "editBtnNimbus": {
+    "message": "Nimbusに保存する"
+  },
+  "editBtnSave": {
+    "message": "イメージとして保存する"
+  },
+  "editBtnSaveVideo": {
+    "message": "Save video"
+  },
+  "editBtnDrive": {
+    "message": "Googleに送る"
+  },
+  "editBtnCopy": {
+    "message": "クリップボードにコピーする"
+  },
+  "editBtnPrint": {
+    "message": "印刷イメージ"
+  },
+  "nimbusSlackSend": {
+    "message": "Send to Slack"
+  },
+  "nimbusSlackWelcome": {
+    "message": "Take a moment to read:"
+  },
+  "nimbusSlackWelcome2": {
+    "message": "Nimbus Screenshot will not have access to the messages in chat rooms. All your conversations will remain private. Nimbus Screenshot can only upload screenshots in Slack"
+  },
+  "nimbusSlackWelcome3": {
+    "message": "If you have any questions, please write on email"
+  },
+  "nimbusSend": {
+    "message": "Send to Nimbus Note"
+  },
+  "nimbusCommentPlaceholder": {
+    "message": "スクリーンショットにコメントを残す"
+  },
+  "nimbusRegistration": {
+    "message": "登録する"
+  },
+  "nimbusLabelEmail": {
+    "message": "Eメール"
+  },
+  "nimbusLabelPassword": {
+    "message": "パスワード"
+  },
+  "nimbusLabelPasswordAndInfo": {
+    "message": "Password (min. 8 symbol)"
+  },
+  "nimbusRemindPass": {
+    "message": "パスワードを思い出す"
+  },
+  "nimbusLabelRetypePass": {
+    "message": "パスワードを再入力してお試しください"
+  },
+  "nimbusPlaceholderPassword": {
+    "message": "パスワード"
+  },
+  "nimbusPlaceholderEmail": {
+    "message": "Eメール"
+  },
+  "nimbusPlaceholderEnterText": {
+    "message": "Enter the text"
+  },
+  "nimbusSelectFolder": {
+    "message": "Select folder"
+  },
+  "nimbusPrivate": {
+    "message": "プライベート"
+  },
+  "nimbusBtnLogin": {
+    "message": "Sign In to Nimbus Note"
+  },
+  "nimbusBtnSignup": {
+    "message": "Create account"
+  },
+  "nimbusBtnRemind": {
+    "message": "Forgot your password?"
+  },
+  "nimbusRate": {
+    "message": "Like Nimbus Screenshot? Put it a rating!"
+  },
+  "nimbusBad": {
+    "message": "Bad"
+  },
+  "nimbusBeBetter": {
+    "message": "Be better"
+  },
+  "nimbusGood": {
+    "message": "Good!"
+  },
+  "nimbusDid": {
+    "message": "Did"
+  },
+  "nimbusEnter": {
+    "message": "Sign In to Nimbus Note"
+  },
+  "nimbusViewUploads": {
+    "message": "私のNimbusアップデートを表示する"
+  },
+  "nimbusLimitUsage": {
+    "message": "使用法"
+  },
+  "nimbusLimitOf": {
+    "message": "の"
+  },
+  "nimbusUpgradePro": {
+    "message": "Why Nimbus Pro is better"
+  },
+  "nimbusLimitSpace": {
+    "message": "申し訳ございませんが、<b>あと少しで一月に使える１００メガバイトの限度容量に達しますので、ファイルをアップロードすることができません</b>。"
+  },
+  "nimbusLimitDescription": {
+    "message": "一月に使える容量を１ギガバイトに増やすためには、<b>Nimbusプロに切り替えてください</b>。"
+  },
+  "nimbusGoPro": {
+    "message": "Nimbusプロへ移行する"
+  },
+  "nimbusNoThanks": {
+    "message": "No thanks"
+  },
+  "nimbusSlackLogout": {
+    "message": "Logout Slack"
+  },
+  "nimbusLimitVideo": {
+    "message": "Unfortunately, the video size<br>exceeds 10 megabytes"
+  },
+  "nimbusLimitVideoDestruction": {
+    "message": "If you would like to upload<br><b>video larger than 10 megabytes</b>, you have to<br>upgrade your subscription to <b>Nimbus Pro</b>"
+  },
+  "nimbusShareFriends": {
+    "message": "Send screenshots and screencasts to friends and colleagues;"
+  },
+  "nimbusAccessAnyTimes": {
+    "message": "Access to the screenshots and screenshots at any time and from any device;"
+  },
+  "nimbusSaveScreenshot": {
+    "message": "Save screenshot"
+  },
+  "nimbusSaveScreencast": {
+    "message": "Save screencast"
+  },
+  "nimbusComment": {
+    "message": "Comment"
+  },
+  "nimbusRateUs": {
+    "message": "Rate Us"
+  },
+  "nimbusSupport": {
+    "message": "Support"
+  },
+  "nimbusSlackHidePanel": {
+    "message": "Hide Slack panel"
+  },
+  "nimbusChannels": {
+    "message": "Channels"
+  },
+  "nimbusPrivateMessage": {
+    "message": "Private message"
+  },
+  "nimbusSelectChannel": {
+    "message": "Select channel"
+  },
+  "nimbusSlackAccount": {
+    "message": "Slack account"
+  },
+  "nimbusAccount": {
+    "message": "Nimbus account"
+  },
+  "nimbusSearch": {
+    "message": "Search"
+  },
+  "nimbusEnvironmentInfo": {
+    "message": "Add information about system and page"
+  },
+  "nimbusBtnAuthGoogle": {
+    "message": "Using Google"
+  },
+  "nimbusBtnAuthFacebook": {
+    "message": "Using Facebook"
+  },
+  "nimbusNotAccount": {
+    "message": "I do not have an account"
+  },
+  "nimbusCreateAccount": {
+    "message": "Create account"
+  },
+  "tooltipUploadTo": {
+    "message": "Upload to"
+  },
+  "nimbusNoteName": {
+    "message": "Note name"
+  },
+  "nimbusInfoPage": {
+    "message": "Web Page"
+  },
+  "nimbusInfoScreen": {
+    "message": "Screen Resolution"
+  },
+  "nimbusInfoBrowser": {
+    "message": "User Browser"
+  },
+  "nimbusInfoAgent": {
+    "message": "User Agent"
+  },
+  "nimbusInfoPlatform": {
+    "message": "User Platform"
+  },
+  "newReleaseTitle": {
+    "message": "Welcome to new version of Nimbus Screenshot"
+  },
+  "newReleaseText": {
+    "message": "<li>New design;</li><li>A lock that prevents elements from being edited;</li><li>Delayed screenshot;</li><li>Possibility to customize the main menu removing the unnecessary;</li><li>Possibility to deliberately add numbers next to the needed shapes;</li><li>Possibility to quickly send to  Nimbus/Slack from the editor using the Ctrl+Enter hotkey;</li><li>Fixed some other bugs;</li>"
+  },
+  "gDriveLabelFolders": {
+    "message": "Screenshot will be saved"
+  },
+  "gDriveTitle": {
+    "message": "Googleドライブへ送信する"
+  },
+  "gDriveLabel": {
+    "message": "スクリーンショットを保存したいフォルダを選択してください"
+  },
+  "gDriveMainFolder": {
+    "message": "これはメインフォルダです"
+  },
+  "gDriveNoItems": {
+    "message": "アイテムがありません"
+  },
+  "gDriveBtnDone": {
+    "message": "完了"
+  },
+  "gDriveNotAuthorized": {
+    "message": "You are not logged in to your account"
+  },
+  "gDriveSendTo": {
+    "message": "Send to"
+  },
+  "gDriveUploadPrivate": {
+    "message": "Upload as private"
+  },
+  "gDriveLogout": {
+    "message": "Logout"
+  }
+}
